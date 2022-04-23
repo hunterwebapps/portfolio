@@ -28,6 +28,20 @@ a {
   background-size: 200%;
 }
 
+.under-construction {
+  position: fixed;
+  bottom: 1rem;
+  z-index: 1;
+  right: 0.5rem;
+  padding: 1rem;
+  font-weight: 900;
+  font-family: Coolvetica;
+  background: #141A46;
+  color: #EC8B5E;
+  border-radius: 50%;
+  text-align: center;
+}
+
 .tagline {
   width: 100%;
   height: 100%;
@@ -290,6 +304,11 @@ input, textarea {
 @media(min-width: 768px) {
   .container {
     max-width: 720px
+  }
+
+  .under-construction {
+    font-size: 2.5rem;
+    padding: 1.5rem 2rem 2rem 2rem;
   }
 }
 
