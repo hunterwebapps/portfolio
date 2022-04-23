@@ -10,13 +10,25 @@ showCalendly.addEventListener('click', () => {
   return false;
 });
 
-const contactForm = document.getElementById('contact-form');
+window.addEventListener('message', (e) => {
+  if (e.data.event === '' && e.data.event.indexOf('calendly') === 0) {
+    gtag('event', 'Calendly', {
+      event_label: e.data.event,
+    })
+  }
+});
 
-contactForm.addEventListener('submit', async (e) => {
-  const data = new FormData(e.target);
+async function handleSubmitContact() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
 
-  const response = await fetch({
-    url: 'api/EmailService.csx',
+  const data = new FormData();
+  data.set('name', name);
+  data.set('email', email);
+  data.set('message', message);
+
+  const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
     method: 'POST',
     body: data,
   });
@@ -24,4 +36,4 @@ contactForm.addEventListener('submit', async (e) => {
   if (response.ok) {
     // TODO: Show thank you.
   }
-});
+}

@@ -35,6 +35,14 @@
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Q2E6ZZL9BM');
+  </script>
 </head>
 
 <body>
@@ -169,28 +177,46 @@
       <div class="page-header page-header-title">Contact Us</div>
 
       <div class="page-body">
-        <button id="show-calendly">Schedule a FREE Video Consultation</button>
+        <div class="contact-form">
+          <button id="show-calendly">Schedule a FREE Video Consultation</button>
 
-        <h5>Or</h5>
+          <h5>Or</h5>
 
-        <form id="contact-form" class="contact-form">
-          <p>
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name">
-          </p>
+          <form id="contact-form" class="contact-form">
+            <p>
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name">
+            </p>
+            <p>
+              <label for="email">Email<abbr title="Required">*</abbr></label>
+              <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="3"></textarea>
+            </p>
+            <p><button
+                class="g-recaptcha"
+                type="button"
+                data-sitekey="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"
+                data-callback="handleSubmitContact"
+                data-action="submit">
+                Submit
+              </button></p>
+          </form>
+        </div>
 
-          <p>
-            <label for="email">Email<abbr title="Required">*</abbr></label>
-            <input type="email" id="email" name="email" required>
-          </p>
+        <div class="contact-thanks-calendar">
+          Thanks for scheduling some time with me. I look forward to meeting you.
+          If you want to do some research before our call, check out my blog!
+          <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
+        </div>
 
-          <p>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </p>
-
-          <p><button>Submit</button></p>
-        </form>
+        <div class="contact-thanks-form">
+          Thanks for contacting me. I'll review your message and get back to you
+          as soon as possible. In the mean time, check out my blog and/or social
+          media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
+        </div>
       </div>
 
       <div class="page-footer">
@@ -206,6 +232,7 @@
   <script src="js/index.js?v=1.0"></script>
   <script src="https://kit.fontawesome.com/f7b1b59847.js" crossorigin="anonymous" defer></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </body>
 
 </html>
