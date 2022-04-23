@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "description": "Hunter Web Apps Portfolio Site",
+  "author": "Hunter Web Apps",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

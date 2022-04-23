@@ -1,0 +1,7 @@
+{
+  "name": "Hunter Web Apps",
+  "short_name": "Hunter Web Apps",
+  "theme_color": "#ec8b5e",
+  "background_color": "#f4f4f4",
+  "display": "standalone"
+}
