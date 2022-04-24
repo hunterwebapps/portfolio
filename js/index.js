@@ -39,7 +39,6 @@ function initCalendly() {
 function initContact() {
   const contactOptions = document.getElementById('contact-options');
   const calendarThanks = document.getElementById('contact-thanks-calendar');
-  const formThanks = document.getElementById('contact-thanks-form');
 
   const submitButton = document.getElementById('recaptcha-submit');
 
@@ -58,25 +57,28 @@ function initContact() {
       }
     }
   });
+}
 
-  async function handleSubmitContact() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+async function handleSubmitContact() {
+  const contactOptions = document.getElementById('contact-options');
+  const formThanks = document.getElementById('contact-thanks-form');
 
-    const response = await fetch('http://localhost:7071/api/SendEmail', {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
-    });
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
 
-    if (response.ok) {
-      contactOptions.classList.add('hide');
-      formThanks.classList.remove('hide');
-    }
+  const response = await fetch('http://localhost:7071/api/SendEmail', {
+    method: 'POST',
+    body: JSON.stringify({
+      name,
+      email,
+      message,
+    }),
+  });
+
+  if (response.ok) {
+    contactOptions.classList.add('hide');
+    formThanks.classList.remove('hide');
   }
 }
 
