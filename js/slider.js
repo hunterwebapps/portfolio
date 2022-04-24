@@ -1,4 +1,4 @@
-function slider(sliderElement) {
+function slider(sliderElement, onSlideChange) {
   const keyUp = { 38: 1, 33: 1 };
   const keyDown = { 40: 1, 34: 1 };
 
@@ -138,6 +138,8 @@ function slider(sliderElement) {
     // change dots
     document.querySelector('a.slider__indicator--active').classList.remove('slider__indicator--active');
     document.querySelector('a[data-slider-target-index="' + currentSlide + '"]').classList.add('slider__indicator--active');
+
+    onSlideChange(currentSlide);
   };
 
   // go to spesific slide if it exists
@@ -163,5 +165,5 @@ function slider(sliderElement) {
     window.addEventListener('onload', init(), false);
   }
 
-  return { gotoSlide };
+  return { gotoSlide, changeSlide };
 };

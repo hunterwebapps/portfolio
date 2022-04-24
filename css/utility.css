@@ -5,3 +5,11 @@
 .text-navy {
   color: #141A46;
 }
+
+.show {
+  display: initial;
+}
+
+.hide {
+  display: none;
+}

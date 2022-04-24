@@ -8,8 +8,10 @@ class NextPage extends HTMLElement {
         .container {
           display: flex;
           justify-content: center;
-          align-items: center;
-          margin-bottom: 3rem;
+          align-items: baseline;
+          height: 3rem;
+          width: 100%;
+          cursor: pointer;
         }
 
         .chevron {
@@ -68,7 +70,7 @@ class NextPage extends HTMLElement {
           }
         }
       </style>
-      <div class="container">
+      <div class="container next-page">
         <div class="chevron"></div>
         <div class="chevron"></div>
         <div class="chevron"></div>

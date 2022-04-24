@@ -52,6 +52,10 @@
     Under<br>Construction
   </div>
 
+  <div id="backtotop" class="back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+  </div>
+
   <div class="slides">
     <!-- Page 1 -->
     <div class="page page-1">
@@ -131,7 +135,7 @@
         </div>
       </div>
 
-      <div class="page-footer page-footer-title">
+      <div class="page-footer">
         <next-page></next-page>
       </div>
     </div>
@@ -169,6 +173,7 @@
 
       <div class="page-footer">
         <p>We only use widely adopted and industry-leading technologies to ensure secure, reliable, and easily maintainable environments.</p>
+        <next-page></next-page>
       </div>
     </div>
 
@@ -177,25 +182,25 @@
       <div class="page-header page-header-title">Contact Us</div>
 
       <div class="page-body">
-        <div class="contact-form">
+        <div id="contact-options">
           <button id="show-calendly">Schedule a FREE Video Consultation</button>
 
           <h5>Or</h5>
 
-          <form id="contact-form" class="contact-form">
+          <form class="contact-form">
             <p>
-              <label for="name">Name</label>
-              <input id="name" type="text" name="name">
+              <label for="name">Name<abbr title="Required">*</abbr></label>
+              <input id="name" type="text" name="name" required>
             </p>
             <p>
               <label for="email">Email<abbr title="Required">*</abbr></label>
               <input type="email" id="email" name="email" required>
             </p>
             <p>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="3"></textarea>
+              <label for="message">Message<abbr title="Required">*</abbr></label>
+              <textarea id="message" name="message" rows="3" required></textarea>
             </p>
-            <p><button
+            <p class="recaptcha-container"><button
                 class="g-recaptcha"
                 type="button"
                 data-sitekey="6LfA7ZYfAAAAAEWfRZggGaIbUBEQNjCtlVAB3uxp"
@@ -206,17 +211,17 @@
           </form>
         </div>
 
-        <div class="contact-thanks-calendar">
+        <h3 id="contact-thanks-calendar" class="hide">
           Thanks for scheduling some time with me. I look forward to meeting you.
           If you want to do some research before our call, check out my blog!
           <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-        </div>
+        </h3>
 
-        <div class="contact-thanks-form">
+        <h3 id="contact-thanks-form" class="hide">
           Thanks for contacting me. I'll review your message and get back to you
           as soon as possible. In the mean time, check out my blog and/or social
           media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-        </div>
+          </>
       </div>
 
       <div class="page-footer">
