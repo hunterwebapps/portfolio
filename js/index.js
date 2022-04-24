@@ -67,7 +67,7 @@ async function handleSubmitContact() {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
-  const response = await fetch('http://localhost:7071/api/SendEmail', {
+  const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
     method: 'POST',
     body: JSON.stringify({
       name,
