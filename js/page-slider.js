@@ -1,4 +1,4 @@
-function slider(sliderElement, onSlideChange) {
+function PageSlider(sliderElement, onSlideChange) {
   const keyUp = { 38: 1, 33: 1 };
   const keyDown = { 40: 1, 34: 1 };
 
@@ -12,15 +12,9 @@ function slider(sliderElement, onSlideChange) {
     document.body.classList.add('slider__body');
 
     // Control Scrolling
-    const whatWheel = 'onwheel' in document.createElement('div')
-      ? 'wheel' :
-      document.onmousewheel !== undefined
-        ? 'mousewheel'
-        : 'DOMMouseScroll';
-
-    window.addEventListener(whatWheel, function (e) {
-      const direction = e.wheelDelta || e.deltaY;
-      changeSlide(direction > 0 ? -1 : 1);
+    window.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) < 50) return;
+      changeSlide(e.deltaY < 0 ? -1 : 1);
     });
 
     // Allow Keyboard Input
@@ -49,7 +43,7 @@ function slider(sliderElement, onSlideChange) {
 
     var index = 1;
     var slides = document.querySelectorAll(sliderElement + ' > *');
-    var flexPercentage = Math.floor(100 / slides.length);
+    var flexPercentage = 100 / slides.length;
     [].forEach.call(slides, function (section) {
 
       var indicator = document.createElement('a');

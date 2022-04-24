@@ -28,15 +28,10 @@
 
   <title>Hunter Web Apps</title>
 
-  <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
-  <link rel="stylesheet" href="css/slider.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/utility.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
+  <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM" async></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -48,194 +43,198 @@
 <body>
   <div class="background"></div>
 
-  <div class="under-construction">
-    Under<br>Construction
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Page 1 -->
+      <div class="swiper-slide" data-hash="">
+        <div class="page page-1">
+          <div class="page-header">
+            <responsive-logo
+              mobile="images/alt-mixed.svg"
+              desktop="images/main-mixed.svg"
+              alt="Hunter Web Apps Logo">
+            </responsive-logo>
+          </div>
+          <div class="page-body">
+            <img src="images/advanced-custom-solutions_tall.svg" alt="Advanced Custom Solutions" class="tagline">
+          </div>
+          <div class="page-footer">
+            <next-page></next-page>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 2 -->
+      <div class="swiper-slide" data-hash="TrustedBy">
+        <div class="page page-2">
+          <div class="page-header page-header-title">
+            Trusted By
+          </div>
+          <div class="page-body">
+            <ellipse-img src="images/jumpcut.webp" color="black" class="jumpcut"></ellipse-img>
+            <ellipse-img src="images/lendingtree.webp" color="white" class="lendingtree"></ellipse-img>
+            <ellipse-img src="images/sprintship.webp" color="black" class="sprintship"></ellipse-img>
+            <ellipse-img src="images/breakaway.webp" color="white" class="breakaway"></ellipse-img>
+          </div>
+          <div class="page-footer page-footer-title">
+            And Many More...
+            <next-page></next-page>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 3 -->
+      <div class="swiper-slide" data-hash="Services">
+        <div class="page page-3">
+          <div class="page-header page-header-title">
+            Services
+          </div>
+          <div class="page-body">
+            <div class="service">
+              <div class="service-title">
+                <i class="fa-solid fa-code"></i>
+                Full Design and Implementation
+              </div>
+              <p class="service-details">It doesn't matter what stage of the ideation or design process you are in. We can step in to help you manifest your dream system.</p>
+            </div>
+            <div class="service">
+              <div class="service-title">
+                <i class="fa-solid fa-gear"></i>
+                Individual Modules
+              </div>
+              <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for infrastructure, business rules, compliance, risk, and dependencies</p>
+            </div>
+            <div class="service">
+              <div class="service-title">
+                <i class="fa-solid fa-people-carry-box"></i>
+                Rescue Missions
+              </div>
+              <p class="service-details">Hired a team and it didn't go the way you planned, or the way they promised? Schedule a free video consultation to discuss how we can get your project back on track.</p>
+            </div>
+            <div class="service">
+              <div class="service-title">
+                <i class="fa-solid fa-globe"></i>
+                Domain Knowledge
+              </div>
+              <p class="service-details">We have direct experience in the industries of lead generation, lead sales and trading, final mile logistics, courier dispatching, content marketing, customer relationship management, and online education.</p>
+            </div>
+          </div>
+          <div class="page-footer">
+            <next-page></next-page>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 4 -->
+      <div class="swiper-slide" data-hash="Technologies">
+        <div class="page page-4">
+          <div class="page-header page-header-title">Technologies</div>
+          <div class="page-body">
+            <div class="technology">
+              <div class="technology-logo">
+                <img src="images/azure.svg" alt="Microsoft Azure Cloud Hosting" />
+              </div>
+              <div class="technology-description">
+                <strong>Microsoft Azure</strong> cloud infrastructure delivers security, scalability, and an industry-exclusive 99.95% SLA.
+              </div>
+            </div>
+            <div class="technology">
+              <div class="technology-logo">
+                <img src="images/csharp.svg" alt="Microsoft C# .NET Programming Environment" class="" />
+              </div>
+              <div class="technology-description">
+                <strong>Microsoft C# .NET</strong> development framework is comprehensive, blazing fast, and universally adopted.
+              </div>
+            </div>
+            <div class="technology">
+              <div class="technology-logo">
+                <img src="images/javascript.svg" alt="JavaScript Web Scripting Language" />
+              </div>
+              <div class="technology-description">
+                <strong>Javascript</strong> is the language of the browser, and powers our favorite front-end frameworks, <strong><i class="fa-brands fa-react"></i> React</strong> and <strong><i class="fa-brands fa-vuejs"></i> Vue</strong>.
+              </div>
+            </div>
+          </div>
+          <div class="page-footer">
+            <p>We only use widely adopted and industry-leading technologies to ensure secure, reliable, and easily maintainable environments.</p>
+            <next-page></next-page>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 5 -->
+      <div class="swiper-slide" data-hash="Blog">
+        <div class="page page-5">
+          <div class="page-header page-header-title">Recent Vlogs</div>
+          <div class="page-body">
+            In Progress
+            <div id="blog-posts">
+            </div>
+            <div id="blog-posts-error hide">
+            </div>
+          </div>
+          <div class="page-footer">
+            <next-page></next-page>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 6 -->
+      <div class="swiper-slide" data-hash="Contact">
+        <div class="page page-6">
+          <div class="page-header page-header-title">Contact Us</div>
+          <div class="page-body">
+            <div id="contact-options" class="contact-options">
+              <button id="show-calendly">Schedule a FREE Video Consultation</button>
+              <p>Or drop us a message and we'll respond in 2-4 hours on business days.</p>
+              <form class="contact-form">
+                <p>
+                  <label for="name">Name</label>
+                  <input id="name" type="text" name="name">
+                </p>
+                <p>
+                  <label for="email">Email<abbr title="Required">*</abbr></label>
+                  <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                  <label for="message">Message<abbr title="Required">*</abbr></label>
+                  <textarea id="message" name="message" rows="3" required></textarea>
+                </p>
+                <p class="recaptcha-container"><button
+                    id="recaptcha-submit"
+                    class="g-recaptcha"
+                    type="button"
+                    data-sitekey=""
+                    data-callback=""
+                    data-action="submit">
+                    Submit
+                  </button></p>
+              </form>
+            </div>
+            <h3 id="contact-thanks-calendar" class="hide">
+              Thanks for scheduling some time with me. I look forward to meeting you.
+              If you want to do some research before our call, check out my blog!
+              <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
+            </h3>
+            <h3 id="contact-thanks-form" class="hide">
+              Thanks for contacting me. I'll review your message and get back to you
+              as soon as possible. In the mean time, check out my blog and/or social
+              media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
+            </h3>
+          </div>
+          <div class="page-footer">
+            <copyright-year></copyright-year>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
   </div>
-
-  <div id="backtotop" class="back-to-top">
-    <i class="fa-solid fa-angle-up"></i>
-  </div>
-
-  <div class="slides">
-    <!-- Page 1 -->
-    <div class="page page-1">
-      <div class="page-header">
-        <responsive-logo
-          mobile="images/alt-mixed.svg"
-          desktop="images/main-mixed.svg"
-          alt="Hunter Web Apps Logo">
-        </responsive-logo>
-      </div>
-
-      <div class="page-body">
-        <img src="images/advanced-custom-solutions_tall.svg" alt="Advanced Custom Solutions" class="tagline">
-      </div>
-
-      <div class="page-footer">
-        <next-page></next-page>
-      </div>
-    </div>
-
-    <!-- Page 2 -->
-    <div id="TrustedBy" class="page page-2">
-      <div class="page-header page-header-title">
-        Trusted By
-      </div>
-
-      <div class="page-body">
-        <ellipse-img src="images/jumpcut.webp" color="black" class="jumpcut"></ellipse-img>
-        <ellipse-img src="images/lendingtree.webp" color="white" class="lendingtree"></ellipse-img>
-        <ellipse-img src="images/sprintship.webp" color="black" class="sprintship"></ellipse-img>
-        <ellipse-img src="images/breakaway.webp" color="white" class="breakaway"></ellipse-img>
-      </div>
-
-      <div class="page-footer page-footer-title">
-        And Many More...
-        <next-page></next-page>
-      </div>
-    </div>
-
-    <!-- Page 3 -->
-    <div id="Services" class="page page-3">
-      <div class="page-header page-header-title">
-        Services
-      </div>
-
-      <div class="page-body">
-        <div class="service">
-          <div class="service-title">
-            <i class="fa-solid fa-code"></i>
-            Full Design and Implementation
-          </div>
-          <p class="service-details">It doesn't matter what stage of the ideation or design process you are in. We can step in to help you manifest your dream system.</p>
-        </div>
-
-        <div class="service">
-          <div class="service-title">
-            <i class="fa-solid fa-gear"></i>
-            Individual Modules
-          </div>
-          <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for infrastructure, business rules, compliance, risk, and dependencies</p>
-        </div>
-
-        <div class="service">
-          <div class="service-title">
-            <i class="fa-solid fa-people-carry-box"></i>
-            Rescue Missions
-          </div>
-          <p class="service-details">Hired a team and it didn't go the way you planned, or the way they promised? Schedule a free video consultation to discuss how we can get your project back on track.</p>
-        </div>
-
-        <div class="service">
-          <div class="service-title">
-            <i class="fa-solid fa-globe"></i>
-            Domain Knowledge
-          </div>
-          <p class="service-details">We have direct experience in the industries of lead generation, lead sales and trading, final mile logistics, courier dispatching, content marketing, customer relationship management, and online education.</p>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <next-page></next-page>
-      </div>
-    </div>
-
-    <!-- Page 4 -->
-    <div id="Technologies" class="page page-4">
-      <div class="page-header page-header-title">Technologies</div>
-
-      <div class="page-body">
-        <div class="technology">
-          <div class="technology-logo">
-            <img src="images/azure.svg" alt="Microsoft Azure Cloud Hosting" />
-          </div>
-          <div class="technology-description">
-            <strong>Microsoft Azure</strong> cloud infrastructure delivers security, scalability, and an industry-exclusive 99.95% SLA.
-          </div>
-        </div>
-        <div class="technology">
-          <div class="technology-logo">
-            <img src="images/csharp.svg" alt="Microsoft C# .NET Programming Environment" class="" />
-          </div>
-          <div class="technology-description">
-            <strong>Microsoft C# .NET</strong> development framework is comprehensive, blazing fast, and universally adopted.
-          </div>
-        </div>
-        <div class="technology">
-          <div class="technology-logo">
-            <img src="images/javascript.svg" alt="JavaScript Web Scripting Language" />
-          </div>
-          <div class="technology-description">
-            <strong>Javascript</strong> is the language of the browser, and powers our favorite front-end frameworks, <strong><i class="fa-brands fa-react"></i> React</strong> and <strong><i class="fa-brands fa-vuejs"></i> Vue</strong>.
-          </div>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <p>We only use widely adopted and industry-leading technologies to ensure secure, reliable, and easily maintainable environments.</p>
-        <next-page></next-page>
-      </div>
-    </div>
-
-    <!-- Page 5 -->
-    <div id="Contact" class="page page-5">
-      <div class="page-header page-header-title">Contact Us</div>
-
-      <div class="page-body">
-        <div id="contact-options">
-          <button id="show-calendly">Schedule a FREE Video Consultation</button>
-
-          <h5>Or</h5>
-
-          <form class="contact-form">
-            <p>
-              <label for="name">Name<abbr title="Required">*</abbr></label>
-              <input id="name" type="text" name="name" required>
-            </p>
-            <p>
-              <label for="email">Email<abbr title="Required">*</abbr></label>
-              <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-              <label for="message">Message<abbr title="Required">*</abbr></label>
-              <textarea id="message" name="message" rows="3" required></textarea>
-            </p>
-            <p class="recaptcha-container"><button
-                class="g-recaptcha"
-                type="button"
-                data-sitekey="6LfA7ZYfAAAAAEWfRZggGaIbUBEQNjCtlVAB3uxp"
-                data-callback="handleSubmitContact"
-                data-action="submit">
-                Submit
-              </button></p>
-          </form>
-        </div>
-
-        <h3 id="contact-thanks-calendar" class="hide">
-          Thanks for scheduling some time with me. I look forward to meeting you.
-          If you want to do some research before our call, check out my blog!
-          <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-        </h3>
-
-        <h3 id="contact-thanks-form" class="hide">
-          Thanks for contacting me. I'll review your message and get back to you
-          as soon as possible. In the mean time, check out my blog and/or social
-          media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-          </>
-      </div>
-
-      <div class="page-footer">
-        <copyright-year></copyright-year>
-      </div>
-    </div>
-  </div>
-
-
 
   <script src="js/components/index.js?v=1.0" type="module"></script>
-  <script src="js/slider.js"></script>
+  <script src="js/swiper.js"></script>
   <script src="js/index.js?v=1.0"></script>
-  <script src="https://kit.fontawesome.com/f7b1b59847.js" crossorigin="anonymous" defer></script>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </body>

@@ -1,3 +1,11 @@
+@import url(./typekit.css);
+@import url(./swiper.min.css);
+@import url(./normalize.css);
+@import url(./utility.css);
+@import url(./fontawesome/css/fontawesome.min.css);
+@import url(./fontawesome/css/solid.min.css);
+@import url(./fontawesome/css/brands.min.css);
+
 body {
   font-family: proxima-nova, Helvetica, Arial, sans-serif;
 }
@@ -28,40 +36,16 @@ a {
   background-size: 200%;
 }
 
-.under-construction {
-  position: fixed;
-  bottom: 1rem;
-  z-index: 1;
-  right: 0.5rem;
-  padding: 0.6rem 1rem 1rem 1rem;
-  font-weight: 900;
-  font-family: Coolvetica;
-  background: #141A46;
-  color: #EC8B5E;
-  border-radius: 50%;
-  text-align: center;
+.swiper {
+  width: 100vw;
+  height: 100vh;
 }
 
-.back-to-top {
-  z-index: 1;
-  border-radius: 10%;
-  background: #141A46;
-  color: #EC8B5E;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  width: 2rem;
-  height: 2rem;
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  cursor: pointer;
+.swiper-pagination-progressbar-fill {
+  background: #141A46 !important;
 }
 
-.back-to-top.show {
-  display: flex;
-}
+.swiper-pagination-bullet-active {}
 
 .tagline {
   width: 100%;
@@ -82,6 +66,7 @@ a {
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
+  height: 100vh;
 }
 
 .page-header-title, .page-footer-title {
@@ -204,10 +189,6 @@ a {
   flex: 0 0 9rem;
 }
 
-.page-5>.page-header {
-  flex: 0 0 4rem;
-}
-
 .technology {
   flex: 0 0 100%;
   display: flex;
@@ -228,6 +209,45 @@ a {
   width: 100%;
 }
 
+.page-5>.page-header {
+  flex: 0 0 4rem;
+}
+
+.page-5>.page-body {
+  flex: 0 0 calc(100% - 7rem);
+}
+
+.page-5>.page-footer {
+  flex: 0 0 3rem;
+}
+
+.blog-card {
+  max-width: 100%;
+}
+
+.blog-card>img {
+  max-width: 100%;
+}
+
+.page-6>.page-header {
+  flex: 0 0 4rem;
+}
+
+.page-6>.page-body {
+  flex: 0 0 calc(100% - 6rem);
+}
+
+.page-6>.page-footer {
+  flex: 0 0 2rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.contact-options {
+  width: 100%;
+}
+
 .contact-form {
   width: 100%;
 }
@@ -236,6 +256,7 @@ abbr[title=Required] {
   color: red;
   text-decoration: none;
   padding-left: 2px;
+  font-weight: normal;
 }
 
 label {
@@ -260,6 +281,7 @@ input:focus-visible, textarea:focus-visible {
 button {
   background: transparent;
   border: 3px solid #141A46;
+  border-radius: 3px;
   padding: 0.5rem;
   font-family: coolvetica;
   color: #141A46;
@@ -348,11 +370,6 @@ button {
 @media(min-width: 768px) {
   .container {
     max-width: 720px
-  }
-
-  .under-construction {
-    font-size: 2.5rem;
-    padding: 1.5rem 2rem 2rem 2rem;
   }
 }
 

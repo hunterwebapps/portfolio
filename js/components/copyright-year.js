@@ -1,7 +1,7 @@
 class CopyrightYear extends HTMLElement {
   connectedCallback() {
     const year = new Date().getFullYear();
-    this.innerText = `\u00A9 ${year} Hunter Web Apps`;
+    this.innerHTML = `<a href="https://www.hunterwebapps.com">\u00A9 ${year} Hunter Web Apps</a>`;
   }
 }
 

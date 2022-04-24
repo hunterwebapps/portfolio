@@ -11,6 +11,7 @@ class NextPage extends HTMLElement {
           align-items: baseline;
           height: 3rem;
           width: 100%;
+          min-width: 3rem;
           cursor: pointer;
         }
 
