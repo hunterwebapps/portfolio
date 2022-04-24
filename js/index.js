@@ -74,6 +74,7 @@ async function handleSubmitContact() {
       email,
       message,
     }),
+    mode: 'cors',
   });
 
   if (response.ok) {
