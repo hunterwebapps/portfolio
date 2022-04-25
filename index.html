@@ -43,7 +43,7 @@
 <body>
   <div class="background"></div>
 
-  <div class="swiper">
+  <div class="swiper page-swiper">
     <div class="swiper-wrapper">
       <!-- Page 1 -->
       <div class="swiper-slide" data-hash="">
@@ -55,9 +55,11 @@
               alt="Hunter Web Apps Logo">
             </responsive-logo>
           </div>
+
           <div class="page-body">
             <img src="images/advanced-custom-solutions_tall.svg" alt="Advanced Custom Solutions" class="tagline">
           </div>
+
           <div class="page-footer">
             <next-page></next-page>
           </div>
@@ -70,12 +72,14 @@
           <div class="page-header page-header-title">
             Trusted By
           </div>
+
           <div class="page-body">
             <ellipse-img src="images/jumpcut.webp" color="black" class="jumpcut"></ellipse-img>
             <ellipse-img src="images/lendingtree.webp" color="white" class="lendingtree"></ellipse-img>
             <ellipse-img src="images/sprintship.webp" color="black" class="sprintship"></ellipse-img>
             <ellipse-img src="images/breakaway.webp" color="white" class="breakaway"></ellipse-img>
           </div>
+
           <div class="page-footer page-footer-title">
             And Many More...
             <next-page></next-page>
@@ -89,6 +93,7 @@
           <div class="page-header page-header-title">
             Services
           </div>
+
           <div class="page-body">
             <div class="service">
               <div class="service-title">
@@ -97,6 +102,7 @@
               </div>
               <p class="service-details">It doesn't matter what stage of the ideation or design process you are in. We can step in to help you manifest your dream system.</p>
             </div>
+
             <div class="service">
               <div class="service-title">
                 <i class="fa-solid fa-gear"></i>
@@ -104,6 +110,7 @@
               </div>
               <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for infrastructure, business rules, compliance, risk, and dependencies</p>
             </div>
+
             <div class="service">
               <div class="service-title">
                 <i class="fa-solid fa-people-carry-box"></i>
@@ -111,6 +118,7 @@
               </div>
               <p class="service-details">Hired a team and it didn't go the way you planned, or the way they promised? Schedule a free video consultation to discuss how we can get your project back on track.</p>
             </div>
+
             <div class="service">
               <div class="service-title">
                 <i class="fa-solid fa-globe"></i>
@@ -119,6 +127,7 @@
               <p class="service-details">We have direct experience in the industries of lead generation, lead sales and trading, final mile logistics, courier dispatching, content marketing, customer relationship management, and online education.</p>
             </div>
           </div>
+
           <div class="page-footer">
             <next-page></next-page>
           </div>
@@ -129,6 +138,7 @@
       <div class="swiper-slide" data-hash="Technologies">
         <div class="page page-4">
           <div class="page-header page-header-title">Technologies</div>
+
           <div class="page-body">
             <div class="technology">
               <div class="technology-logo">
@@ -138,6 +148,7 @@
                 <strong>Microsoft Azure</strong> cloud infrastructure delivers security, scalability, and an industry-exclusive 99.95% SLA.
               </div>
             </div>
+
             <div class="technology">
               <div class="technology-logo">
                 <img src="images/csharp.svg" alt="Microsoft C# .NET Programming Environment" class="" />
@@ -146,6 +157,7 @@
                 <strong>Microsoft C# .NET</strong> development framework is comprehensive, blazing fast, and universally adopted.
               </div>
             </div>
+
             <div class="technology">
               <div class="technology-logo">
                 <img src="images/javascript.svg" alt="JavaScript Web Scripting Language" />
@@ -155,6 +167,7 @@
               </div>
             </div>
           </div>
+
           <div class="page-footer">
             <p>We only use widely adopted and industry-leading technologies to ensure secure, reliable, and easily maintainable environments.</p>
             <next-page></next-page>
@@ -166,13 +179,23 @@
       <div class="swiper-slide" data-hash="Blog">
         <div class="page page-5">
           <div class="page-header page-header-title">Recent Vlogs</div>
+
           <div class="page-body">
-            In Progress
-            <div id="blog-posts">
+            <div id="blog-posts" class="swiper post-swiper">
+              <div class="swiper-wrapper">
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div id="blog-posts-error hide">
-            </div>
+
+            <h3 id="blog-posts-error" class="hide">
+              Error loading posts. Please try reloading.
+            </h3>
           </div>
+
           <div class="page-footer">
             <next-page></next-page>
           </div>

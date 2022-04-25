@@ -4,12 +4,11 @@ initContact();
 initNextPageButtons(pageSwiper);
 initRecentBlogs();
 
-
 function initPageSwiper() {
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.page-swiper', {
     direction: 'vertical',
     pagination: {
-      el: '.swiper-pagination',
+      el: '.page-swiper>.swiper-pagination',
       type: 'progressbar',
     },
     mousewheel: {
@@ -21,6 +20,34 @@ function initPageSwiper() {
       pageUpDown: true,
     },
     hashNavigation: true,
+  });
+
+  return swiper;
+}
+
+function initPostSwiper() {
+  const swiper = new Swiper('.post-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    nested: true,
+    centerInsufficientSlides: true,
+    spaceBetween: 16,
+    slidesPerView: 1.1,
+    pagination: {
+      el: '.post-swiper>.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    mousewheel: {
+      thresholdDelta: 100,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+      pageUpDown: true,
+    },
   });
 
   return swiper;
@@ -107,16 +134,19 @@ async function initRecentBlogs() {
 
   const body = await response.json();
 
-  // for (const post of body) {
-  //   const blogPostTemplate = document.createElement('div');
-  //   blogPostTemplate.innerHTML = `
-  //     <div class="blog-card">
-  //       <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
-  //       <p>
-  //         ${post.excerpt.rendered}
-  //       </p>
-  //     </div>
-  //   `;
-  //   blogPosts.appendChild(blogPostTemplate);
-  // }
+  for (const post of body) {
+    const blogPostDiv = document.createElement('div');
+    blogPostDiv.classList.add('swiper-slide');
+    blogPostDiv.innerHTML = `
+      <a href="${post.link}" class="blog-card">
+        <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
+        <p>
+          ${post.excerpt.rendered}
+        </p>
+      </a>
+    `;
+    blogPosts.getElementsByClassName('swiper-wrapper')[0].appendChild(blogPostDiv);
+  }
+
+  initPostSwiper();
 }
