@@ -13,6 +13,7 @@ function initPageSwiper() {
     },
     mousewheel: {
       thresholdDelta: 100,
+      forceToAxis: true,
     },
     keyboard: {
       enabled: true,
@@ -42,6 +43,7 @@ function initPostSwiper() {
     },
     mousewheel: {
       thresholdDelta: 100,
+      forceToAxis: true,
     },
     keyboard: {
       enabled: true,
@@ -74,10 +76,6 @@ function initContact() {
 
   window.addEventListener('message', (e) => {
     if (e.data.event === '' && e.data.event.indexOf('calendly') === 0) {
-      gtag('event', 'Calendly', {
-        event_label: e.data.event,
-      });
-
       if (e.data.event === 'calendly.event_scheduled') {
         contactOptions.classList.add('hide');
         calendarThanks.classList.remove('hide');
@@ -87,6 +85,10 @@ function initContact() {
 }
 
 async function handleSubmitContact() {
+  const submitLoading = document.getElementById('submit-loading');
+
+  submitLoading.classList.remove('hide');
+
   const contactOptions = document.getElementById('contact-options');
   const formThanks = document.getElementById('contact-thanks-form');
 
@@ -108,6 +110,8 @@ async function handleSubmitContact() {
     contactOptions.classList.add('hide');
     formThanks.classList.remove('hide');
   }
+
+  submitLoading.classList.add('hide');
 }
 
 function initNextPageButtons(swiper) {

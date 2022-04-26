@@ -224,8 +224,14 @@
           <div class="page-header page-header-title">Contact Us</div>
           <div class="page-body">
             <div id="contact-options" class="contact-options">
-              <button id="show-calendly">Schedule a FREE Video Consultation</button>
-              <p>Or drop us a message and we'll respond in 2-4 hours on business days.</p>
+              <div class="contact-greeting">We'd love to meet to you!</div>
+              <!-- GA Event ID -->
+              <button id="show-calendly" class="video-consult">
+                <i class="fa-solid fa-calendar-day"></i>
+                Schedule a FREE Video Consultation
+              </button>
+              <p>Or drop us a message.</p>
+              <p>We respond in 2-4 hours on business days.</p>
               <form class="contact-form">
                 <p>
                   <label for="name">Name</label>
@@ -239,6 +245,7 @@
                   <label for="message">Message<abbr title="Required">*</abbr></label>
                   <textarea id="message" name="message" rows="3" required></textarea>
                 </p>
+                <!-- GA Event ID -->
                 <p class="recaptcha-container"><button
                     id="recaptcha-submit"
                     class="g-recaptcha"
@@ -246,20 +253,24 @@
                     data-sitekey=""
                     data-callback=""
                     data-action="submit">
+                    <div id="submit-loading" class="loading hide"></div>
                     Submit
                   </button></p>
               </form>
             </div>
-            <h3 id="contact-thanks-calendar" class="hide">
-              Thanks for scheduling some time with me. I look forward to meeting you.
-              If you want to do some research before our call, check out my blog!
-              <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-            </h3>
-            <h3 id="contact-thanks-form" class="hide">
-              Thanks for contacting me. I'll review your message and get back to you
-              as soon as possible. In the mean time, check out my blog and/or social
-              media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-            </h3>
+            <!-- GA Event ID -->
+            <div id="contact-thanks-calendar" class="thank-you-message hide">
+              <p>Thanks for scheduling some time to talk about your project.</p>
+              <p>In the mean time, check out what I'm up to by scrolling back up to check out some of my recent vlogs!</p>
+              <p>Or go directly to my site: <a href="https://hunterwebapps.blog">HunterWebApps.blog</a></p>
+            </div>
+            <div id="contact-thanks-form" class="thank-you-message hide">
+              <p>Thanks for the message. We respond within 2-4 hours on business days.</p>
+              <p>
+                In the mean time, check out what I'm up to on my blog and social
+                media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
+              </p>
+            </div>
           </div>
           <div class="page-footer">
             <copyright-year></copyright-year>
