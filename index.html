@@ -124,7 +124,7 @@
                 <i class="fa-solid fa-gear"></i>
                 Individual Modules
               </div>
-              <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for infrastructure, business rules, compliance, risk, and dependencies</p>
+              <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for existing infrastructure, business rules, compliance, risk, and dependencies</p>
             </div>
 
             <div class="service">
@@ -240,10 +240,12 @@
                 <p>
                   <label for="email">Email<abbr title="Required">*</abbr></label>
                   <input type="email" id="email" name="email" required>
+                  <span id="email-error" class="error">A valid email is required to reply.</span>
                 </p>
                 <p>
                   <label for="message">Message<abbr title="Required">*</abbr></label>
                   <textarea id="message" name="message" rows="3" required></textarea>
+                  <span id="message-error" class="error">Let us know how we can help.</span>
                 </p>
                 <!-- GA Event ID -->
                 <p class="recaptcha-container"><button

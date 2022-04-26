@@ -85,6 +85,10 @@ function initContact() {
 }
 
 async function handleSubmitContact() {
+  if (!validateContactForm()) {
+    return;
+  }
+
   const submitLoading = document.getElementById('submit-loading');
 
   submitLoading.classList.remove('hide');
@@ -113,6 +117,32 @@ async function handleSubmitContact() {
   }
 
   submitLoading.classList.add('hide');
+}
+
+function validateContactForm() {
+  const emailEl = document.getElementById('email');
+  const emailErrorEl = document.getElementById('email-error');
+  const messageEl = document.getElementById('message');
+  const messageErrorEl = document.getElementById('message-error');
+
+  let isValid = true;
+
+  const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if (!emailRegex.test(emailEl.value)) {
+    emailErrorEl.classList.add('show');
+    isValid = false;
+  } else {
+    emailErrorEl.classList.remove('show');
+  }
+
+  if (!messageEl.value) {
+    messageErrorEl.classList.add('show');
+    isValid = false;
+  } else {
+    messageErrorEl.classList.remove('show');
+  }
+
+  return isValid;
 }
 
 function initNextPageButtons(swiper) {

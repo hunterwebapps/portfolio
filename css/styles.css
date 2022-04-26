@@ -304,10 +304,19 @@ input, textarea {
   margin: 0.5rem 0;
   border-radius: 3px;
   color: #141A46;
+  display: block;
 }
 
 input:focus-visible, textarea:focus-visible {
   outline: 2px solid #EC8B5E;
+}
+
+.error {
+  position: relative;
+  top: -0.5rem;
+  font-size: 0.7rem;
+  color: #cc0000;
+  display: none;
 }
 
 button {
@@ -329,6 +338,10 @@ button:active {
 
 .g-recaptcha {
   position: relative;
+}
+
+.recaptcha-container {
+  margin-bottom: 0;
 }
 
 .thank-you-message {
