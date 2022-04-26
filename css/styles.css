@@ -85,6 +85,7 @@ a {
 
 .page-header-title, .page-footer-title {
   font-size: 2.5rem;
+  flex: 0 0 4rem;
   font-family: Coolvetica, Helvetica, Arial, sans-serif;
 }
 
@@ -94,25 +95,24 @@ a {
 }
 
 .page-1>.page-header {
-  flex: 0 0 6rem;
+  flex: 0 0 5rem;
 }
 
 .page-1>.page-body {
-  flex: 0 0 calc(100% - 10rem);
+  flex: 0 0 calc(100% - 8.5rem);
   align-items: center;
   justify-content: center;
   contain: size;
 }
 
 .page-1>.page-footer {
-  flex: 0 0 4rem;
+  flex: 0 0 3.5rem;
   display: flex;
   align-items: baseline;
   justify-content: center;
 }
 
 .page-2>.page-header {
-  flex: 0 0 4rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -138,7 +138,6 @@ a {
 
 .page-2>.page-footer>next-page {
   display: block;
-  margin-top: 0.6rem;
 }
 
 .jumpcut, .lendingtree, .sprintship, .breakaway {
@@ -149,14 +148,8 @@ a {
   padding: 1rem;
 }
 
-.page-3>.page-header {
-  flex: 0 0 4rem;
-  display: flex;
-  align-items: baseline;
-}
-
 .page-3>.page-body {
-  flex: 0 0 calc(100% - 7rem);
+  flex: 0 0 calc(100% - 7.5rem);
   align-content: space-evenly;
 }
 
@@ -165,7 +158,7 @@ a {
 }
 
 .page-3>.page-footer {
-  flex: 0 0 3rem;
+  flex: 0 0 3.5rem;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -186,14 +179,8 @@ a {
   text-align: center;
 }
 
-.page-4>.page-header {
-  flex: 0 0 4rem;
-  display: flex;
-  align-items: baseline;
-}
-
 .page-4>.page-body {
-  flex: 0 0 calc(100% - 12rem);
+  flex: 0 0 calc(100% - 13rem);
   flex-wrap: wrap;
   align-content: space-evenly;
   justify-content: space-between;
@@ -227,17 +214,13 @@ a {
   padding-right: 0;
 }
 
-.page-5>.page-header {
-  flex: 0 0 4rem;
-}
-
 .page-5>.page-body {
-  flex: 0 0 calc(100% - 7rem);
+  flex: 0 0 calc(100% - 7.5rem);
   align-content: center;
 }
 
 .page-5>.page-footer {
-  flex: 0 0 3rem;
+  flex: 0 0 3.5rem;
 }
 
 .page-5>.page-footer>h2 {
@@ -273,18 +256,14 @@ a {
   flex: 0 0 6rem;
 }
 
-.page-6>.page-header {
-  flex: 0 0 4rem;
-}
-
 .page-6>.page-body {
   flex: 0 0 calc(100% - 6rem);
 }
 
 .page-6>.page-footer {
   flex: 0 0 2rem;
-  justify-content: center;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 

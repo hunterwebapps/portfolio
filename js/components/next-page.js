@@ -9,7 +9,7 @@ class NextPage extends HTMLElement {
           display: flex;
           justify-content: center;
           align-items: baseline;
-          height: 3rem;
+          height: 3.5rem;
           width: 100%;
           min-width: 3rem;
           cursor: pointer;
@@ -18,7 +18,7 @@ class NextPage extends HTMLElement {
         .chevron {
           position: absolute;
           width: 2.1rem;
-          height: 0.48rem;
+          height: 0.5rem;
           opacity: 0;
           transform: scale(0.3);
           animation: move-chevron 3s ease-out infinite;
