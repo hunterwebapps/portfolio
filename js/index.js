@@ -99,6 +99,7 @@ async function handleSubmitContact() {
   const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
     method: 'POST',
     body: JSON.stringify({
+      type: 'PortfolioContact',
       name,
       email,
       message,
