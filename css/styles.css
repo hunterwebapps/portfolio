@@ -95,11 +95,11 @@ a {
 }
 
 .page-1>.page-header {
-  flex: 0 0 5rem;
+  flex: 0 0 6rem;
 }
 
 .page-1>.page-body {
-  flex: 0 0 calc(100% - 8.5rem);
+  flex: 0 0 calc(100% - 9.5rem);
   align-items: center;
   justify-content: center;
   contain: size;
