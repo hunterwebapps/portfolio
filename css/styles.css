@@ -196,30 +196,29 @@ a:hover {
 }
 
 .page-4>.page-body {
-  flex: 0 0 calc(100% - 13rem);
+  flex: 0 0 calc(100% - 7.5rem);
   flex-wrap: wrap;
   align-content: space-evenly;
   justify-content: space-between;
 }
 
 .page-4>.page-footer {
-  flex: 0 0 9rem;
+  flex: 0 0 3.5rem;
 }
 
 .technology {
   flex: 0 0 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 1rem;
 }
 
 .technology-description {
-  flex: 0 0 75%;
+  font-size: 1.35rem;
 }
 
 .technology-logo {
-  flex: 0 0 20%;
+  max-width: 3rem;
+  float: left;
+  margin: 0 0.5rem 0 0;
 }
 
 .technology-logo>img {
