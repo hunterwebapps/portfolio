@@ -228,57 +228,94 @@
           <div class="page-header page-header-title">Contact Us</div>
           <div class="page-body">
             <div id="contact-options" class="contact-options">
-              <div class="contact-greeting">We'd love to meet to you!</div>
               <!-- GA Event ID -->
               <button id="show-calendly" class="video-consult">
                 <i class="fa-solid fa-calendar-day"></i>
                 Schedule a FREE Video Consultation
               </button>
-              <p>Or drop us a message.</p>
-              <p>We respond in 2-4 hours on business days.</p>
+
+              <p>Or drop us a message. We respond in 2-4 hours on business days.</p>
+
               <form class="contact-form">
                 <p>
                   <label for="name">Name</label>
-                  <input id="name" type="text" name="name">
+                  <input id="name" type="text" name="name" tabindex="1">
                 </p>
+
                 <p>
                   <label for="email">Email<abbr title="Required">*</abbr></label>
-                  <input type="email" id="email" name="email" required>
+                  <input type="email" id="email" name="email" required tabindex="2">
                   <span id="email-error" class="error">A valid email is required to reply.</span>
                 </p>
+
                 <p>
                   <label for="message">Message<abbr title="Required">*</abbr></label>
-                  <textarea id="message" name="message" rows="3" required></textarea>
+                  <textarea id="message" name="message" rows="3" required tabindex="3"></textarea>
                   <span id="message-error" class="error">Let us know how we can help.</span>
                 </p>
+
                 <!-- GA Event ID -->
-                <p class="recaptcha-container"><button
+                <p class="recaptcha-container">
+                  <button
                     id="recaptcha-submit"
                     class="g-recaptcha"
                     type="button"
+                    tabindex="4"
                     data-sitekey=""
                     data-callback=""
                     data-action="submit">
                     <div id="submit-loading" class="loading hide"></div>
                     Submit
-                  </button></p>
+                  </button>
+                </p>
               </form>
             </div>
+
             <!-- GA Event ID -->
             <div id="contact-thanks-calendar" class="thank-you-message hide">
               <p>Thanks for scheduling some time to talk about your project.</p>
-              <p>In the mean time, check out what I'm up to by scrolling back up to check out some of my recent vlogs!</p>
-              <p>Or go directly to my site: <a href="https://hunterwebapps.blog">HunterWebApps.blog</a></p>
+              <p>In the mean time, check out what I'm up to on my blog and social media.</p>
+              <p><a href="https://hunterwebapps.blog">https://HunterWebApps.blog</a></p>
             </div>
+
             <div id="contact-thanks-form" class="thank-you-message hide">
-              <p>Thanks for the message. We respond within 2-4 hours on business days.</p>
-              <p>
-                In the mean time, check out what I'm up to on my blog and social
-                media. <a href="https://hunterwebapps.blog">HunterWebApps.blog</a>
-              </p>
+              <p>Thanks for reaching out. We respond within 2-4 hours on business days.</p>
+              <p>In the mean time, check out what I'm up to on my blog and social media.</p>
+              <p><a href="https://hunterwebapps.blog">https://HunterWebApps.blog</a></p>
+            </div>
+
+            <div id="contact-form-fail" class="thank-you-message hide">
+              <p>Uh-oh! Something went wrong sending that message.</p>
+              <p>Please reach out via email at the following address.</p>
+              <div class="contact-email">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:hunter@hunterwebapps.com" target="_blank">
+                  hunter@hunterwebapps.com
+                </a>
+              </div>
+              <p><strong>Original message:</strong></p>
+              <textarea id="original-message" rows="3"></textarea>
             </div>
           </div>
+
           <div class="page-footer">
+            <div class="social-buttons">
+              <span class="contact-social">
+                <a href="https://www.linkedin.com/in/hunterwebapps/" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </span>
+              <span class="contact-social youtube">
+                <a href="https://www.youtube.com/channel/UCUgsoKMYXB1W4ApTRvy3nVw" target="_blank">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </span>
+              <span class="contact-social">
+                <a href="https://github.com/hunterwebapps" target="_blank">
+                  <i class="fa-brands fa-github-square"></i>
+                </a>
+              </span>
+            </div>
             <copyright-year></copyright-year>
           </div>
         </div>
@@ -291,7 +328,7 @@
   <script src="js/components/index.js?v=1.0" type="module"></script>
   <script src="js/swiper.js"></script>
   <script src="js/index.js?v=1.0"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </body>
 

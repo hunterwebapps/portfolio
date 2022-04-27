@@ -7,6 +7,7 @@ initRecentBlogs();
 function initPageSwiper() {
   const swiper = new Swiper('.page-swiper', {
     direction: 'vertical',
+    slidesOffsetAfter: 200,
     pagination: {
       el: '.page-swiper>.swiper-pagination',
       type: 'progressbar',
@@ -100,23 +101,27 @@ async function handleSubmitContact() {
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
-  const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
-    method: 'POST',
-    body: JSON.stringify({
-      type: 'PortfolioContact',
-      name,
-      email,
-      message,
-    }),
-    mode: 'cors',
-  });
+  try {
+    const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
+      method: 'POST',
+      body: JSON.stringify({
+        type: 'PortfolioContact',
+        name,
+        email,
+        message,
+      }),
+      mode: 'cors',
+    });
 
-  if (response.ok) {
-    contactOptions.classList.add('hide');
-    formThanks.classList.remove('hide');
+    if (response.ok) {
+      contactOptions.classList.add('hide');
+      formThanks.classList.remove('hide');
+    }
+
+    submitLoading.classList.add('hide');
+  } catch (ex) {
+    handleContactFormFailure(ex, message);
   }
-
-  submitLoading.classList.add('hide');
 }
 
 function validateContactForm() {
@@ -145,6 +150,20 @@ function validateContactForm() {
   return isValid;
 }
 
+function handleContactFormFailure(ex, originalMessage) {
+  appInsights.trackException({ exception: ex });
+
+  const contactFailEl = document.getElementById('contact-form-fail');
+  const contactOptionsEl = document.getElementById('contact-options');
+  const originalMessageEl = document.getElementById('original-message');
+
+  originalMessageEl.value = originalMessage;
+  contactOptionsEl.classList.add('hide');
+  contactFailEl.classList.remove('hide');
+  originalMessageEl.focus();
+  originalMessageEl.select();
+}
+
 function initNextPageButtons(swiper) {
   const nextPageButtons = document.getElementsByTagName('next-page');
 
@@ -156,7 +175,12 @@ function initNextPageButtons(swiper) {
 }
 
 async function initRecentBlogs() {
-  const response = await fetch('https://hunterwebapps.blog/wp-json/wp/v2/posts');
+  let response;
+  try {
+    response = await fetch('https://hunterwebapps.blog/wp-json/wp/v2/posts');
+  } catch (ex) {
+    handleBlogFailure(ex);
+  }
 
   const blogPosts = document.getElementById('blog-posts');
 
@@ -184,4 +208,14 @@ async function initRecentBlogs() {
   }
 
   initPostSwiper();
+}
+
+function handleBlogFailure(ex) {
+  appInsights.trackException({ exception: ex });
+
+  const blogEl = document.getElementById('blog-posts');
+  const blogFailEl = document.getElementById('blog-posts-error');
+
+  blogEl.classList.add('hide');
+  blogFailEl.classList.remove('hide');
 }
