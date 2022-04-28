@@ -70,8 +70,8 @@
         <div class="page page-1">
           <div class="page-header">
             <responsive-logo
-              mobile="images/alt-mixed.svg"
-              desktop="images/main-mixed.svg"
+              portrait="images/alt-mixed.svg"
+              landscape="images/main-mixed.svg"
               alt="Hunter Web Apps Logo">
             </responsive-logo>
           </div>
@@ -101,7 +101,7 @@
           </div>
 
           <div class="page-footer page-footer-title">
-            And Many More...
+            <p>And Many More...</p>
             <next-page></next-page>
           </div>
         </div>
@@ -120,7 +120,10 @@
                 <i class="fa-solid fa-code"></i>
                 Full Design and Implementation
               </div>
-              <p class="service-details">It doesn't matter what stage of the ideation or design process you are in. We can step in to help you manifest your dream system.</p>
+              <div class="service-details">
+                No matter what stage of the ideation or design process
+                you're in. We can help you manifest your dream system.
+              </div>
             </div>
 
             <div class="service">
@@ -128,7 +131,11 @@
                 <i class="fa-solid fa-gear"></i>
                 Individual Modules
               </div>
-              <p class="service-details">We can provide small, individual modules, built to specification, with a strong consideration for existing infrastructure, business rules, compliance, risk, and dependencies</p>
+              <div class="service-details">
+                We provide small, individual modules, built to specification,
+                with a strong consideration for existing infrastructure, business
+                rules, compliance, risk, and dependencies.
+              </div>
             </div>
 
             <div class="service">
@@ -136,7 +143,11 @@
                 <i class="fa-solid fa-people-carry-box"></i>
                 Rescue Missions
               </div>
-              <p class="service-details">Hired a team and it didn't go the way you planned, or the way they promised? Schedule a free video consultation to discuss how we can get your project back on track.</p>
+              <div class="service-details">
+                Hired a team and they didn't meet their commitments? Schedule a
+                free video consultation to discuss how we can get your project
+                back on track.
+              </div>
             </div>
 
             <div class="service">
@@ -144,7 +155,10 @@
                 <i class="fa-solid fa-globe"></i>
                 Domain Knowledge
               </div>
-              <p class="service-details">We have direct experience in the industries of lead generation, lead sales and trading, final mile logistics, courier dispatching, content marketing, customer relationship management, and online education.</p>
+              <div class="service-details">
+                We have direct experience in the industries of: lead generation; final mile logistics; courier dispatching;
+                content marketing; CRMs; and online education.
+              </div>
             </div>
           </div>
 
@@ -210,6 +224,11 @@
           <div class="page-header page-header-title">Recent Vlogs</div>
 
           <div class="page-body">
+            <div class="blog-commentary">
+              <p>We're passionate about sharing and giving back to our community.</p>
+              <p>Check out our Vlog, targeted at mid-level and senior software engineers.</p>
+              <p>We discuss Career Development Strategies, Productivity, and Live Coding.</p>
+            </div>
             <div id="blog-posts" class="swiper post-swiper">
               <div class="swiper-wrapper">
               </div>
@@ -237,47 +256,54 @@
           <div class="page-header page-header-title">Contact Us</div>
           <div class="page-body">
             <div id="contact-options" class="contact-options">
-              <!-- GA Event ID -->
-              <button id="show-calendly" class="video-consult">
-                <i class="fa-solid fa-calendar-day"></i>
-                Schedule a FREE Video Consultation
-              </button>
-
-              <p>Or drop us a message. We respond in 2-4 hours on business days.</p>
-
-              <form class="contact-form">
-                <p>
-                  <label for="name">Name</label>
-                  <input id="name" type="text" name="name" tabindex="1">
-                </p>
-
-                <p>
-                  <label for="email">Email<abbr title="Required">*</abbr></label>
-                  <input type="email" id="email" name="email" required tabindex="2">
-                  <span id="email-error" class="error">A valid email is required to reply.</span>
-                </p>
-
-                <p>
-                  <label for="message">Message<abbr title="Required">*</abbr></label>
-                  <textarea id="message" name="message" rows="3" required tabindex="3"></textarea>
-                  <span id="message-error" class="error">Let us know how we can help.</span>
-                </p>
-
+              <div class="video-consult-wrapper">
                 <!-- GA Event ID -->
-                <p class="recaptcha-container">
-                  <button
-                    id="recaptcha-submit"
-                    class="g-recaptcha"
-                    type="button"
-                    tabindex="4"
-                    data-sitekey=""
-                    data-callback=""
-                    data-action="submit">
-                    <div id="submit-loading" class="loading hide"></div>
-                    Submit
-                  </button>
-                </p>
-              </form>
+                <button id="show-calendly" class="video-consult">
+                  <i class="fa-solid fa-calendar-day"></i>
+                  Schedule a FREE Video Consultation
+                </button>
+              </div>
+
+              <div class="contact-form-wrapper">
+                <p>Or drop us a message. We respond in 2-4 hours on business days.</p>
+                <form class="contact-form">
+                  <div class="contact-pii">
+                    <p>
+                      <label for="name">Name</label>
+                      <input id="name" type="text" name="name" tabindex="1">
+                    </p>
+
+                    <p>
+                      <label for="email">Email<abbr title="Required">*</abbr></label>
+                      <input type="email" id="email" name="email" required tabindex="2">
+                      <span id="email-error" class="error">A valid email is required to reply.</span>
+                    </p>
+                  </div>
+
+                  <div class="contact-message">
+                    <p>
+                      <label for="message">Message<abbr title="Required">*</abbr></label>
+                      <textarea id="message" name="message" rows="3" required tabindex="3"></textarea>
+                      <span id="message-error" class="error">Let us know how we can help.</span>
+                    </p>
+
+                    <!-- GA Event ID -->
+                    <p class="recaptcha-container">
+                      <button
+                        id="recaptcha-submit"
+                        class="g-recaptcha"
+                        type="button"
+                        tabindex="4"
+                        data-sitekey=""
+                        data-callback=""
+                        data-action="submit">
+                        <div id="submit-loading" class="loading hide"></div>
+                        Submit
+                      </button>
+                    </p>
+                  </div>
+                </form>
+              </div>
             </div>
 
             <!-- GA Event ID -->

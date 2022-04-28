@@ -10,10 +10,10 @@ class ResponsiveLogo extends HTMLElement {
   }
 
   updateImage() {
-    const { mobile, desktop, alt } = this.attributes;
-    const imageUrl = document.documentElement.clientWidth < 480
-      ? mobile.value
-      : desktop.value;
+    const { portrait, landscape, alt } = this.attributes;
+    const imageUrl = window.innerHeight > window.innerWidth
+      ? portrait.value
+      : landscape.value;
 
     this.innerHTML = `<img src="${imageUrl}" alt="${alt.value}" class="logo" />`
   }

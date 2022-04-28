@@ -3,7 +3,7 @@
   "description": "Hunter Web Apps Portfolio Site",
   "author": "Hunter Web Apps",
   "scripts": {
-    "dev": "live-server"
+    "dev": "live-server --host=localhost"
   },
   "devDependencies": {
     "live-server": "^1.2.1"

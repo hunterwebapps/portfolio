@@ -39,8 +39,8 @@ function initPostSwiper() {
       el: '.post-swiper>.swiper-pagination',
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.post-swiper>.swiper-button-next',
+      prevEl: '.post-swiper>.swiper-button-prev',
     },
     mousewheel: {
       thresholdDelta: 100,
@@ -50,6 +50,14 @@ function initPostSwiper() {
       enabled: true,
       onlyInViewport: false,
       pageUpDown: true,
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2.2,
+      },
+      992: {
+        slidesPerView: 3.2,
+      }
     },
   });
 
@@ -199,9 +207,9 @@ async function initRecentBlogs() {
     blogPostDiv.innerHTML = `
       <a href="${post.link}" class="blog-card">
         <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
-        <p>
+        <div class="blog-description">
           ${post.excerpt.rendered}
-        </p>
+        </div>
       </a>
     `;
     blogPosts.getElementsByClassName('swiper-wrapper')[0].appendChild(blogPostDiv);
