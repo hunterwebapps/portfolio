@@ -220,6 +220,16 @@ a:hover {
 }
 
 .blog-card {
+  text-decoration: none !important;
+  transform: scale(1);
+  transition: transform 100ms ease;
+}
+
+.blog-card:active {
+  transform: scale(0.9);
+}
+
+.blog-card {
   max-width: 100%;
   display: block;
 }
