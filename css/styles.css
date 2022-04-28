@@ -68,6 +68,9 @@ a:hover {
 .swiper-button-prev,
 .swiper-button-next {
   display: none;
+  background: rgba(255, 255, 255, 0.5);
+  width: 3rem;
+  height: 4rem;
 }
 
 .tagline {
