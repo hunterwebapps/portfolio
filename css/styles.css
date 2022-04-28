@@ -56,6 +56,11 @@ a:hover {
   height: 100%;
 }
 
+.swiper-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .swiper-pagination-progressbar-fill {
   background: #EC8B5E !important;
 }
