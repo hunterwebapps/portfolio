@@ -43,7 +43,7 @@ function initPostSwiper() {
     nested: true,
     centerInsufficientSlides: true,
     spaceBetween: 16,
-    slidesPerView: 2.2,
+    slidesPerView: 1.1,
     pagination: {
       el: '.post-swiper>.swiper-pagination',
     },
@@ -214,7 +214,7 @@ async function initRecentBlogs() {
       <a href="${post.link}" class="blog-card">
         <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
         <div class="blog-description">
-          ${post.excerpt.rendered}
+          ${post.title.rendered}
         </div>
       </a>
     `;
