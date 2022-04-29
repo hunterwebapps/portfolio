@@ -61,6 +61,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.swiper-slide {
+  overflow: hidden;
+}
+
 .swiper-pagination-progressbar-fill {
   background: #EC8B5E !important;
 }
