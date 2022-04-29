@@ -61,6 +61,9 @@ function initPostSwiper() {
       pageUpDown: true,
     },
     breakpoints: {
+      500: {
+        slidesPerView: 2.2,
+      },
       992: {
         slidesPerView: 3.2,
       }

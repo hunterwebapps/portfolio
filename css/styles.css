@@ -617,9 +617,7 @@ button:active {
 
   .video-consult-wrapper {
     flex: 0 0 auto;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
+    padding: 1rem 1rem 0 0;
   }
 
   .video-consult {
@@ -628,7 +626,11 @@ button:active {
   }
 
   .contact-form-wrapper {
-    flex: 0 0 60%;
+    flex: 1 0 auto;
+  }
+
+  .contact-form-wrapper p {
+    margin-bottom: 0;
   }
 
   input, textarea {
@@ -636,8 +638,16 @@ button:active {
     margin: 0.2rem 0;
   }
 
+  .page-6>.page-header {
+    margin-bottom: 0;
+  }
+
   .contact-form {
     display: flex;
+  }
+
+  .response-time {
+    display: none;
   }
 
   .contact-pii {
@@ -646,6 +656,10 @@ button:active {
 
   .contact-message {
     flex: 0 0 50%;
+  }
+
+  .recaptcha-container {
+    margin-top: 0;
   }
 }
 
