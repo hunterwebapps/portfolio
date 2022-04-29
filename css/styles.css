@@ -138,21 +138,50 @@ a:hover {
 
 .page-2>.page-body {
   justify-content: space-around;
-  align-content: space-evenly;
+  align-content: space-around;
+}
+
+.page-2>.page-body>div {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.page-2>.page-body>div:last-of-type {
+  align-self: flex-end;
 }
 
 .page-2>.page-body>ellipse-img {
+  flex: 1 0 100%;
+  padding: 1rem 0;
+  max-height: 6rem;
+  max-width: 100%;
+}
+
+.ellipse-img {
+  border-radius: 100%;
   height: 100%;
-  max-height: 100px;
-  flex: 0 0 100%;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.ellipse-img>img {
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
 }
 
 .page-2>.page-footer {
   text-align: center;
 }
 
-.page-2>.page-footer>p {
-  margin: 0 0 0.5rem 0;
+.trusted-tagline {
+  margin: 0;
 }
 
 .page-3>.page-body {
@@ -160,13 +189,12 @@ a:hover {
 }
 
 .service-title {
-  font-size: 1.1rem;
   font-weight: bold;
   line-height: 2rem;
 }
 
 .service-title>i {
-  width: 2rem;
+  width: 1.7rem;
   text-align: center;
 }
 
@@ -184,9 +212,7 @@ a:hover {
   align-items: center;
 }
 
-.technology-description {
-  font-size: 1.1rem;
-}
+.technology-description {}
 
 .technology-logo {
   max-width: 3rem;
@@ -202,10 +228,13 @@ a:hover {
   padding-right: 0;
 }
 
+.page-5>.page-body {
+  align-content: flex-start;
+}
+
 .blog-commentary>p {
   flex: 0 0 100%;
-  font-size: 1.1rem;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0;
   padding-right: 1rem;
 }
 
@@ -216,10 +245,6 @@ a:hover {
 .post-swiper {
   width: 100%;
   height: min-content;
-}
-
-.post-swiper>.swiper-pagination {
-  bottom: 0;
 }
 
 .blog-card {
@@ -248,6 +273,10 @@ a:hover {
   -webkit-line-clamp: 5;
   line-clamp: 5;
   -webkit-box-orient: vertical;
+}
+
+.page-6>.page-header {
+  margin-bottom: 1rem;
 }
 
 .page-6>.page-footer {
@@ -399,7 +428,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  height: 4rem;
+  height: 2.35rem;
   width: 100%;
   min-width: 3rem;
   cursor: pointer;
@@ -407,8 +436,8 @@ button:active {
 
 .chevron {
   position: absolute;
-  width: 2.1rem;
-  height: 0.5rem;
+  width: 1.6rem;
+  height: 0.35rem;
   opacity: 0;
   transform: scale(0.3);
   animation: move-chevron 3s ease-out infinite;
@@ -450,65 +479,49 @@ button:active {
 
   33.3% {
     opacity: 1;
-    transform: translateY(1.5rem);
+    transform: translateY(0.67rem);
   }
 
   66.6% {
     opacity: 1;
-    transform: translateY(2.5rem);
+    transform: translateY(1.33rem);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(3.5rem) scale(0.5);
-  }
-}
-
-/* Taller Mobile Devices */
-@media(min-height: 750px) {
-  .service-details {
-    font-size: 1.2rem;
-  }
-
-  .blog-commentary>p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-  }
-
-  .post-swiper {
-    margin: 1rem 0;
-  }
-
-  .blog-description {
-    -webkit-line-clamp: 8;
-    line-clamp: 8;
-  }
-}
-
-/* Mid-size Mobile Devices */
-@media(min-width: 350px) {
-  .service-title {
-    font-size: 1.2rem;
-  }
-
-  .technology-description {
-    font-size: 1.35rem;
+    transform: translateY(2rem) scale(0.5);
   }
 }
 
 /* Large Mobile Devices */
 @media(min-width: 400px) {
-  .service-title {
-    font-size: 1.4rem;
+  .page-2>.page-body>ellipse-img {
+    max-height: 7rem;
   }
 
-  .page-5>.page-body>p {
-    font-size: 1.3rem;
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-details {
+    font-size: 1.2rem;
+  }
+
+  .technology-description {
+    font-size: 1.2rem;
+  }
+
+  .blog-commentary>p {
+    font-size: 1.2rem;
+  }
+
+  .blog-description {
+    font-size: 1.2rem;
   }
 }
 
 /* Mobile Landscape */
-@media(min-width: 500px) and (max-height: 450px) {
+@media(min-width: 500px) and (max-height: 550px) {
   .next-page {
     height: 2.35rem;
   }
@@ -548,17 +561,18 @@ button:active {
     display: block;
   }
 
-  .page-2>.page-body>ellipse-img {
-    height: 45%;
-    flex: 0 0 36%;
+  .page-2>.page-body {
+    justify-content: space-between;
+    align-content: space-around;
   }
 
-  .sprintship {
-    order: 1;
+  .page-2>.page-body>ellipse-img {
+    height: 40%;
+    flex: 0 0 24%;
   }
 
   .service-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.2rem;
   }
 
@@ -580,6 +594,14 @@ button:active {
 
   .blog-commentary {
     flex: 0 0 50%;
+  }
+
+  .blog-commentary>p {
+    font-size: 1rem;
+  }
+
+  .blog-description {
+    font-size: 0.9rem;
   }
 
   .post-swiper {
@@ -685,8 +707,8 @@ button:active {
   }
 
   .service-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 
   .service-title>i {
@@ -698,26 +720,22 @@ button:active {
   }
 
   .technology-logo {
-    max-width: 6rem;
+    max-width: 5rem;
     margin-right: 1rem;
   }
 
   .technology-description {
-    font-size: 1.85rem;
+    font-size: 1.5rem;
   }
 
   .page-5 {
     padding-right: 0;
   }
 
-  .page-5>.page-body {
-    align-content: center;
-  }
-
   .blog-commentary>p {
     font-size: 1.35rem;
     margin: 1rem 0;
-    padding-right: 2rem;
+    padding-right: 0;
   }
 
   .post-swiper {
@@ -753,6 +771,10 @@ button:active {
   .sprintship {
     order: 1;
   }
+
+  .page-2>.page-body>div:last-of-type {
+    order: 2;
+  }
 }
 
 /* Desktop */
@@ -761,5 +783,21 @@ button:active {
     max-width: 1200px;
   }
 
+  .page-2>.page-body>ellipse-img {
+    max-height: 10rem;
+    padding: 0;
+  }
 
+  .service-title {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  .service-details {
+    font-size: 1.8rem;
+  }
+
+  .technology-description {
+    font-size: 1.8rem;
+  }
 }

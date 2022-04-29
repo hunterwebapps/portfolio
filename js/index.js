@@ -22,6 +22,15 @@ function initPageSwiper() {
       pageUpDown: true,
     },
     hashNavigation: true,
+    breakpoints: {
+      1024: {
+        scrollbar: {
+          el: '.page-swiper>.swiper-scrollbar',
+          draggable: true,
+          snapOnRelease: true,
+        },
+      },
+    },
   });
 
   return swiper;
@@ -34,7 +43,7 @@ function initPostSwiper() {
     nested: true,
     centerInsufficientSlides: true,
     spaceBetween: 16,
-    slidesPerView: 1.1,
+    slidesPerView: 2.2,
     pagination: {
       el: '.post-swiper>.swiper-pagination',
     },
@@ -52,9 +61,6 @@ function initPostSwiper() {
       pageUpDown: true,
     },
     breakpoints: {
-      500: {
-        slidesPerView: 2.2,
-      },
       992: {
         slidesPerView: 3.2,
       }
