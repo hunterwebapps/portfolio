@@ -137,7 +137,7 @@ async function handleSubmitContact() {
       appInsights.trackException({ exception: err });
     });
 
-    const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/email/send', {
+    const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
       method: 'POST',
       body: JSON.stringify({
         type: 'PortfolioContact',
