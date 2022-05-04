@@ -120,22 +120,7 @@ async function handleSubmitContact() {
   const message = document.getElementById('message').value;
 
   try {
-    const formData = new FormData();
-    formData.append('oid', '00D8b000002byl2');
-    formData.append('debug', 1);
-    formData.append('debugEmail', 'hunter@hunterwebapps.com');
-    formData.append('first_name', names.at(0));
-    formData.append('last_name', names.at(-1));
-    formData.append('email', email);
-    formData.append('description', message);
-
-    fetch('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
-      method: 'POST',
-      body: formData,
-      mode: 'cors',
-    }).catch((err) => {
-      appInsights.trackException({ exception: err });
-    });
+    webToLead(names.at(0), names.at(-1), email, message);
 
     const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
       method: 'POST',
@@ -253,4 +238,32 @@ function handleBlogFailure(ex) {
 
   blogEl.classList.add('hide');
   blogFailEl.classList.remove('hide');
+}
+
+function webToLead(firstName, lastName, email, description) {
+  const form = document.createElement('form');
+
+  form.method = 'POST';
+  form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+
+  form.appendChild(createHiddenInput('oid', '00D8b000002byl2'));
+  form.appendChild(createHiddenInput('retURL', 'https://hunterwebapps.dev'));
+  form.appendChild(createHiddenInput('debug', '1'));
+  form.appendChild(createHiddenInput('debugEmail', 'hunter@hunterwebapps.com'));
+  form.appendChild(createHiddenInput('first_name', firstName));
+  form.appendChild(createHiddenInput('last_name', lastName));
+  form.appendChild(createHiddenInput('email', email));
+  form.appendChild(createHiddenInput('description', description));
+
+  document.body.appendChild(form);
+
+  form.submit();
+}
+
+function createHiddenInput(name, value) {
+  const input = document.createElement('input');
+  input.name = name;
+  input.value = value;
+  input.setAttribute('type', 'hidden');
+  return input;
 }
