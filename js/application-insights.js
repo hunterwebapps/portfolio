@@ -2,7 +2,7 @@
   src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js",
   crossOrigin: "anonymous",
   cfg: {
-    instrumentationKey: "6c7bc4a2-23c7-4462-bb06-837a8577b596",
+    instrumentationKey: !['localhost', '127.0.0.1'].includes(location.hostname) && "6c7bc4a2-23c7-4462-bb06-837a8577b596",
     disableFetchTracking: false,
     enableAutoRouteTracking: true,
   },

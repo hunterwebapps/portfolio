@@ -115,11 +115,29 @@ async function handleSubmitContact() {
   const formThanks = document.getElementById('contact-thanks-form');
 
   const name = document.getElementById('name').value;
+  const names = name.split(' ');
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
 
   try {
-    const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
+    const formData = new FormData();
+    formData.append('oid', '00D8b000002byl2');
+    formData.append('debug', 1);
+    formData.append('debugEmail', 'hunter@hunterwebapps.com');
+    formData.append('first_name', names.at(0));
+    formData.append('last_name', names.at(-1));
+    formData.append('email', email);
+    formData.append('description', message);
+
+    fetch('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
+      method: 'POST',
+      body: formData,
+      mode: 'cors',
+    }).catch((err) => {
+      appInsights.trackException({ exception: err });
+    });
+
+    const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/email/send', {
       method: 'POST',
       body: JSON.stringify({
         type: 'PortfolioContact',
@@ -130,7 +148,7 @@ async function handleSubmitContact() {
       mode: 'cors',
     });
 
-    if (response.ok) {
+    if (emailResponse.ok) {
       contactOptions.classList.add('hide');
       formThanks.classList.remove('hide');
     }
