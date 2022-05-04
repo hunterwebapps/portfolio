@@ -245,6 +245,7 @@ function webToLead(firstName, lastName, email, description) {
 
   form.method = 'POST';
   form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+  form.target = 'salesforce';
 
   form.appendChild(createHiddenInput('oid', '00D8b000002byl2'));
   form.appendChild(createHiddenInput('retURL', 'https://hunterwebapps.dev'));
