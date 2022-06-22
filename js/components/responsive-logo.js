@@ -15,7 +15,7 @@ class ResponsiveLogo extends HTMLElement {
       ? portrait.value
       : landscape.value;
 
-    this.innerHTML = `<img src="${imageUrl}" alt="${alt.value}" class="logo" />`
+    this.innerHTML = `<img src="${imageUrl}" alt="${alt.value}" style="height:100%;" />`
   }
 }
 

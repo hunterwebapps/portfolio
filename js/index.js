@@ -1,76 +1,19 @@
-const pageSwiper = initPageSwiper();
-initCalendly();
-initContact();
-initNextPageButtons(pageSwiper);
-initRecentBlogs();
+initNavbar();
+// initCalendly();
+// initContact();
+// initRecentBlogs();
 
-function initPageSwiper() {
-  const swiper = new Swiper('.page-swiper', {
-    direction: 'vertical',
-    slidesOffsetAfter: 200,
-    pagination: {
-      el: '.page-swiper>.swiper-pagination',
-      type: 'progressbar',
-    },
-    mousewheel: {
-      thresholdDelta: 100,
-      forceToAxis: true,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-      pageUpDown: true,
-    },
-    hashNavigation: true,
-    breakpoints: {
-      1024: {
-        scrollbar: {
-          el: '.page-swiper>.swiper-scrollbar',
-          draggable: true,
-          snapOnRelease: true,
-        },
-      },
-    },
+function initNavbar() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navbarNav = document.getElementById('navbarNav');
+  const bsNavbar = new bootstrap.Collapse(navbarNav, {
+    toggle: false
   });
-
-  return swiper;
-}
-
-function initPostSwiper() {
-  const swiper = new Swiper('.post-swiper', {
-    direction: 'horizontal',
-    loop: true,
-    nested: true,
-    centerInsufficientSlides: true,
-    spaceBetween: 16,
-    slidesPerView: 1.1,
-    pagination: {
-      el: '.post-swiper>.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.post-swiper>.swiper-button-next',
-      prevEl: '.post-swiper>.swiper-button-prev',
-    },
-    mousewheel: {
-      thresholdDelta: 100,
-      forceToAxis: true,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-      pageUpDown: true,
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2.2,
-      },
-      992: {
-        slidesPerView: 3.2,
-      }
-    },
-  });
-
-  return swiper;
+  for (const link of navLinks) {
+    link.addEventListener('click', () => {
+      bsNavbar.hide();
+    });
+  }
 }
 
 function initCalendly() {
