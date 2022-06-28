@@ -1,2 +1,2 @@
 import './copyright-year.js';
-import './responsive-logo.js';
+import './blog-post.js';

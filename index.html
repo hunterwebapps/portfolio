@@ -30,8 +30,6 @@
     <script src="js/google-tag-manager.js"></script>
     <script src="js/application-insights.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
     <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -50,8 +48,8 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <nav id="Home" class="navbar navbar-expand-lg shadow-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index2.html">
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="/">
                 <img src="images/main-mixed.svg" alt="Hunter Web Apps" class="logo" />
             </a>
 
@@ -69,23 +67,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index2.html#Home">Home</a>
+                        <a class="nav-link" data-href="Home">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#AboutUs">About Us</a>
+                        <a class="nav-link" data-href="WhyUs">Why Us?</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index2.html#CaseStudies">Case Studies</a>
+                        <a class="nav-link" data-href="BlogPosts">Blog Posts</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index2.html#Blogs">Recent Blogs</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html#Contact">Contact</a>
+                        <a class="nav-link" data-href="Contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -108,31 +102,20 @@
             </div>
         </section>
 
-        <section id="AboutUs" class="menu section-padding">
+        <section id="WhyUs" class="section section-padding">
             <div class="container">
                 <div class="row">
 
                     <div class="col-12">
-                        <h2 class="text-center mb-lg-5 mb-4">Hunter Web Apps</h2>
+                        <h2 class="text-center mb-lg-5 mb-4">Why Us?</h2>
                     </div>
 
                     <div class="col-12">
-                        <p>
-                            Hunter Web Apps is your partner in developing custom solutions to logistics and supply chain problems.
-                        </p>
-                        <p>
-                            We have over a decade of experience in software development for clients ranging from
-                            seed stage startups to maturity phase enterprises.
-                        </p>
-                        <p>
-                            We recognized that in order to deliver the best solutions we needed to specialize so we
-                            understand our Clients' industry as well as they do.
-                        </p>
-                        <p>
-                            It doesn't matter how good your partner
-                            is at writing code if they don't truly understand the business problems you need to solve.
-                        </p>
                         <p>Most software agencies will build anything for anyone. Our team is logistics and supply chain industry experts.</p>
+
+                        <p>We realized that in order for us to deliver effective solutions to complicated problems we needed to specialize.</p>
+
+                        <p>Hunter Web Apps is your partner in developing custom solutions to logistics and supply chain problems.</p>
 
                         <h3 class="text-center mt-5">We're not for just anybody. We're specifically for you.</h3>
                     </div>
@@ -141,237 +124,141 @@
             </div>
         </section>
 
-        <section class="BgImage"></section>
+        <section class="parralax-image"></section>
 
-        <section class="news section-padding">
+        <section id="BlogPosts" class="section section-padding">
             <div class="container">
                 <div class="row">
-
-                    <h2 class="text-center mb-lg-5 mb-4">News &amp; Events</h2>
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images2/news/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg" class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info news-text-info-large">
-                                <span class="category-tag bg-danger">Featured</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Healthy Lifestyle and happy living tips</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images2/news/stefan-johnson-xIFbDeGcy44-unsplash.jpg" class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info news-text-info-large">
-                                <span class="category-tag bg-danger">Featured</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">How to make a healthy meal</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="news-thumb mb-lg-0 mb-lg-4 mb-0">
-                            <a href="news-detail.html">
-                                <img src="images2/news/gilles-lambert-S_LhjpfIdm4-unsplash.jpg" class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag me-3 bg-info">Promotions</span>
-
-                                <strong>8 April 2022</strong>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Is Coconut good for you?</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="news-thumb mb-lg-0 mb-lg-4 mb-2">
-                            <a href="news-detail.html">
-                                <img src="images2/news/caroline-attwood-bpPTlXWTOvg-unsplash.jpg" class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag">News</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Salmon Steak Noodle</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images2/news/louis-hansel-GiIiRV0FjwU-unsplash.jpg" class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag me-3 bg-info">Meeting</span>
-
-                                <strong>30 April 2022</strong>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Making a healthy salad</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
+                    <h2 class="text-center mb-lg-5 mb-4">
+                        Recent Blog Posts
+                    </h2>
                 </div>
+
+                <div id="BlogPostContainer" class="row">
+                    Loading...
+                    <div style="height:850px"></div>
+                </div>
+
+                <h3 id="BlogPostError" class="d-none row">
+                    Error loading posts. Please try refreshing your browser.
+                </h3>
             </div>
         </section>
 
     </main>
 
-    <footer class="site-footer section-padding">
-
+    <footer id="Contact" class="site-footer section-padding">
         <div class="container">
-
             <div class="row">
 
                 <div class="col-12">
-                    <h4 class="text-white mb-4 me-5">Crispy Kitchen</h4>
+                    <h4 class="text-white mb-4 me-5">Hunter Web Apps</h4>
                 </div>
 
-                <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
-                    <h6 class="text-white mb-lg-4 mb-3">Location</h6>
+                <div class="col-xl-4 col-lg-5 col-md-7 col-12 mt30">
+                    <h6 class="text-white mb-lg-4 mb-3">Contact Form</h6>
+                    <form id="ContactForm" class="custom-form contact-form" action="#" method="post" role="form">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name">
 
-                    <p>121 Einstein Loop N, Bronx, NY 10475, United States</p>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
+                        <span id="email-error" class="text-danger d-none">A valid email is required to reply.</span>
 
-                    <a href="https://goo.gl/maps/wZVGLA7q64uC1s886" class="custom-btn btn btn-dark mt-2">Directions</a>
-                </div>
+                        <textarea class="form-control" rows="5" name="message" id="message" placeholder="Project Details" required></textarea>
+                        <span id="message-error" class="text-danger d-none">Let us know how we can help.</span>
 
-                <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
-                    <h6 class="text-white mb-lg-4 mb-3">Opening Hours</h6>
+                        <div class="col-12 submit-container">
+                            <button
+                                type="submit"
+                                id="recaptcha-submit"
+                                class="form-control g-recaptcha"
+                                data-sitekey="6LfA7ZYfAAAAAEWfRZggGaIbUBEQNjCtlVAB3uxp"
+                                data-callback="handleSubmitContact"
+                                data-size="invisible"
+                                data-badge="inline">
+                                <div id="submit-loading" class="loading d-none"></div>
+                                Send
+                            </button>
+                        </div>
+                    </form>
 
-                    <p class="mb-2">Monday - Friday</p>
+                    <div id="ContactThanksForm" class="d-none">
+                        <p>Thanks for reaching out. We respond within 2-4 hours on business days.</p>
+                        <p>In the mean time, check out what we're up to on our blog and social media.</p>
+                        <p>
+                            <a href="https://hunterwebapps.blog">
+                                <h5><i class="bi-globe"></i> https://HunterWebApps.blog</h5>
+                            </a>
+                        </p>
+                    </div>
 
-                    <p>10:00 AM - 08:00 PM</p>
-
-                    <p>Tel: <a href="tel: 010-02-0340" class="tel-link">010-02-0340</a></p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
-                    <h6 class="text-white mb-lg-4 mb-3">Social</h6>
-
-                    <ul class="social-icon">
-                        <li><a href="#" class="social-icon-link bi-facebook"></a></li>
-
-                        <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                        <li><a href="https://twitter.com/search?q=tooplate.com&src=typed_query&f=live" target="_blank"
-                                class="social-icon-link bi-twitter"></a></li>
-
-                        <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-                    </ul>
-
-                    <p class="copyright-text tooplate-mt60">
-                        <copyright-year></copyright-year>
-                    </p>
-
-                </div>
-
-            </div><!-- row ending -->
-
-        </div><!-- container ending -->
-
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal fade" id="BookingModal" tabindex="-1" aria-labelledby="BookingModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="mb-0">Reserve a table</h3>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body d-flex flex-column justify-content-center">
-                    <div class="booking">
-
-                        <form class="booking-form row" role="form" action="#" method="post">
-                            <div class="col-lg-6 col-12">
-                                <label for="name" class="form-label">Full Name</label>
-
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <label for="email" class="form-label">Email Address</label>
-
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@email.com" required>
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <label for="phone" class="form-label">Phone Number</label>
-
-                                <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <label for="people" class="form-label">Number of persons</label>
-
-                                <input type="text" name="people" id="people" class="form-control" placeholder="12 persons">
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <label for="date" class="form-label">Date</label>
-
-                                <input type="date" name="date" id="date" value="" class="form-control">
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <label for="time" class="form-label">Time</label>
-
-                                <select class="form-select form-control" name="time" id="time">
-                                    <option value="5" selected>5:00 PM</option>
-                                    <option value="6">6:00 PM</option>
-                                    <option value="7">7:00 PM</option>
-                                    <option value="8">8:00 PM</option>
-                                    <option value="9">9:00 PM</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="message" class="form-label">Special Request</label>
-
-                                <textarea class="form-control" rows="4" id="message" name="message" placeholder=""></textarea>
-                            </div>
-
-                            <div class="col-lg-4 col-12 ms-auto">
-                                <button type="submit" class="form-control">Submit Request</button>
-                            </div>
-                        </form>
+                    <div id="ContactFormFail" class="thank-you-message d-none">
+                        <p>Uh-oh! Something went wrong sending that message.</p>
+                        <p>Please reach out via email at the following address.</p>
+                        <p class="contact-email">
+                            <i class="bi-envelope-open"></i>
+                            <a href="mailto:hunter@hunterwebapps.com" target="_blank">
+                                hunter@hunterwebapps.com
+                            </a>
+                        </p>
+                        <p><strong>Original message:</strong></p>
+                        <textarea id="OriginalMessage" rows="3"></textarea>
                     </div>
                 </div>
 
-                <div class="modal-footer"></div>
+                <div class="offset-xl-1 col-lg-7 col-md-5 col-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="mt30">
+                                <h6 class="text-white mb-lg-4 mb-3">
+                                    Location
+                                </h6>
+                                <p>100 E Pine St Suite 110<br>Orlando, FL 32801</p>
+                                <a target="_blank" href="https://www.google.com/maps/place/100+E+Pine+St+STE+110,+Orlando,+FL+32801/@28.5411106,-81.3790945,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77afdb79f76e7:0x817983cc15d66878!8m2!3d28.5411059!4d-81.3769005">
+                                    <button class="btn btn-secondary custom-btn">
+                                        <i class="bi-geo-fill"></i>
+                                        Directions
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="mt30">
+                                <h6 class="text-white mb-lg-4 mb-3">
+                                    Operating Hours
+                                </h6>
+                                <p class="mb-2">Monday - Friday</p>
+                                <p id="OperatingHours"></p>
+                                <p>Tel: <a href="tel: 407-279-0709" class="tel-link">(407) 279-0709</a></p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12 mt30">
+                            <h6 class="text-white mb-lg-4 mb-3">
+                                Social
+                            </h6>
+                            <ul class="social-icon">
+                                <li><a href="https://www.linkedin.com/in/hunterwebapps/" target="_blank" class="social-icon-link bi-linkedin"></a></li>
+                                <li><a href="https://github.com/hunterwebapps" target="_blank" class="social-icon-link bi-github"></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCUgsoKMYXB1W4ApTRvy3nVw" target="_blank" class="social-icon-link bi-youtube"></a></li>
+                                <li><a href="https://twitter.com/HunterWebApps" target="_blank" class="social-icon-link bi-twitter"></a></li>
+                            </ul>
+                            <p class="copyright-text">
+                                <copyright-year></copyright-year>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
         </div>
-    </div>
+    </footer>
+
+    <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/moment-tz.js"></script>
     <script src="js/components/index.js?v=1.0" type="module"></script>
     <script src="js/index.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </body>
 
 </html>

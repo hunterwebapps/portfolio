@@ -1,7 +1,8 @@
 initNavbar();
-// initCalendly();
-// initContact();
-// initRecentBlogs();
+initOperatingHours();
+initRecentBlogs();
+
+let categories = [];
 
 function initNavbar() {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -12,37 +13,37 @@ function initNavbar() {
   for (const link of navLinks) {
     link.addEventListener('click', () => {
       bsNavbar.hide();
+      const target = link.getAttribute('data-href');
+      document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
     });
   }
 }
 
-function initCalendly() {
-  const showCalendly = document.getElementById('show-calendly');
+function initOperatingHours() {
+  const timeFormat = 'HH:mm:ssZ';
+  const companyBaseTimezone = 'America/New_York';
+  const openingHour = '10:00:00';
+  const hoursOpen = 8;
 
-  showCalendly.addEventListener('click', () => {
-    Calendly.initPopupWidget({
-      url: 'https://calendly.com/hunter-web-apps/video-consultation?text_color=000000&primary_color=141a46',
-    });
-  });
-}
+  const openMoment = moment.tz(`2020-01-01 ${openingHour}`, companyBaseTimezone);
+  const openHour = openMoment.format(timeFormat);
+  const closeHour = openMoment.add(hoursOpen, 'hours').format(timeFormat);
 
-function initContact() {
-  const contactOptions = document.getElementById('contact-options');
-  const calendarThanks = document.getElementById('contact-thanks-calendar');
+  const openDate = new Date(`1970-01-01T${openHour}`);
+  const closeDate = new Date(`1970-01-01T${closeHour}`);
 
-  const submitButton = document.getElementById('recaptcha-submit');
+  const localeOptions = {
+    hour: 'numeric',
+    minute: '2-digit'
+  };
 
-  submitButton.setAttribute('data-sitekey', '6LfA7ZYfAAAAAEWfRZggGaIbUBEQNjCtlVAB3uxp');
-  submitButton.setAttribute('data-callback', 'handleSubmitContact');
+  const localOpen = openDate.toLocaleTimeString([], localeOptions);
+  const localClose = closeDate.toLocaleTimeString([], localeOptions);
 
-  window.addEventListener('message', (e) => {
-    if (e.data.event === 'calendly.event_scheduled') {
-      const url = 'https://' + e.data.payload.invitee.uri.replace('https://api.', '');
-      webToLead("Calendly", "Lead", null, url);
-      contactOptions.classList.add('hide');
-      calendarThanks.classList.remove('hide');
-    }
-  });
+  const zoneAbbr = moment.tz(moment.tz.guess()).zoneAbbr();
+
+  const p = document.getElementById('OperatingHours');
+  p.innerHTML = `${localOpen} to ${localClose} ${zoneAbbr}`;
 }
 
 async function handleSubmitContact() {
@@ -52,10 +53,10 @@ async function handleSubmitContact() {
 
   const submitLoading = document.getElementById('submit-loading');
 
-  submitLoading.classList.remove('hide');
+  submitLoading.classList.remove('d-none');
 
-  const contactOptions = document.getElementById('contact-options');
-  const formThanks = document.getElementById('contact-thanks-form');
+  const contactForm = document.getElementById('ContactForm');
+  const formThanks = document.getElementById('ContactThanksForm');
 
   const name = document.getElementById('name').value;
   const names = name.split(' ');
@@ -77,11 +78,11 @@ async function handleSubmitContact() {
     });
 
     if (emailResponse.ok) {
-      contactOptions.classList.add('hide');
-      formThanks.classList.remove('hide');
+      contactForm.classList.add('d-none');
+      formThanks.classList.remove('d-none');
     }
 
-    submitLoading.classList.add('hide');
+    submitLoading.classList.add('d-none');
   } catch (ex) {
     handleContactFormFailure(ex, message);
   }
@@ -97,17 +98,17 @@ function validateContactForm() {
 
   const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   if (!emailRegex.test(emailEl.value)) {
-    emailErrorEl.classList.add('show');
+    emailErrorEl.classList.remove('d-none');
     isValid = false;
   } else {
-    emailErrorEl.classList.remove('show');
+    emailErrorEl.classList.add('d-none');
   }
 
   if (!messageEl.value) {
-    messageErrorEl.classList.add('show');
+    messageErrorEl.classList.remove('d-none');
     isValid = false;
   } else {
-    messageErrorEl.classList.remove('show');
+    messageErrorEl.classList.add('d-none');
   }
 
   return isValid;
@@ -116,71 +117,83 @@ function validateContactForm() {
 function handleContactFormFailure(ex, originalMessage) {
   appInsights.trackException({ exception: ex });
 
-  const contactFailEl = document.getElementById('contact-form-fail');
-  const contactOptionsEl = document.getElementById('contact-options');
-  const originalMessageEl = document.getElementById('original-message');
+  const contactFailEl = document.getElementById('ContactFormFail');
+  const contactFormEl = document.getElementById('ContactForm');
+  const originalMessageEl = document.getElementById('OriginalMessage');
 
   originalMessageEl.value = originalMessage;
-  contactOptionsEl.classList.add('hide');
-  contactFailEl.classList.remove('hide');
+  contactFormEl.classList.add('d-none');
+  contactFailEl.classList.remove('d-none');
   originalMessageEl.focus();
   originalMessageEl.select();
 }
 
-function initNextPageButtons(swiper) {
-  const nextPageButtons = document.getElementsByTagName('next-page');
+async function fetchCategories() {
+  let response;
 
-  for (const nextPageButton of nextPageButtons) {
-    nextPageButton.addEventListener('click', (e) => {
-      swiper.slideNext();
-    });
+  try {
+    response = await fetch('https://hunterwebapps.blog/wp-json/wp/v2/categories');
+  } catch (ex) {
+    return;
   }
+
+  if (!response.ok) {
+    return;
+  }
+
+  categories = await response.json();
+}
+
+function getCategoryNameById(categoryId) {
+  const category = categories.find(x => x.id === categoryId);
+  return category ? category.name : 'General';
 }
 
 async function initRecentBlogs() {
+  const fetchCategoriesPromise = fetchCategories();
+  const blogPosts = document.getElementById('BlogPostContainer');
+  const blogPostsError = document.getElementById('BlogPostError');
+
   let response;
+
   try {
-    response = await fetch('https://hunterwebapps.blog/wp-json/wp/v2/posts');
+    const responsePromise = fetch('https://hunterwebapps.blog/wp-json/wp/v2/posts');
+
+    const results = await Promise.allSettled([responsePromise, fetchCategoriesPromise]);
+
+    response = results[0].value;
   } catch (ex) {
-    handleBlogFailure(ex);
+    blogPosts.classList.add('d-none');
+    blogPostsError.innerText = 'Network Error. Please check your connection, and refresh your browser.';
+    blogPostsError.classList.remove('d-none');
+    return;
   }
 
-  const blogPosts = document.getElementById('blog-posts');
-
   if (!response.ok) {
-    const blogPostsError = document.getElementById('blog-posts-error');
-    blogPosts.classList.add('hide');
-    blogPostsError.classList.remove('hide');
+    const response = await response.text();
+    appInsights.trackException({ exception: new Error(response) });
+    blogPosts.classList.add('d-none');
+    blogPostsError.classList.remove('d-none');
     return;
   }
 
   const body = await response.json();
 
+  blogPosts.innerHTML = '';
+
+  let counter = 0;
   for (const post of body) {
-    const blogPostDiv = document.createElement('div');
-    blogPostDiv.classList.add('swiper-slide');
-    blogPostDiv.innerHTML = `
-      <a href="${post.link}" class="blog-card">
-        <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
-        <div class="blog-description">
-          ${post.title.rendered}
-        </div>
-      </a>
-    `;
-    blogPosts.getElementsByClassName('swiper-wrapper')[0].appendChild(blogPostDiv);
+    const blogPostEl = document.createElement('blog-post');
+    blogPostEl.setAttribute('title', post.title.rendered);
+    blogPostEl.setAttribute('link', post.link);
+    blogPostEl.setAttribute('image', post.jetpack_featured_media_url);
+    blogPostEl.setAttribute('category', getCategoryNameById(post.categories[0]));
+    blogPostEl.setAttribute('date', post.date);
+    blogPostEl.setAttribute('index', counter);
+
+    blogPosts.appendChild(blogPostEl);
+    counter++;
   }
-
-  initPostSwiper();
-}
-
-function handleBlogFailure(ex) {
-  appInsights.trackException({ exception: ex });
-
-  const blogEl = document.getElementById('blog-posts');
-  const blogFailEl = document.getElementById('blog-posts-error');
-
-  blogEl.classList.add('hide');
-  blogFailEl.classList.remove('hide');
 }
 
 function webToLead(firstName, lastName, email, description) {
