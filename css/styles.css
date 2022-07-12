@@ -128,6 +128,7 @@ button {
 
 a {
   color: var(--secondary-color);
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -272,18 +273,13 @@ strong {
   top: 8px;
 }
 
-
-/*---------------------------------------
-  SITE HEADER
------------------------------------------*/
-
 .logo {
   width: 100%;
   max-width: 135px;
 }
 
 /*---------------------------------------
-  HERO
+  BANNER IMAGES
 -----------------------------------------*/
 .hero {
   position: relative;
@@ -320,6 +316,13 @@ strong {
   color: var(--primary-color);
 }
 
+.parralax-image {
+  background: url('../images/contemplating_stock.webp') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+}
+
 /*---------------------------------------
   MENU
 -----------------------------------------*/
@@ -342,47 +345,15 @@ strong {
   flex: 1 0 auto;
 }
 
-.calendar-text {
-  color: rgb(108, 117, 125);
-  font-size: 0.9rem;
-  position: absolute;
-  left: 1.85rem;
-  top: 1.6rem;
-}
-
-.menu-thumb {
-  position: relative;
-  overflow: hidden;
-}
-
-.menu-info {
-  padding: 20px 20px 30px 20px;
-}
-
-.menu-image {
-  display: block;
-}
-
-.menu-image-wrap {
-  position: relative;
-}
-
-.menu-tag {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px;
-}
-
 /*---------------------------------------
-  NEWS
+  BLOG
 -----------------------------------------*/
-.news-thumb {
+.blog-thumb {
   position: relative;
   overflow: hidden;
 }
 
-.news-thumb>a {
+.blog-thumb>a {
   display: block;
   width: 100%;
   height: 100%;
@@ -391,11 +362,21 @@ strong {
   transition: all 0.3s ease-out;
 }
 
-.news-thumb>a:hover {
+.blog-thumb>a:hover {
   transform: scale(1.2);
 }
 
-.news-text-info {
+.blog-image {
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.blog-image:hover {
+  transform: scale(1.2);
+}
+
+.blog-text-info {
   background: var(--section-bg-color);
   position: relative;
   z-index: 2;
@@ -403,11 +384,7 @@ strong {
   transition: all 0.3s ease-out;
 }
 
-.related-news .news-text-info {
-  background: var(--white-color);
-}
-
-.news-text-info-large {
+.blog-text-info-large {
   background: linear-gradient(to top, var(--dark-color), transparent 90%);
   position: absolute;
   z-index: 2;
@@ -417,26 +394,15 @@ strong {
   pointer-events: none;
 }
 
-.news-text-info-large .news-title-link {
+.blog-text-info-large .blog-title-link {
   color: var(--white-color);
 }
 
-.news-title-link {
+.blog-title-link {
   color: var(--news-title-color);
 }
 
-.news-image {
-  display: block;
-  width: 100%;
-  transition: all 0.3s ease-out;
-}
-
-.news-image:hover {
-  transform: scale(1.2);
-}
-
-.category-tag,
-.menu-tag {
+.category-tag {
   background: var(--dark-color);
   border-radius: var(--border-radius-default);
   color: var(--white-color);
@@ -447,10 +413,6 @@ strong {
 
 .category-tag {
   margin-bottom: 5px;
-}
-
-.comment-form {
-  margin-bottom: 60px;
 }
 
 /*---------------------------------------
@@ -476,13 +438,6 @@ strong {
 .contact-email {
   font-size: 1.75rem;
   font-weight: bold;
-}
-
-.parralax-image {
-  background: url('../images/contemplating_stock.webp') no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 500px;
 }
 
 /*---------------------------------------
@@ -521,10 +476,6 @@ strong {
   font-size: var(--menu-font-size);
 }
 
-.tel-link {
-  color: var(--p-color);
-}
-
 .site-footer a:hover {
   color: var(--white-color);
 }
@@ -537,7 +488,6 @@ strong {
 .site-footer p {
   color: #AAA;
 }
-
 
 /*---------------------------------------
   SOCIAL ICON
@@ -569,7 +519,10 @@ strong {
   color: var(--primary-color);
 }
 
-/* Loading Indicator */
+
+/*---------------------------------------
+  LOADING INDICATOR
+-----------------------------------------*/
 .loading {
   display: flex;
   justify-content: center;
@@ -676,11 +629,6 @@ strong {
 @media screen and (max-width: 480px) {
   .hero .container .col-12 {
     padding: 0 0.5rem;
-  }
-
-  .newsletter-image {
-    max-width: 310px;
-    max-height: 310px;
   }
 }
 
