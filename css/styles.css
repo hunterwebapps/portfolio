@@ -77,7 +77,8 @@ h6 {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--header-font-family);
   font-weight: var(--font-weight-normal);
 }
