@@ -1,27 +1,29 @@
 class BlogPost extends HTMLElement {
   connectedCallback() {
     const { title, link, image, category, date, index } = this.attributes;
+    let tagClass = this.attributes['tag-class'];
+    if (!tagClass) {
+      tagClass = { value: 'bg-danger' };
+    }
 
     this.classList.add('blog-post');
     if (index.value < 2) {
       this.classList.add('col-lg-6', 'col-md-6', 'col-12');
+
+      const img = `<img src="${image.value}" class="img-fluid blog-image" alt="${title.value}">`;
+      const anchorImg = `<a href="${link?.value}" target="_blank">${img}</a>`;
+      const anchorTitle = `<a href="${link?.value}" target="_blank">${title.value}</a>`;
+      const categoryTag = `<span class="category-tag ${tagClass.value}">${category?.value}</span>`;
+
       this.innerHTML = `
           <div class="blog-thumb mb-4">
-              <a href="${link.value}" target="_blank">
-                  <img
-                      src="${image.value}"
-                      class="img-fluid blog-image"
-                      alt="${title.value}"
-                  >
-              </a>
+              ${(link?.value ? anchorImg : img)}
 
               <div class="blog-text-info blog-text-info-large">
-                  <span class="category-tag bg-danger">${category.value}</span>
+                  ${(category?.value ? categoryTag : '')}
 
-                  <h5 class="mt-2">
-                      <a href="${link.value}" class="blog-title-link" target="_blank">
-                          ${title.value}
-                      </a>
+                  <h5 class="mt-2 blog-title">
+                      ${(link?.value ? anchorTitle : title.value)}
                   </h5>
               </div>
           </div>
@@ -44,7 +46,7 @@ class BlogPost extends HTMLElement {
                   <strong>${moment(date.value).format('MMMM Do @ hh:mm a')}</strong>
 
                   <h5 class="blog-title mt-2">
-                      <a href="${link.value}" class="blog-title-link" target="_blank">
+                      <a href="${link.value}" target="_blank">
                           ${title.value}
                       </a>
                   </h5>
