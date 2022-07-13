@@ -1,21 +1,21 @@
 class BlogPost extends HTMLElement {
-  connectedCallback() {
-    const { title, link, image, category, date, index } = this.attributes;
-    let tagClass = this.attributes['tag-class'];
-    if (!tagClass) {
-      tagClass = { value: 'bg-danger' };
-    }
+    connectedCallback() {
+        let { title, link, image, category, date, index } = this.attributes;
+        let tagClass = this.attributes['tag-class'];
 
-    this.classList.add('blog-post');
-    if (index.value < 2) {
-      this.classList.add('col-lg-6', 'col-md-6', 'col-12');
+        tagClass = tagClass || { value: 'bg-danger' };
+        index = index || { value: 0 };
 
-      const img = `<img src="${image.value}" class="img-fluid blog-image" alt="${title.value}">`;
-      const anchorImg = `<a href="${link?.value}" target="_blank">${img}</a>`;
-      const anchorTitle = `<a href="${link?.value}" target="_blank">${title.value}</a>`;
-      const categoryTag = `<span class="category-tag ${tagClass.value}">${category?.value}</span>`;
+        this.classList.add('blog-post');
+        if (index.value < 2) {
+            this.classList.add('col-lg-6', 'col-md-6', 'col-12');
 
-      this.innerHTML = `
+            const img = `<img src="${image.value}" class="img-fluid blog-image" alt="${title.value}">`;
+            const anchorImg = `<a href="${link?.value}" target="_blank">${img}</a>`;
+            const anchorTitle = `<a href="${link?.value}" target="_blank">${title.value}</a>`;
+            const categoryTag = `<span class="category-tag ${tagClass.value}">${category?.value}</span>`;
+
+            this.innerHTML = `
           <div class="blog-thumb mb-4">
               ${(link?.value ? anchorImg : img)}
 
@@ -28,9 +28,9 @@ class BlogPost extends HTMLElement {
               </div>
           </div>
       `;
-    } else {
-      this.classList.add('col-lg-4', 'col-md-4', 'col-12');
-      this.innerHTML = `
+        } else {
+            this.classList.add('col-lg-4', 'col-md-4', 'col-12');
+            this.innerHTML = `
           <div class="blog-thumb mb-lg-0 mb-lg-4 mb-0">
               <a href="${link.value}" target="_blank">
                   <img
@@ -53,8 +53,8 @@ class BlogPost extends HTMLElement {
               </div>
           </div>
       `;
+        }
     }
-  }
 }
 
 customElements.define('blog-post', BlogPost);

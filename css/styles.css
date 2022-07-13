@@ -342,6 +342,11 @@ strong {
   SERVICES
 -----------------------------------------*/
 
+#Services .blog-title {
+  font-size: var(--h3-font-size);
+  font-family: var(--header-font-family);
+}
+
 .service-example {
   display: flex;
   align-items: center;
@@ -406,10 +411,6 @@ strong {
   right: 0;
   left: 0;
   pointer-events: none;
-}
-
-.services .blog-text-info-large {
-  font-size: 2rem;
 }
 
 .blog-text-info-large .blog-title {
