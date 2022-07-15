@@ -359,13 +359,14 @@ strong {
   flex: 0 0 100%;
   height: fit-content;
   max-width: 355px;
-  margin: 3rem 0;
+  width: 100%;
+  margin: 1rem auto;
+  align-self: center;
 }
 
-.certifications {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.why-reasons i {
+  font-size: 2rem;
+  margin-right: 1rem;
 }
 
 /*---------------------------------------

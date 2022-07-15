@@ -12,8 +12,8 @@ class CardPanel extends HTMLElement {
     const bodyEl = document.createElement('div');
     bodyEl.classList.add('card-body');
 
-    const titleEl = document.createElement('h4');
-    titleEl.classList.add('card-title', 'justify-content-between', 'd-flex');
+    const titleEl = document.createElement('div');
+    titleEl.classList.add('card-title');
     titleEl.innerHTML = subtitle.value;
 
     const contentEl = document.createElement('div');
