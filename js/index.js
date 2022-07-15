@@ -1,15 +1,18 @@
-initNavbar();
-initOperatingHours();
-initRecentBlogs();
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initOperatingHours();
+  initRecentBlogs();
+});
 
 let categories = [];
 
 function initNavbar() {
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('[data-href]');
   const navbarNav = document.getElementById('navbarNav');
   const bsNavbar = new bootstrap.Collapse(navbarNav, {
     toggle: false
   });
+
   for (const link of navLinks) {
     link.addEventListener('click', () => {
       bsNavbar.hide();

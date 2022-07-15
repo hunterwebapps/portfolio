@@ -3,6 +3,7 @@ class BlogPost extends HTMLElement {
         let { title, link, image, category, date, index } = this.attributes;
         let tagClass = this.attributes['tag-class'];
 
+        title = title || { value: '' }
         tagClass = tagClass || { value: 'bg-danger' };
         index = index || { value: 0 };
 
