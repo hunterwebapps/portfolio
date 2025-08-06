@@ -25,8 +25,8 @@ function initNavbar() {
 function initOperatingHours() {
   const timeFormat = 'HH:mm:ssZ';
   const companyBaseTimezone = 'America/New_York';
-  const openingHour = '10:00:00';
-  const hoursOpen = 8;
+  const openingHour = '09:00:00';
+  const hoursOpen = 9;
 
   const openMoment = moment.tz(`2020-01-01 ${openingHour}`, companyBaseTimezone);
   const openHour = openMoment.format(timeFormat);
