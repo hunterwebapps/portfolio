@@ -400,6 +400,102 @@ strong {
 }
 
 /*---------------------------------------
+  APPROACH
+-----------------------------------------*/
+.approach-intro {
+  color: var(--p-color);
+  font-family: var(--header-font-family);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-normal);
+}
+
+.approach-intro strong {
+  color: var(--dark-color);
+}
+
+.approach-card {
+  border-radius: var(--border-radius-default);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.approach-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.approach-card h5 {
+  font-family: var(--header-font-family);
+  font-weight: var(--font-weight-normal);
+}
+
+.approach-navy {
+  background: linear-gradient(135deg, var(--secondary-color), #1b2260);
+  color: var(--white-color);
+  border: none;
+}
+
+.approach-coral {
+  background: linear-gradient(135deg, var(--primary-color), #e17440);
+  color: var(--white-color);
+  border: none;
+}
+
+.approach-light {
+  background: #ffffff;
+  border: 1px solid rgba(236, 139, 94, 0.3);
+}
+
+.approach-navy h5,
+.approach-navy p,
+.approach-navy li,
+.approach-navy .approach-why-label { color: var(--white-color); }
+
+.approach-coral h5,
+.approach-coral p,
+.approach-coral li,
+.approach-coral .approach-why-label { color: var(--white-color); }
+
+.approach-navy .approach-icon,
+.approach-coral .approach-icon { color: var(--white-color); }
+
+.approach-why {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-default);
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+}
+
+.approach-why ul {
+  color: inherit;
+}
+
+.approach-why .approach-why-label {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+}
+
+.approach-why-light {
+  border-color: rgba(236, 139, 94, 0.35);
+  background: rgba(236, 139, 94, 0.06);
+}
+
+.text-coral { color: var(--primary-color) !important; }
+
+/*---------------------------------------
   BLOG
 -----------------------------------------*/
 .blog-thumb {
