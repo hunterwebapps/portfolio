@@ -374,6 +374,101 @@ strong {
 }
 
 /*---------------------------------------
+  PAIN POINTS
+-----------------------------------------*/
+.pain-point-card {
+  background: #ffffff;
+  border: 2px solid rgba(236, 139, 94, 0.2);
+  border-radius: var(--border-radius-default);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.pain-point-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  border-color: var(--primary-color);
+}
+
+.pain-point-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.pain-point-text {
+  font-size: 1.15rem;
+  color: var(--dark-color);
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  color: var(--p-color);
+  font-weight: var(--font-weight-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/*---------------------------------------
+  VALUE PROPOSITION
+-----------------------------------------*/
+.value-prop-highlight {
+  background: linear-gradient(135deg, rgba(236, 139, 94, 0.1), rgba(236, 139, 94, 0.05));
+  border: 2px solid rgba(236, 139, 94, 0.3);
+  border-radius: var(--border-radius-default);
+  padding: 2.5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.value-prop-highlight h4 {
+  color: var(--dark-color);
+  font-family: var(--header-font-family);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+/*---------------------------------------
+  ADVANTAGE CARDS
+-----------------------------------------*/
+.advantage-card {
+  background: #ffffff;
+  border-radius: var(--border-radius-default);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.advantage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.advantage-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.advantage-card h5 {
+  color: var(--dark-color);
+  font-family: var(--header-font-family);
+  font-weight: var(--font-weight-normal);
+}
+
+.advantage-card p {
+  color: var(--p-color);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/*---------------------------------------
   SERVICES
 -----------------------------------------*/
 
@@ -1116,6 +1211,36 @@ strong {
 
   .hero .container p {
     font-size: 1rem;
+  }
+
+  .pain-point-card {
+    padding: 1.5rem;
+  }
+
+  .pain-point-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pain-point-text {
+    font-size: 1rem;
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+  }
+
+  .value-prop-highlight {
+    padding: 2rem 1.5rem;
+  }
+
+  .advantage-card {
+    padding: 1.5rem;
+  }
+
+  .advantage-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 }
 
