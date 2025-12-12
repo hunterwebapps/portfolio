@@ -4,6 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ec8b5e">
+
+    <!-- ——— PRECONNECT (critical resources only) ——— -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://p.typekit.net/p.css?s=1&k=jgk1kms&ht=tk&f=175.305&a=104673495&app=typekit&e=css" as="style">
+    <!-- DNS prefetch for deferred/late resources -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="dns-prefetch" href="https://webto.salesforce.com">
 
     <!-- ——— META & SOCIAL ——— -->
     <meta name="description"
@@ -25,23 +37,104 @@
     <meta name="twitter:description"
           content="Partner with specialists who understand logistics and turn opportunity into software-powered results.">
 
+    <!-- ——— STRUCTURED DATA ——— -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hunter Web Apps",
+        "url": "https://hunterwebapps.dev",
+        "logo": "https://hunterwebapps.dev/images/main-mixed.svg",
+        "sameAs": ["https://www.linkedin.com/in/hunterwebapps/"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-407-349-3633",
+            "contactType": "sales"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Hunter Web Apps",
+        "description": "Custom software development and strategic consulting for 3PL and supply-chain providers",
+        "url": "https://hunterwebapps.dev",
+        "telephone": "+1-407-349-3633",
+        "email": "hunter@hunterwebapps.com",
+        "priceRange": "$$$$"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Custom Software Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Hunter Web Apps"
+        },
+        "areaServed": "US",
+        "description": "Custom cloud software, automation, and strategic assessments for 3PL logistics operations"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is my team spending more time in spreadsheets than moving freight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Manual processes and disconnected systems force teams into spreadsheet workarounds. Custom software integration can automate data flows and eliminate redundant data entry."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why can't I customize my 3PL software the way I need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Off-the-shelf solutions are built for generic workflows. Hunter Web Apps builds custom software tailored to your specific logistics operations and processes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why doesn't automation fit my logistics process?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generic automation tools are designed for standard workflows. Custom automation solutions can be built to match your unique operational requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I bridge the gap between what my system can do and what customers need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Custom integrations and software extensions can expand your system's capabilities to meet specific customer requirements without replacing your core platform."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="icon" href="icons/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="canonical" href="https://hunterwebapps.dev/">
 
-    <title>Hunter Web Apps</title>
+    <title>Hunter Web Apps | Custom Software & Strategy for 3PLs</title>
 
     <!-- ——— SCRIPTS & STYLES ——— -->
-    <script src="js/google-tag-manager.js"></script>
-    <script src="js/application-insights.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/google-tag-manager.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/typekit.css">
     <link rel="stylesheet" href="css/styles.css?v=1.2">
 
-    <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style"
-          onload="this.onload=null;this.rel='stylesheet'">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -56,6 +149,7 @@
 </head>
 
 <body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW53W2L" height="0" width="0"
@@ -66,7 +160,7 @@
 <nav id="Home" class="navbar navbar-expand-lg shadow-lg">
     <div class="container navbar-container">
         <a class="navbar-brand" href="/">
-            <img src="images/main-mixed.svg" alt="Hunter Web Apps" class="logo"/>
+            <img src="images/main-mixed.svg" alt="Hunter Web Apps" class="logo" width="135" height="40"/>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -75,18 +169,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" data-href="Home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" data-href="AboutUs">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" data-href="Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" data-href="ServicePackages">Packages</a></li>
-                <li class="nav-item"><a class="nav-link" data-href="MeasuredApproach">Approach</a></li>
-                <li class="nav-item"><a class="nav-link" data-href="Contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#AboutUs">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Services">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ServicePackages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#MeasuredApproach">Approach</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main>
+<main id="main-content">
     <!-- ——— HERO ——— -->
     <section class="hero">
         <div class="container">
@@ -110,7 +204,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h3 class="mb-3">Sound Familiar?</h3>
+                    <h2 class="h3 mb-3">Sound Familiar?</h2>
                     <p class="paragraph mb-5">You're not the only one facing these challenges</p>
                 </div>
             </div>
@@ -118,7 +212,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="pain-point-card h-100">
                         <div class="pain-point-icon">
-                            <i class="bi-file-spreadsheet"></i>
+                            <i class="bi-file-spreadsheet" aria-hidden="true"></i>
                         </div>
                         <p class="pain-point-text">
                             If your team's spending more time in spreadsheets than moving freight, you're not alone.
@@ -128,7 +222,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="pain-point-card h-100">
                         <div class="pain-point-icon">
-                            <i class="bi-sliders"></i>
+                            <i class="bi-sliders" aria-hidden="true"></i>
                         </div>
                         <p class="pain-point-text">
                             Your software vendor says it's "customizable," but you can't customize what actually matters.
@@ -138,7 +232,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="pain-point-card h-100">
                         <div class="pain-point-icon">
-                            <i class="bi-gear"></i>
+                            <i class="bi-gear" aria-hidden="true"></i>
                         </div>
                         <p class="pain-point-text">
                             Automation sounds great until you realize it doesn't fit your process.
@@ -148,7 +242,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="pain-point-card h-100">
                         <div class="pain-point-icon">
-                            <i class="bi-arrow-left-right"></i>
+                            <i class="bi-arrow-left-right" aria-hidden="true"></i>
                         </div>
                         <p class="pain-point-text">
                             Your team's stuck between what your system can do... and what your customers actually need.
@@ -165,7 +259,7 @@
         </div>
     </section>
 
-    <section class="parralax-image"></section>
+    <section class="parallax-image"></section>
 
     <!-- ——— ABOUT US ——— -->
     <section id="AboutUs" class="section section-padding">
@@ -179,14 +273,14 @@
                 <div class="offset-xl-1 col-lg-6 col-12">
                     <div class="row why-reasons">
                         <div class="col-12 d-flex">
-                            <i class="bi-patch-check-fill"></i>
+                            <i class="bi-patch-check-fill" aria-hidden="true"></i>
                             <div>
                                 <h5>Logistics Specialists</h5>
                                 <p><em>Exclusively</em> focused on independent 3PLs.</p>
                             </div>
                         </div>
                         <div class="col-12 d-flex">
-                            <i class="bi-lightbulb-fill"></i>
+                            <i class="bi-lightbulb-fill" aria-hidden="true"></i>
                             <div>
                                 <h5>Opportunity Discovery</h5>
                                 <p>Rapid strategic assessments to expose margin-killers, process bottlenecks, and quick
@@ -194,14 +288,14 @@
                             </div>
                         </div>
                         <div class="col-12 d-flex">
-                            <i class="bi-award-fill"></i>
+                            <i class="bi-award-fill" aria-hidden="true"></i>
                             <div>
                                 <h5>Engineering Excellence</h5>
                                 <p>Cloud-native and full-stack development experience honed over decades.</p>
                             </div>
                         </div>
                         <div class="col-12 d-flex">
-                            <i class="bi-people-fill"></i>
+                            <i class="bi-people-fill" aria-hidden="true"></i>
                             <div>
                                 <h5>Partnership Mindset</h5>
                                 <p>Shared success drives every engagement. We win when your KPIs move.</p>
@@ -213,7 +307,7 @@
                 <!-- CREDENTIALS -->
                 <div class="col-xl-4 col-lg-6 col-12 text-center">
                     <img src="images/credentials/ascm.webp" alt="Association for Supply Chain Management"
-                         class="ascm-card">
+                         class="ascm-card" width="355" height="242" loading="lazy" decoding="async">
                 </div>
 
                 <div class="col-12 text-center mt-5">
@@ -228,70 +322,90 @@
         </div>
     </section>
 
-    <section class="parralax-image"></section>
+    <section class="parallax-image"></section>
 
     <!-- ——— SERVICES ——— -->
     <section id="Services" class="section section-padding">
         <div class="container">
             <div class="row">
-                <h3 class="text-center mb-lg-4 mb-3 mt-3">Solutions We Deliver</h3>
+                <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">Solutions We Deliver</h2>
 
                 <div class="col-12 service-examples">
                     <div class="row">
                         <div class="col-xl-4 col-md-6 col-12 service-example">
                             <img src="images/icons/material_requirements_planning.svg"
-                                 alt="Strategic Assessment & Roadmapping">
+                                 alt="Strategic Assessment & Roadmapping" width="48" height="48" loading="lazy" decoding="async">
                             <p>Strategic Assessment & Roadmapping</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/barcode.svg" alt="Barcode & RFID Tracking">
+                            <img src="images/icons/barcode.svg" alt="Barcode & RFID Tracking" width="48" height="48" loading="lazy" decoding="async">
                             <p>Barcode & RFID Tracking</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/inventory_management.svg" alt="Inventory Management">
+                            <img src="images/icons/inventory_management.svg" alt="Inventory Management" width="48" height="48" loading="lazy" decoding="async">
                             <p>Inventory Management</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/order_processing.svg" alt="Order Processing">
+                            <img src="images/icons/order_processing.svg" alt="Order Processing" width="48" height="48" loading="lazy" decoding="async">
                             <p>Order Processing</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/shipping_logistics.svg" alt="Shipping & Logistics">
+                            <img src="images/icons/shipping_logistics.svg" alt="Shipping & Logistics" width="48" height="48" loading="lazy" decoding="async">
                             <p>Shipping & Logistics</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/warehouse_management.svg" alt="Warehouse Management Systems">
+                            <img src="images/icons/warehouse_management.svg" alt="Warehouse Management Systems" width="48" height="48" loading="lazy" decoding="async">
                             <p>Warehouse Management Systems</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/third_party_integrations.svg" alt="Third-Party Integrations">
+                            <img src="images/icons/third_party_integrations.svg" alt="Third-Party Integrations" width="48" height="48" loading="lazy" decoding="async">
                             <p>Third-Party Integrations (EDI, FedEx, ArcGIS, ERP, etc.)</p>
                         </div>
                         <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/analytics.svg" alt="Operational Analytics">
+                            <img src="images/icons/analytics.svg" alt="Operational Analytics" width="48" height="48" loading="lazy" decoding="async">
                             <p>Operational Analytics</p>
                         </div>
                     </div>
                 </div>
 
-                <h3 class="text-center mb-lg-4 mb-3 mt-3">Technology</h3>
+                <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">Technology</h2>
 
                 <div class="col-xl-3 col-md-6 col-12">
-                    <blog-post title="Software" image="images/technology/automation.webp"></blog-post>
+                    <div class="tech-card mb-4">
+                        <img src="images/technology/automation.webp" class="img-fluid tech-card-image" alt="Software" width="350" height="233" loading="lazy" decoding="async">
+                        <div class="tech-card-overlay">
+                            <h5 class="mt-2 tech-card-title">Software</h5>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xl-3 col-md-6 col-12">
-                    <blog-post title="Automation" image="images/technology/web3.webp"></blog-post>
+                    <div class="tech-card mb-4">
+                        <img src="images/technology/web3.webp" class="img-fluid tech-card-image" alt="Automation" width="350" height="233" loading="lazy" decoding="async">
+                        <div class="tech-card-overlay">
+                            <h5 class="mt-2 tech-card-title">Automation</h5>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xl-3 col-md-6 col-12">
-                    <blog-post title="IoT" image="images/technology/iot.webp"></blog-post>
+                    <div class="tech-card mb-4">
+                        <img src="images/technology/iot.webp" class="img-fluid tech-card-image" alt="IoT" width="350" height="233" loading="lazy" decoding="async">
+                        <div class="tech-card-overlay">
+                            <h5 class="mt-2 tech-card-title">IoT</h5>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xl-3 col-md-6 col-12">
-                    <blog-post title="AI" image="images/technology/ai.webp"></blog-post>
+                    <div class="tech-card mb-4">
+                        <img src="images/technology/ai.webp" class="img-fluid tech-card-image" alt="AI" width="350" height="233" loading="lazy" decoding="async">
+                        <div class="tech-card-overlay">
+                            <h5 class="mt-2 tech-card-title">AI</h5>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- The Playing Field Just Leveled -->
                 <div class="col-12 text-center mt-5 mb-4">
-                    <h3 class="mb-3">The Playing Field Just Leveled</h3>
+                    <h2 class="h3 mb-3">The Playing Field Just Leveled</h2>
                     <p class="lead-text">
                         With today's AI tools, small 3PLs can move faster than enterprise competitors.
                     </p>
@@ -300,7 +414,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="advantage-card h-100">
                         <div class="advantage-icon">
-                            <i class="bi-lightning-charge-fill"></i>
+                            <i class="bi-lightning-charge-fill" aria-hidden="true"></i>
                         </div>
                         <h5 class="mb-3">Speed Without the Price Tag</h5>
                         <p class="mb-0">
@@ -311,7 +425,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="advantage-card h-100">
                         <div class="advantage-icon">
-                            <i class="bi-trophy-fill"></i>
+                            <i class="bi-trophy-fill" aria-hidden="true"></i>
                         </div>
                         <h5 class="mb-3">Your Operations, Your Way</h5>
                         <p class="mb-0">
@@ -323,14 +437,14 @@
         </div>
     </section>
 
-    <section class="parralax-image"></section>
+    <section class="parallax-image"></section>
 
     <!-- ——— SERVICE PACKAGES ——— -->
     <section id="ServicePackages" class="section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3 class="text-center mb-lg-4 mb-3 mt-3">How We Partner</h3>
+                    <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">How We Partner</h2>
                     <p class="paragraph mb-5">
                         Two proven paths to operational excellence
                     </p>
@@ -347,7 +461,7 @@
                                     <div class="package-step-number">Step 1</div>
                                     <div class="package-header">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-chat-dots-fill package-icon me-2 text-coral"></i>
+                                            <i class="bi-chat-dots-fill package-icon me-2 text-coral" aria-hidden="true"></i>
                                             <h5 class="mb-0">Discovery</h5>
                                         </div>
                                         <div class="package-price">FREE</div>
@@ -364,7 +478,7 @@
                                     </div>
                                     <div class="package-footer">
                                         <div class="package-next">
-                                            <i class="bi-arrow-right me-2"></i>
+                                            <i class="bi-arrow-right me-2" aria-hidden="true"></i>
                                             Leads to Strategy Assessment
                                         </div>
                                     </div>
@@ -377,7 +491,7 @@
                                     <div class="package-step-number">Step 2</div>
                                     <div class="package-header">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-compass-fill package-icon me-2"></i>
+                                            <i class="bi-compass-fill package-icon me-2" aria-hidden="true"></i>
                                             <h5 class="mb-0">Strategy Assessment</h5>
                                         </div>
                                         <div class="package-price">$3K – $5K</div>
@@ -396,7 +510,7 @@
                                     </div>
                                     <div class="package-footer">
                                         <div class="package-next">
-                                            <i class="bi-arrow-right me-2"></i>
+                                            <i class="bi-arrow-right me-2" aria-hidden="true"></i>
                                             Blueprint for Implementation
                                         </div>
                                     </div>
@@ -409,7 +523,7 @@
                                     <div class="package-step-number">Step 3</div>
                                     <div class="package-header">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-rocket-takeoff-fill package-icon me-2"></i>
+                                            <i class="bi-rocket-takeoff-fill package-icon me-2" aria-hidden="true"></i>
                                             <h5 class="mb-0">Phased Implementation</h5>
                                         </div>
                                         <div class="package-price">$30K – $50K</div>
@@ -429,7 +543,7 @@
                                     </div>
                                     <div class="package-footer">
                                         <div class="package-cta">
-                                            <i class="bi-trophy-fill me-2"></i>
+                                            <i class="bi-trophy-fill me-2" aria-hidden="true"></i>
                                             Where transformation happens
                                         </div>
                                     </div>
@@ -453,7 +567,7 @@
                             <div class="package-card package-premium h-100">
                                 <div class="package-header">
                                     <div class="d-flex align-items-center mb-2">
-                                        <i class="bi-lightning-charge-fill package-icon me-2"></i>
+                                        <i class="bi-lightning-charge-fill package-icon me-2" aria-hidden="true"></i>
                                         <h5 class="mb-0">Custom Solution</h5>
                                     </div>
                                     <div class="package-price">Custom Pricing</div>
@@ -471,7 +585,7 @@
                                 </div>
                                 <div class="package-footer">
                                     <div class="package-cta">
-                                        <i class="bi-arrow-right-circle me-2"></i>
+                                        <i class="bi-arrow-right-circle me-2" aria-hidden="true"></i>
                                         For teams ready to move fast
                                     </div>
                                 </div>
@@ -483,7 +597,7 @@
                     <div class="row mt-5">
                         <div class="col-12 text-center">
                             <div class="package-trust">
-                                <i class="bi-shield-check me-2"></i>
+                                <i class="bi-shield-check me-2" aria-hidden="true"></i>
                                 <span><strong>Risk-Free Promise:</strong> Every engagement starts with clear success metrics and includes a 1-year bug-free guarantee.</span>
                             </div>
                         </div>
@@ -493,14 +607,14 @@
         </div>
     </section>
 
-    <section class="parralax-image"></section>
+    <section class="parallax-image"></section>
 
     <!-- ——— A MEASURED APPROACH ——— -->
     <section id="MeasuredApproach" class="section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3 class="text-center mb-lg-4 mb-3 mt-3">A Measured Approach</h3>
+                    <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">A Measured Approach</h2>
                     <p class="paragraph mb-5">
                         The guiding principles for sustainable growth and disciplined process enhancement
                     </p>
@@ -519,13 +633,13 @@
                         <div class="col-lg-6 col-12">
                             <div class="approach-card approach-navy h-100">
                                 <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-lightning-charge-fill approach-icon me-2"></i>
+                                    <i class="bi-lightning-charge-fill approach-icon me-2" aria-hidden="true"></i>
                                     <h5 class="mb-0">Progressive Enhancement</h5>
                                 </div>
                                 <p class="mb-3">Deliver consistent, iterative improvements, without waiting for a full
                                     overhaul.</p>
                                 <div class="approach-why">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2"></i>Why this
+                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
                                         matters
                                     </div>
                                     <ul class="mb-0 ps-3">
@@ -540,12 +654,12 @@
                         <div class="col-lg-6 col-12">
                             <div class="approach-card approach-coral h-100">
                                 <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-shield-fill-check approach-icon me-2"></i>
+                                    <i class="bi-shield-fill-check approach-icon me-2" aria-hidden="true"></i>
                                     <h5 class="mb-0">Built-In Guardrails</h5>
                                 </div>
                                 <p class="mb-3">New workflows run in parallel with safety fallbacks until real data proves stability.</p>
                                 <div class="approach-why">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2"></i>Why this
+                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
                                         matters
                                     </div>
                                     <ul class="mb-0 ps-3">
@@ -560,13 +674,13 @@
                         <div class="col-lg-6 col-12">
                             <div class="approach-card approach-light h-100">
                                 <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-bar-chart-fill approach-icon me-2 text-coral"></i>
+                                    <i class="bi-bar-chart-fill approach-icon me-2 text-coral" aria-hidden="true"></i>
                                     <h5 class="mb-0">Quantified Returns</h5>
                                 </div>
                                 <p class="mb-3">Financial and operational metrics are tracked phase-by-phase to prove
                                     value.</p>
                                 <div class="approach-why approach-why-light">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2"></i>Why this
+                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
                                         matters
                                     </div>
                                     <ul class="mb-0 ps-3">
@@ -594,13 +708,16 @@
             <!-- CONTACT FORM -->
             <div class="col-xl-4 col-lg-5 col-md-7 col-12 mt30">
                 <h6 class="text-white mb-lg-4 mb-3">Contact Form</h6>
-                <form id="ContactForm" class="custom-form contact-form" action="#" method="post" role="form">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name">
+                <form id="ContactForm" class="custom-form contact-form" action="#" method="post">
+                    <label for="name" class="visually-hidden">Your Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" autocomplete="name">
+                    <label for="email" class="visually-hidden">Email Address</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email Address"
-                           required>
+                           autocomplete="email" required aria-describedby="email-error">
                     <span id="email-error" class="text-danger d-none">A valid email is required to reply.</span>
+                    <label for="message" class="visually-hidden">Project Details</label>
                     <textarea class="form-control" rows="5" name="message" id="message" placeholder="Project Details"
-                              required></textarea>
+                              required aria-describedby="message-error"></textarea>
                     <span id="message-error" class="text-danger d-none">Let us know how we can help.</span>
                     <div class="col-12 submit-container">
                         <button type="submit" id="recaptcha-submit"
@@ -614,14 +731,14 @@
                         </button>
                     </div>
                 </form>
-                <div id="ContactThanksForm" class="d-none">
+                <div id="ContactThanksForm" class="d-none" aria-live="polite">
                     <p>Thanks for reaching out. We respond within 2-4 hours on business days.</p>
                 </div>
-                <div id="ContactFormFail" class="thank-you-message d-none">
+                <div id="ContactFormFail" class="thank-you-message d-none" aria-live="polite">
                     <p>Uh-oh! Something went wrong sending that message.</p>
                     <p>Please reach out via email at the following address.</p>
                     <p class="contact-email">
-                        <i class="bi-envelope-open"></i>
+                        <i class="bi-envelope-open" aria-hidden="true"></i>
                         <a href="mailto:hunter@hunterwebapps.com" target="_blank">hunter@hunterwebapps.com</a>
                     </p>
                     <p><strong>Original message:</strong></p>
@@ -643,19 +760,13 @@
                             <copyright-year></copyright-year>
                         </p>
                     </div>
-<!--                    <div class="col-lg-6 col-12 mt30">-->
-<!--                        <h6 class="text-white mb-lg-4 mb-3">Social</h6>-->
-<!--                        <ul class="social-icon">-->
-<!--                            <li><a href="https://www.linkedin.com/in/hunterwebapps/" target="_blank"-->
-<!--                                   class="social-icon-link bi-linkedin"></a></li>-->
-<!--&lt;!&ndash;                            <li><a href="https://github.com/hunterwebapps" target="_blank"&ndash;&gt;-->
-<!--&lt;!&ndash;                                   class="social-icon-link bi-github"></a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <li><a href="https://www.youtube.com/channel/UCUgsoKMYXB1W4ApTRvy3nVw" target="_blank"&ndash;&gt;-->
-<!--&lt;!&ndash;                                   class="social-icon-link bi-youtube"></a></li>&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            <li><a href="https://twitter.com/HunterWebApps" target="_blank"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                                   class="social-icon-link bi-twitter"></a></li>&ndash;&gt;-->
-<!--                        </ul>-->
-<!--                    </div>-->
+                    <div class="col-lg-6 col-12 mt30">
+                        <h6 class="text-white mb-lg-4 mb-3">Social</h6>
+                        <ul class="social-icon">
+                            <li><a href="https://www.linkedin.com/in/hunterwebapps/" target="_blank" rel="noopener noreferrer"
+                                   class="social-icon-link bi-linkedin" aria-label="Visit Hunter Web Apps on LinkedIn"></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -665,16 +776,14 @@
 <!-- ——— FLOATING PHONE CTA ——— -->
 <div id="floating-phone-cta" class="floating-phone-cta">
     <a href="tel:+14073493633" class="phone-cta-link">
-        <i class="bi-telephone-fill phone-icon"></i>
+        <i class="bi-telephone-fill phone-icon" aria-hidden="true"></i>
         <span class="phone-number">(407) 349-3633</span>
     </a>
 </div>
 
 <!-- ——— SCRIPTS ——— -->
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/moment.js"></script>
-<script src="js/moment-tz.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/components/index.js?v=1.2" type="module"></script>
 <script src="js/index.js?v=1.2"></script>
 <script defer src="https://www.google.com/recaptcha/api.js"></script>

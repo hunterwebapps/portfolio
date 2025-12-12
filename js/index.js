@@ -1,52 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initOperatingHours();
-  initRecentBlogs();
 });
 
-let categories = [];
-
 function initNavbar() {
-  const navLinks = document.querySelectorAll('[data-href]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   const navbarNav = document.getElementById('navbarNav');
   const bsNavbar = new bootstrap.Collapse(navbarNav, {
     toggle: false
   });
 
   for (const link of navLinks) {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
       bsNavbar.hide();
-      const target = link.getAttribute('data-href');
+      const target = link.getAttribute('href').substring(1);
       document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
     });
   }
 }
 
 function initOperatingHours() {
-  const timeFormat = 'HH:mm:ssZ';
-  const companyBaseTimezone = 'America/New_York';
-  const openingHour = '09:00:00';
-  const hoursOpen = 9;
+  const openHour = 9;
+  const closeHour = 18;
+  const timeZone = 'America/New_York';
 
-  const openMoment = moment.tz(`2020-01-01 ${openingHour}`, companyBaseTimezone);
-  const openHour = openMoment.format(timeFormat);
-  const closeHour = openMoment.add(hoursOpen, 'hours').format(timeFormat);
-
-  const openDate = new Date(`1970-01-01T${openHour}`);
-  const closeDate = new Date(`1970-01-01T${closeHour}`);
-
-  const localeOptions = {
+  const formatter = new Intl.DateTimeFormat([], {
     hour: 'numeric',
-    minute: '2-digit'
-  };
+    minute: '2-digit',
+    timeZone: timeZone
+  });
 
-  const localOpen = openDate.toLocaleTimeString([], localeOptions);
-  const localClose = closeDate.toLocaleTimeString([], localeOptions);
+  const open = formatter.format(new Date(2020, 0, 1, openHour, 0));
+  const close = formatter.format(new Date(2020, 0, 1, closeHour, 0));
+  const zone = new Intl.DateTimeFormat([], { timeZoneName: 'short' })
+    .formatToParts(new Date())
+    .find(p => p.type === 'timeZoneName')?.value || '';
 
-  const zoneAbbr = moment.tz(moment.tz.guess()).zoneAbbr();
-
-  const p = document.getElementById('OperatingHours');
-  p.innerHTML = `${localOpen} to ${localClose} ${zoneAbbr}`;
+  document.getElementById('OperatingHours').innerHTML = `${open} to ${close} ${zone}`;
 }
 
 async function handleSubmitContact() {
@@ -118,7 +109,7 @@ function validateContactForm() {
 }
 
 function handleContactFormFailure(ex, originalMessage) {
-  appInsights.trackException({ exception: ex });
+  console.error('Contact form submission failed:', ex);
 
   const contactFailEl = document.getElementById('ContactFormFail');
   const contactFormEl = document.getElementById('ContactForm');
@@ -129,74 +120,6 @@ function handleContactFormFailure(ex, originalMessage) {
   contactFailEl.classList.remove('d-none');
   originalMessageEl.focus();
   originalMessageEl.select();
-}
-
-async function fetchCategories() {
-  let response;
-
-  try {
-    response = await fetch('https://hunterwebapps.blog/wp-json/wp/v2/categories');
-  } catch (ex) {
-    return;
-  }
-
-  if (!response.ok) {
-    return;
-  }
-
-  categories = await response.json();
-}
-
-function getCategoryNameById(categoryId) {
-  const category = categories.find(x => x.id === categoryId);
-  return category ? category.name : 'General';
-}
-
-async function initRecentBlogs() {
-  const fetchCategoriesPromise = fetchCategories();
-  const blogPosts = document.getElementById('BlogPostContainer');
-  const blogPostsError = document.getElementById('BlogPostError');
-
-  let response;
-
-  try {
-    const responsePromise = fetch('https://hunterwebapps.blog/wp-json/wp/v2/posts');
-
-    const results = await Promise.allSettled([responsePromise, fetchCategoriesPromise]);
-
-    response = results[0].value;
-  } catch (ex) {
-    blogPosts.classList.add('d-none');
-    blogPostsError.innerText = 'Network Error. Please check your connection, and refresh your browser.';
-    blogPostsError.classList.remove('d-none');
-    return;
-  }
-
-  if (!response.ok) {
-    const response = await response.text();
-    appInsights.trackException({ exception: new Error(response) });
-    blogPosts.classList.add('d-none');
-    blogPostsError.classList.remove('d-none');
-    return;
-  }
-
-  const body = await response.json();
-
-  blogPosts.innerHTML = '';
-
-  let counter = 0;
-  for (const post of body) {
-    const blogPostEl = document.createElement('blog-post');
-    blogPostEl.setAttribute('title', post.title.rendered);
-    blogPostEl.setAttribute('link', post.link);
-    blogPostEl.setAttribute('image', post.jetpack_featured_media_url);
-    blogPostEl.setAttribute('category', getCategoryNameById(post.categories[0]));
-    blogPostEl.setAttribute('date', post.date);
-    blogPostEl.setAttribute('index', counter);
-
-    blogPosts.appendChild(blogPostEl);
-    counter++;
-  }
 }
 
 function webToLead(firstName, lastName, email, description) {
