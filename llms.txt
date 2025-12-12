@@ -1,0 +1,57 @@
+# Hunter Web Apps
+
+> Custom software development and strategic consulting for 3PL logistics providers.
+
+## What We Do
+- Strategic assessments to identify operational bottlenecks and margin opportunities
+- Custom cloud software development for warehouse and logistics operations
+- Third-party integrations (EDI, FedEx, ArcGIS, ERP systems)
+- Automation solutions tailored to logistics workflows
+- Barcode and RFID tracking systems
+- Inventory management solutions
+- Order processing and shipping logistics
+- Warehouse management systems (WMS)
+- Operational analytics and reporting
+
+## Who We Serve
+- Independent 3PL (third-party logistics) providers
+- Supply chain and warehousing companies
+- Logistics businesses seeking custom technology solutions
+- Growth-minded logistics operations looking to scale throughput
+
+## Technology Expertise
+- Custom software development (cloud-native, full-stack)
+- Process automation and workflow optimization
+- IoT integration for warehouse and fleet tracking
+- AI-powered logistics optimization
+- System integrations and API development
+
+## Engagement Models
+
+### Path 1: Transformation Journey
+1. **Discovery Call** (FREE) - 30-minute call to explore fit and identify quick wins
+2. **Strategy Assessment** ($3K-$5K) - 1-week deep dive with workflow analysis, technology gap assessment, and prioritized roadmap
+3. **Phased Implementation** ($30K-$50K per phase) - Custom development with parallel testing, training, and 1-year bug-free guarantee
+
+### Path 2: Direct to Solution
+- Custom pricing for specific integrations, emergency fixes, scaling, or migrations
+- For teams who already know exactly what they need
+
+## Differentiators
+- Exclusively focused on independent 3PLs
+- APICS CSCP Certified (Certified Supply Chain Professional)
+- ASCM Member (Association for Supply Chain Management)
+- Partnership mindset - success tied to client KPIs
+- 1-year bug-free guarantee on all implementations
+
+## Contact
+- Website: https://hunterwebapps.dev
+- Email: hunter@hunterwebapps.com
+- Phone: (407) 349-3633
+- LinkedIn: https://www.linkedin.com/in/hunterwebapps/
+- Location: Serving clients across the United States
+
+## Core Philosophy: A Measured Approach
+1. **Progressive Enhancement** - Iterative improvements without waiting for full overhauls
+2. **Built-In Guardrails** - New workflows run in parallel with safety fallbacks
+3. **Quantified Returns** - Financial and operational metrics tracked phase-by-phase
