@@ -1150,22 +1150,16 @@ strong {
 /*---------------------------------------
   RESPONSIVE STYLES
 -----------------------------------------*/
-@media screen and (max-width: 1180px) {
-  h1 {
-    font-size: 62px;
-  }
-}
-
 @media screen and (max-width: 1170px) {
   h1 {
-    font-size: 56px;
+    font-size: 3.5rem;
   }
 }
 
 
 @media screen and (max-width: 991px) {
   h1 {
-    font-size: 36px;
+    font-size: 1.75rem;
   }
 
   h2 {
