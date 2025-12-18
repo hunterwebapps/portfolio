@@ -108,6 +108,7 @@ const scoreLabels = ['Manual', 'Minimal', 'Hybrid', 'Mostly', 'Full'];
 const scores = {};
 let totalQuestions = 0;
 const STORAGE_KEY = 'hwa-scorecard-data';
+let isInitialLoad = true;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -240,18 +241,26 @@ function renderAccordion() {
 function openInitialAccordion() {
     // Check if any questions have been answered (has saved data)
     const hasAnyAnswers = categories.some(cat => scores[cat.id].some(s => s !== null));
+    const allComplete = categories.every(cat => scores[cat.id].every(s => s !== null));
 
     if (!hasAnyAnswers) {
-        // No saved data - open first accordion
+        // No saved data - open first accordion, no scroll
         const firstCollapse = document.getElementById(`collapse-${categories[0].id}`);
         if (firstCollapse) {
             const bsCollapse = new bootstrap.Collapse(firstCollapse, { toggle: false });
             bsCollapse.show();
         }
+        isInitialLoad = false;
         return;
     }
 
-    // Find first incomplete category
+    if (allComplete) {
+        // All categories complete - leave all closed, no scroll
+        isInitialLoad = false;
+        return;
+    }
+
+    // Find first incomplete category (in progress) and scroll to it
     for (const category of categories) {
         const hasUnanswered = scores[category.id].some(s => s === null);
         if (hasUnanswered) {
@@ -259,12 +268,22 @@ function openInitialAccordion() {
             if (collapseEl) {
                 const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
                 bsCollapse.show();
+
+                // Scroll to the accordion item after it opens
+                collapseEl.addEventListener('shown.bs.collapse', function onShown() {
+                    const accordionItem = collapseEl.closest('.accordion-item');
+                    if (accordionItem) {
+                        scrollToAccordionItem(accordionItem);
+                    }
+                    collapseEl.removeEventListener('shown.bs.collapse', onShown);
+                    isInitialLoad = false;
+                });
             }
             return;
         }
     }
 
-    // All categories complete - leave all closed
+    isInitialLoad = false;
 }
 
 function renderQuestionCard(category, question, qIndex) {
@@ -371,6 +390,7 @@ function setupEventListeners() {
     const accordion = document.getElementById('scorecardAccordion');
     if (accordion) {
         accordion.addEventListener('shown.bs.collapse', (e) => {
+            if (isInitialLoad) return; // Skip scroll during initial page load
             const collapseEl = e.target;
             const accordionItem = collapseEl.closest('.accordion-item');
             if (accordionItem) {
@@ -802,6 +822,7 @@ async function handleSubmit() {
         });
 
         if (response.ok) {
+            clearStorage();
             showSubmitSuccess();
         } else {
             showSubmitError();
