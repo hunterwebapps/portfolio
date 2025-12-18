@@ -1,0 +1,895 @@
+/*---------------------------------------
+  SCORECARD PAGE STYLES
+  Extends the main Hunter Web Apps design system
+-----------------------------------------*/
+
+/*---------------------------------------
+  HERO SECTION
+-----------------------------------------*/
+.scorecard-hero {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #1b2260 100%);
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.scorecard-hero h1 {
+    color: var(--white-color);
+    font-size: var(--h1-font-size);
+    margin-bottom: 0.5rem;
+}
+
+.scorecard-hero .lead {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem;
+}
+
+.scorecard-hero .hero-description {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/*---------------------------------------
+  SCORING LEGEND
+-----------------------------------------*/
+.scoring-legend {
+    background: var(--white-color);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.legend-card {
+    background: var(--section-bg-color);
+    border-radius: var(--border-radius-default);
+    padding: 1rem 1.5rem;
+}
+
+.legend-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.legend-header i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.legend-header span:first-of-type {
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark-color);
+}
+
+.legend-time {
+    margin-left: auto;
+    color: var(--p-color);
+    font-size: 0.9rem;
+}
+
+.legend-time i {
+    font-size: 0.9rem;
+    color: var(--p-color);
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 auto;
+    min-width: 180px;
+}
+
+.legend-score {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    font-size: 0.85rem;
+    color: var(--white-color);
+    flex-shrink: 0;
+}
+
+.legend-label {
+    font-size: 0.85rem;
+    color: var(--p-color);
+}
+
+/* Score Colors */
+.score-0, .legend-score.score-0 { background: #dc3545; }
+.score-1, .legend-score.score-1 { background: #fd7e14; }
+.score-2, .legend-score.score-2 { background: #ffc107; color: var(--dark-color); }
+.score-3, .legend-score.score-3 { background: #20c997; }
+.score-4, .legend-score.score-4 { background: #198754; }
+
+/*---------------------------------------
+  MAIN SCORECARD AREA
+-----------------------------------------*/
+.scorecard-main {
+    padding-top: 2rem;
+}
+
+.company-info-card {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.company-info-card .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.company-info-card .form-control {
+    border-color: var(--border-color);
+}
+
+.company-info-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(236, 139, 94, 0.25);
+}
+
+/*---------------------------------------
+  ACCORDION STYLES
+-----------------------------------------*/
+.scorecard-accordion {
+    margin-bottom: 1.5rem;
+}
+
+.scorecard-accordion .accordion-item {
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.75rem;
+    border-radius: var(--border-radius-default) !important;
+    overflow: hidden;
+}
+
+.scorecard-accordion .accordion-header {
+    margin: 0;
+}
+
+.scorecard-accordion .accordion-button {
+    padding: 1rem 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    background: var(--white-color);
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    gap: 1rem;
+}
+
+.scorecard-accordion .accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--secondary-color), #1b2260);
+    color: var(--white-color);
+    box-shadow: none;
+}
+
+.scorecard-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+.scorecard-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23717275'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.scorecard-accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.category-header-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-title i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.accordion-button:not(.collapsed) .category-title i {
+    color: var(--white-color);
+}
+
+.category-progress-bar {
+    margin-top: 0.5rem;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.category-progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .category-progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.accordion-button:not(.collapsed) .category-progress-fill {
+    background: var(--white-color);
+}
+
+.category-score-badge {
+    background: rgba(236, 139, 94, 0.15);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-semibold);
+    white-space: nowrap;
+}
+
+.accordion-button:not(.collapsed) .category-score-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white-color);
+}
+
+.scorecard-accordion .accordion-body {
+    padding: 1.25rem;
+    background: var(--section-bg-color);
+}
+
+/*---------------------------------------
+  QUESTION CARDS
+-----------------------------------------*/
+.question-card {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.question-card:last-child {
+    margin-bottom: 0;
+}
+
+.question-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.question-card.answered {
+    border-left: 4px solid var(--primary-color);
+}
+
+.question-number {
+    font-size: 0.8rem;
+    color: var(--p-color);
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+.question-text {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/*---------------------------------------
+  SCORE BUTTONS
+-----------------------------------------*/
+.score-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.score-btn {
+    flex: 1;
+    min-width: 60px;
+    padding: 0.75rem 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    background: var(--white-color);
+    color: var(--p-color);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.score-btn:hover {
+    border-color: var(--primary-color);
+    background: rgba(236, 139, 94, 0.05);
+}
+
+.score-btn.selected {
+    color: var(--white-color);
+    border-color: transparent;
+}
+
+.score-btn.selected.score-0 { background: #dc3545; }
+.score-btn.selected.score-1 { background: #fd7e14; }
+.score-btn.selected.score-2 { background: #ffc107; color: var(--dark-color); }
+.score-btn.selected.score-3 { background: #20c997; }
+.score-btn.selected.score-4 { background: #198754; }
+
+.score-btn-label {
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+}
+
+/*---------------------------------------
+  RESULTS PANEL
+-----------------------------------------*/
+.results-panel {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    padding: 1.5rem;
+    position: sticky;
+    top: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.results-header h3 {
+    font-family: var(--header-font-family);
+    font-size: var(--h4-font-size);
+    margin: 0;
+    color: var(--dark-color);
+}
+
+/*---------------------------------------
+  SCORE GAUGE
+-----------------------------------------*/
+.score-gauge-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.score-gauge {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1rem;
+}
+
+.gauge-svg {
+    transform: rotate(-90deg);
+}
+
+.gauge-background {
+    fill: none;
+    stroke: #e9ecef;
+    stroke-width: 10;
+}
+
+.gauge-progress {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+}
+
+.gauge-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gauge-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    line-height: 1;
+    font-family: var(--header-font-family);
+}
+
+.gauge-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--p-color);
+    margin-top: 0.25rem;
+}
+
+.maturity-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-default);
+    background: var(--section-bg-color);
+    border: 1px solid var(--border-color);
+}
+
+.maturity-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--p-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.maturity-value {
+    display: block;
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+}
+
+/* Maturity Level Colors */
+.maturity-badge.spreadsheet-driven {
+    background: rgba(220, 53, 69, 0.1);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+.maturity-badge.spreadsheet-driven .maturity-value { color: #dc3545; }
+
+.maturity-badge.hybrid {
+    background: rgba(253, 126, 20, 0.1);
+    border-color: rgba(253, 126, 20, 0.3);
+}
+.maturity-badge.hybrid .maturity-value { color: #fd7e14; }
+
+.maturity-badge.system-driven {
+    background: rgba(13, 110, 253, 0.1);
+    border-color: rgba(13, 110, 253, 0.3);
+}
+.maturity-badge.system-driven .maturity-value { color: #0d6efd; }
+
+.maturity-badge.integrated {
+    background: rgba(25, 135, 84, 0.1);
+    border-color: rgba(25, 135, 84, 0.3);
+}
+.maturity-badge.integrated .maturity-value { color: #198754; }
+
+/*---------------------------------------
+  PROGRESS INDICATOR
+-----------------------------------------*/
+.progress-indicator {
+    margin-bottom: 1.5rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--p-color);
+    margin-bottom: 0.5rem;
+}
+
+.progress-indicator .progress {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.progress-indicator .progress-bar {
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/*---------------------------------------
+  CATEGORY BREAKDOWN
+-----------------------------------------*/
+.category-breakdown {
+    margin-bottom: 1.5rem;
+}
+
+.category-breakdown h5 {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+.category-bar {
+    margin-bottom: 0.75rem;
+}
+
+.category-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--p-color);
+    margin-bottom: 0.25rem;
+}
+
+.category-bar-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.5rem;
+}
+
+.category-bar-score {
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark-color);
+    flex-shrink: 0;
+}
+
+.category-bar-track {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.category-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Color by percentage */
+.category-bar-fill.low { background: #dc3545; }
+.category-bar-fill.medium-low { background: #fd7e14; }
+.category-bar-fill.medium { background: #ffc107; }
+.category-bar-fill.medium-high { background: #20c997; }
+.category-bar-fill.high { background: #198754; }
+
+/*---------------------------------------
+  RESULTS GUIDANCE
+-----------------------------------------*/
+.results-guidance {
+    background: var(--section-bg-color);
+    border-radius: var(--border-radius-default);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.results-guidance h5 {
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.results-guidance h5 i {
+    color: var(--primary-color);
+}
+
+.results-guidance p {
+    font-size: 0.9rem;
+    color: var(--p-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/*---------------------------------------
+  RESULTS CTA
+-----------------------------------------*/
+.results-cta {
+    text-align: center;
+}
+
+.results-cta .btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    padding: 0.75rem 1.5rem;
+}
+
+.results-cta .btn-primary:hover:not(:disabled) {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.results-cta .btn-primary:disabled {
+    background: #adb5bd;
+    border-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.cta-subtext {
+    font-size: 0.8rem;
+    color: var(--p-color);
+    margin: 0.5rem 0 0;
+}
+
+/*---------------------------------------
+  SCORECARD ACTIONS
+-----------------------------------------*/
+.scorecard-actions-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.scorecard-actions {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.scorecard-actions-top .btn-outline-secondary,
+.scorecard-actions .btn-outline-secondary {
+    color: var(--p-color);
+    border-color: var(--border-color);
+}
+
+.scorecard-actions-top .btn-outline-secondary:hover,
+.scorecard-actions .btn-outline-secondary:hover {
+    background: var(--section-bg-color);
+    color: var(--dark-color);
+}
+
+/*---------------------------------------
+  SUBMIT MODAL
+-----------------------------------------*/
+.modal-content {
+    border-radius: var(--border-radius-default);
+    border: none;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--secondary-color), #1b2260);
+    color: var(--white-color);
+    border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+}
+
+.modal-header .modal-title {
+    color: var(--white-color);
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-intro {
+    color: var(--p-color);
+    margin-bottom: 1.5rem;
+}
+
+.results-summary-preview {
+    background: var(--section-bg-color);
+    border-radius: var(--border-radius-default);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.results-summary-preview h6 {
+    font-size: 0.85rem;
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary-row:last-child {
+    margin-bottom: 0;
+}
+
+.summary-row span {
+    color: var(--p-color);
+}
+
+.summary-row strong {
+    color: var(--dark-color);
+}
+
+.submit-success-icon,
+.submit-error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+#submit-success h4,
+#submit-error h4 {
+    margin-bottom: 0.75rem;
+}
+
+/*---------------------------------------
+  FOOTER
+-----------------------------------------*/
+.scorecard-footer {
+    background: var(--secondary-color);
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.scorecard-footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.footer-brand {
+    color: var(--white-color);
+    font-weight: var(--font-weight-semibold);
+}
+
+.footer-brand:hover {
+    color: var(--primary-color);
+}
+
+.footer-phone {
+    color: var(--white-color);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.1rem;
+}
+
+.footer-phone:hover {
+    color: var(--primary-color);
+}
+
+/*---------------------------------------
+  RESPONSIVE STYLES
+-----------------------------------------*/
+@media screen and (max-width: 991px) {
+    .scorecard-hero h1 {
+        font-size: 2rem;
+    }
+
+    .scorecard-hero .lead {
+        font-size: 1.25rem;
+    }
+
+    .scorecard-hero .hero-description {
+        font-size: 1rem;
+    }
+
+    .scoring-legend {
+        position: relative;
+        top: 0;
+    }
+
+    .legend-items {
+        gap: 0.75rem;
+    }
+
+    .legend-item {
+        min-width: 150px;
+    }
+
+    .results-panel {
+        position: relative;
+        top: 0;
+        margin-top: 2rem;
+        order: -1;
+    }
+
+    .scorecard-main .row {
+        flex-direction: column-reverse;
+    }
+
+    .score-gauge {
+        width: 120px;
+        height: 120px;
+    }
+
+    .gauge-value {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .scorecard-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .scorecard-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .legend-time {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .score-btn {
+        min-width: 50px;
+        padding: 0.5rem 0.35rem;
+        font-size: 1rem;
+    }
+
+    .score-btn-label {
+        display: none;
+    }
+
+    .category-breakdown {
+        display: none;
+    }
+
+    .question-card {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .legend-items {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .legend-item {
+        min-width: auto;
+    }
+
+    .score-buttons {
+        gap: 0.35rem;
+    }
+
+    .score-btn {
+        min-width: 45px;
+        padding: 0.5rem 0.25rem;
+    }
+}
+
+/*---------------------------------------
+  PRINT STYLES
+-----------------------------------------*/
+@media print {
+    .navbar,
+    .scoring-legend,
+    .scorecard-actions,
+    .results-cta,
+    .scorecard-footer {
+        display: none !important;
+    }
+
+    .results-panel {
+        position: relative !important;
+        top: 0 !important;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+
+    .scorecard-accordion .accordion-collapse {
+        display: block !important;
+    }
+
+    .scorecard-accordion .accordion-button::after {
+        display: none !important;
+    }
+
+    .score-btn.selected {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
