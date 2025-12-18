@@ -2,7 +2,8 @@
   "routes": [
     {
       "route": "/scorecard",
-      "rewrite": "/scorecard.html"
+      "rewrite": "/scorecard.html",
+      "statusCode": 200
     }
   ]
 }
