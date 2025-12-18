@@ -245,12 +245,14 @@ function openInitialAccordion() {
 
     if (!hasAnyAnswers) {
         // No saved data - open first accordion, no scroll
+        // isInitialLoad stays true; global listener will skip scroll and clear flag
         const firstCollapse = document.getElementById(`collapse-${categories[0].id}`);
         if (firstCollapse) {
             const bsCollapse = new bootstrap.Collapse(firstCollapse, { toggle: false });
             bsCollapse.show();
+        } else {
+            isInitialLoad = false;
         }
-        isInitialLoad = false;
         return;
     }
 
@@ -261,6 +263,8 @@ function openInitialAccordion() {
     }
 
     // Find first incomplete category (in progress) and scroll to it
+    // Clear flag BEFORE opening so the global listener will scroll
+    isInitialLoad = false;
     for (const category of categories) {
         const hasUnanswered = scores[category.id].some(s => s === null);
         if (hasUnanswered) {
@@ -268,22 +272,10 @@ function openInitialAccordion() {
             if (collapseEl) {
                 const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
                 bsCollapse.show();
-
-                // Scroll to the accordion item after it opens
-                collapseEl.addEventListener('shown.bs.collapse', function onShown() {
-                    const accordionItem = collapseEl.closest('.accordion-item');
-                    if (accordionItem) {
-                        scrollToAccordionItem(accordionItem);
-                    }
-                    collapseEl.removeEventListener('shown.bs.collapse', onShown);
-                    isInitialLoad = false;
-                });
             }
             return;
         }
     }
-
-    isInitialLoad = false;
 }
 
 function renderQuestionCard(category, question, qIndex) {
@@ -390,7 +382,11 @@ function setupEventListeners() {
     const accordion = document.getElementById('scorecardAccordion');
     if (accordion) {
         accordion.addEventListener('shown.bs.collapse', (e) => {
-            if (isInitialLoad) return; // Skip scroll during initial page load
+            if (isInitialLoad) {
+                // Skip scroll during initial page load, then clear the flag
+                isInitialLoad = false;
+                return;
+            }
             const collapseEl = e.target;
             const accordionItem = collapseEl.closest('.accordion-item');
             if (accordionItem) {
