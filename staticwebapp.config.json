@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "route": "/scorecard",
+      "rewrite": "/scorecard.html"
+    }
+  ]
+}
