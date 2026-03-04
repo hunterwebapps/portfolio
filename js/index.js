@@ -73,11 +73,22 @@ async function handleSubmitContact() {
       mode: 'cors',
     });
 
-    if (!emailResponse.ok) {
-      const errorText = await emailResponse.text();
-      throw new Error(errorText || 'Submission failed');
+    const serverErrorEl = document.getElementById('server-error');
+
+    if (emailResponse.status === 400) {
+      const raw = await emailResponse.text();
+      const errorText = raw.replace(/^"|"$/g, '');
+      serverErrorEl.textContent = errorText || 'Please check your email and try again.';
+      serverErrorEl.classList.remove('d-none');
+      submitLoading.classList.add('d-none');
+      return;
     }
 
+    if (!emailResponse.ok) {
+      throw new Error('Submission failed');
+    }
+
+    serverErrorEl.classList.add('d-none');
     contactForm.classList.add('d-none');
     formThanks.classList.remove('d-none');
 
@@ -104,8 +115,11 @@ async function handleSubmitContact() {
 function validateContactForm() {
   const emailEl = document.getElementById('email');
   const emailErrorEl = document.getElementById('email-error');
+  const serverErrorEl = document.getElementById('server-error');
   const messageEl = document.getElementById('message');
   const messageErrorEl = document.getElementById('message-error');
+
+  serverErrorEl.classList.add('d-none');
 
   let isValid = true;
 
