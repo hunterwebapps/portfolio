@@ -55,6 +55,7 @@ async function handleSubmitContact() {
   const name = document.getElementById('name').value;
   const names = name.split(' ');
   const email = document.getElementById('email').value;
+  const confirmEmail = document.getElementById('confirm_email').value;
   const message = document.getElementById('message').value;
 
   try {
@@ -66,29 +67,33 @@ async function handleSubmitContact() {
         type: 'PortfolioContact',
         name,
         email,
+        confirmEmail,
         message,
       }),
       mode: 'cors',
     });
 
-    if (emailResponse.ok) {
-      contactForm.classList.add('d-none');
-      formThanks.classList.remove('d-none');
-
-      // Tracking
-      HWA_TRACKING.identifyVisitor(email, { firstname: names.at(0), lastname: names.at(-1) });
-      HWA_TRACKING.trackHubSpotEvent('pe_contact_form_submit');
-      HWA_TRACKING.pushDataLayerEvent('contact_form_submit', { formType: 'contact', userEmail: email });
-      HWA_TRACKING.sendToClayWebhook(Object.assign({
-        source: 'contact_form',
-        firstName: names.at(0),
-        lastName: names.at(-1),
-        email: email,
-        message: message,
-        pageUrl: window.location.href,
-        timestamp: new Date().toISOString()
-      }, HWA_TRACKING.getUtmParams()));
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text();
+      throw new Error(errorText || 'Submission failed');
     }
+
+    contactForm.classList.add('d-none');
+    formThanks.classList.remove('d-none');
+
+    // Tracking
+    HWA_TRACKING.identifyVisitor(email, { firstname: names.at(0), lastname: names.at(-1) });
+    HWA_TRACKING.trackHubSpotEvent('pe_contact_form_submit');
+    HWA_TRACKING.pushDataLayerEvent('contact_form_submit', { formType: 'contact', userEmail: email });
+    HWA_TRACKING.sendToClayWebhook(Object.assign({
+      source: 'contact_form',
+      firstName: names.at(0),
+      lastName: names.at(-1),
+      email: email,
+      message: message,
+      pageUrl: window.location.href,
+      timestamp: new Date().toISOString()
+    }, HWA_TRACKING.getUtmParams()));
 
     submitLoading.classList.add('d-none');
   } catch (ex) {
