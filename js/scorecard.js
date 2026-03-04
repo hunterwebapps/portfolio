@@ -109,6 +109,8 @@ const scores = {};
 let totalQuestions = 0;
 const STORAGE_KEY = 'hwa-scorecard-data';
 let isInitialLoad = true;
+let scorecardStarted = false;
+let scorecardCompleteFired = false;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -420,6 +422,13 @@ function handleScoreClick(btn) {
     // Update state
     scores[categoryId][questionIndex] = score;
 
+    // Track scorecard start on first-ever answer
+    if (!scorecardStarted) {
+        scorecardStarted = true;
+        HWA_TRACKING.pushDataLayerEvent('scorecard_start');
+        HWA_TRACKING.trackHubSpotEvent('pe_scorecard_start');
+    }
+
     // Update UI - remove selected from siblings
     const questionCard = btn.closest('.question-card');
     questionCard.querySelectorAll('.score-btn').forEach(b => b.classList.remove('selected'));
@@ -614,6 +623,18 @@ function updateSubmitButton() {
     const minRequired = Math.ceil(totalQuestions * 0.5);
     submitBtn.disabled = answered < minRequired;
 
+    // Track scorecard complete (fire once)
+    if (answered === totalQuestions && !scorecardCompleteFired) {
+        scorecardCompleteFired = true;
+        var overallScore = document.getElementById('overall-score')?.textContent || '0';
+        var maturity = document.getElementById('maturity-level')?.textContent || '';
+        HWA_TRACKING.pushDataLayerEvent('scorecard_complete', {
+            overallScore: overallScore,
+            maturityLevel: maturity
+        });
+        HWA_TRACKING.trackHubSpotEvent('pe_scorecard_complete');
+    }
+
     // Update button text based on completion
     if (answered === totalQuestions) {
         submitBtn.innerHTML = '<i class="bi-send me-2" aria-hidden="true"></i>Get Free Analysis';
@@ -694,6 +715,10 @@ function resetScorecard() {
 
     // Clear localStorage
     clearStorage();
+
+    // Reset tracking flags
+    scorecardStarted = false;
+    scorecardCompleteFired = false;
 
     // Collapse all accordions except first
     categories.forEach((category, index) => {
@@ -820,6 +845,28 @@ async function handleSubmit() {
         if (response.ok) {
             clearStorage();
             showSubmitSuccess();
+
+            // Tracking
+            HWA_TRACKING.identifyVisitor(email, { company: companyName });
+            HWA_TRACKING.trackHubSpotEvent('pe_scorecard_submit');
+            HWA_TRACKING.pushDataLayerEvent('scorecard_submit', {
+                formType: 'scorecard',
+                userEmail: email,
+                companyName: companyName,
+                overallScore: overallPercentage,
+                maturityLevel: maturityLevel
+            });
+            HWA_TRACKING.sendToClayWebhook(Object.assign({
+                source: 'scorecard',
+                email: email,
+                phone: phone,
+                companyName: companyName,
+                overallScore: overallPercentage,
+                maturityLevel: maturityLevel,
+                categoryResults: categoryResults,
+                pageUrl: window.location.href,
+                timestamp: new Date().toISOString()
+            }, HWA_TRACKING.getUtmParams()));
         } else {
             showSubmitError();
         }

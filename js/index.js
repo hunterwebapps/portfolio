@@ -74,6 +74,20 @@ async function handleSubmitContact() {
     if (emailResponse.ok) {
       contactForm.classList.add('d-none');
       formThanks.classList.remove('d-none');
+
+      // Tracking
+      HWA_TRACKING.identifyVisitor(email, { firstname: names.at(0), lastname: names.at(-1) });
+      HWA_TRACKING.trackHubSpotEvent('pe_contact_form_submit');
+      HWA_TRACKING.pushDataLayerEvent('contact_form_submit', { formType: 'contact', userEmail: email });
+      HWA_TRACKING.sendToClayWebhook(Object.assign({
+        source: 'contact_form',
+        firstName: names.at(0),
+        lastName: names.at(-1),
+        email: email,
+        message: message,
+        pageUrl: window.location.href,
+        timestamp: new Date().toISOString()
+      }, HWA_TRACKING.getUtmParams()));
     }
 
     submitLoading.classList.add('d-none');
