@@ -637,9 +637,9 @@ function updateSubmitButton() {
 
     // Update button text based on completion
     if (answered === totalQuestions) {
-        submitBtn.innerHTML = '<i class="bi-send me-2" aria-hidden="true"></i>Get Free Analysis';
+        submitBtn.innerHTML = '<i class="bi-send me-2" aria-hidden="true"></i>Share Results';
     } else if (answered >= minRequired) {
-        submitBtn.innerHTML = '<i class="bi-send me-2" aria-hidden="true"></i>Get Free Analysis';
+        submitBtn.innerHTML = '<i class="bi-send me-2" aria-hidden="true"></i>Share Results';
     }
 }
 
@@ -653,7 +653,7 @@ function updateGuidanceText() {
     });
 
     if (answered === 0) {
-        guidanceText.textContent = 'Complete the assessment to see personalized recommendations.';
+        guidanceText.textContent = 'Complete the assessment to see where it makes sense to dig deeper.';
         return;
     }
 

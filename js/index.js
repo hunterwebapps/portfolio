@@ -59,8 +59,6 @@ async function handleSubmitContact() {
   const message = document.getElementById('message').value;
 
   try {
-    webToLead(names.at(0), names.at(-1), email, message);
-
     const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
       method: 'POST',
       body: JSON.stringify({
@@ -89,6 +87,9 @@ async function handleSubmitContact() {
     }
 
     serverErrorEl.classList.add('d-none');
+
+    webToLead(names.at(0), names.at(-1), email, message);
+
     contactForm.classList.add('d-none');
     formThanks.classList.remove('d-none');
 
