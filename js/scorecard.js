@@ -10,11 +10,9 @@ const categories = [
         name: 'Order-to-Ship',
         icon: 'bi-truck',
         questions: [
-            'Order intake is captured once (no re-keying from email/PDF/spreadsheets).',
-            'Customer-specific routing, labeling, and packing rules are enforced automatically.',
-            'Pick/pack tasks are system-directed (not printed lists or spreadsheet work queues).',
-            'Shipping labels/manifests are generated from an integrated workflow (not copy/paste).',
-            'Exceptions (shorts, substitutions, holds) are tracked in-system with clear resolution paths.'
+            'Orders flow from intake to shipping labels without manual re-keying or copy/paste between systems.',
+            'Pick/pack tasks, routing rules, and customer-specific requirements are system-directed (not printed lists or tribal knowledge).',
+            'Exceptions (shorts, holds, substitutions) are caught by system guardrails and tracked with clear resolution paths.'
         ]
     },
     {
@@ -22,10 +20,9 @@ const categories = [
         name: 'Receiving & Putaway',
         icon: 'bi-box-seam',
         questions: [
-            'Inbound appointments/ASNs are captured and accessible to receiving teams.',
-            'Receiving is scan-driven with system validation (SKU/lot/qty).',
-            'Putaway rules are system-directed (locations, constraints, velocity).',
-            'Discrepancies (over/short/damage) are logged and communicated without spreadsheets.'
+            'Inbound receipts are scan-driven with ASN validation (SKU, lot, qty) — not paper-based.',
+            'Putaway is system-directed based on location rules, constraints, and velocity.',
+            'Receiving discrepancies (over/short/damage) are logged and communicated in-system.'
         ]
     },
     {
@@ -33,10 +30,9 @@ const categories = [
         name: 'Inventory Accuracy',
         icon: 'bi-clipboard-check',
         questions: [
-            'Cycle counting is planned and executed in-system with variance reporting.',
-            'Lot/serial/expiry tracking is supported where required (without manual logs).',
-            'Inventory adjustments require reason codes/approvals and are auditable.',
-            'Inventory status/holds (QA, quarantine, damaged) are managed consistently in-system.'
+            'Cycle counts are planned, executed, and variance-reported in-system.',
+            'Lot, serial, expiry, and inventory holds (QA, quarantine, damaged) are tracked in-system — not manual logs.',
+            'Inventory adjustments require reason codes and approvals with a clear audit trail.'
         ]
     },
     {
@@ -44,10 +40,9 @@ const categories = [
         name: 'Billing & Finance',
         icon: 'bi-currency-dollar',
         questions: [
-            'Billable events (storage, handling, VAS) are captured automatically at the point of work.',
-            'Customer invoices are generated from system data (minimal manual edits).',
-            'Accessorials and exceptions (rework, relabel, special handling) are billed consistently.',
-            'Disputes/chargebacks can be supported with system evidence (timestamps, scans, logs).'
+            'Billable events, accessorials, and VAS charges are captured automatically at the point of work.',
+            'Customer invoices are generated from system data with minimal manual edits.',
+            'Disputes and chargebacks can be supported with system evidence (timestamps, scans, logs).'
         ]
     },
     {
@@ -55,9 +50,8 @@ const categories = [
         name: 'Customer Requirements & SLAs',
         icon: 'bi-people',
         questions: [
-            'SLAs are defined and measured (cutoffs, ship windows, accuracy) by customer.',
-            'New customer onboarding has a repeatable playbook and system configuration steps.',
-            'Customer reporting requirements are met without manual spreadsheet assembly.'
+            'SLAs are defined, measured, and reported by customer without manual spreadsheet assembly.',
+            'New customer onboarding follows a repeatable playbook with standard system configuration steps.'
         ]
     },
     {
@@ -65,49 +59,39 @@ const categories = [
         name: 'Integrations & Data Flow',
         icon: 'bi-diagram-3',
         questions: [
-            'WMS/ERP/EDI/Shipping systems are integrated (near real-time, minimal manual transfers).',
-            'Master data changes (items, UOMs, customers) have clear ownership and sync rules.',
-            'Data quality checks exist (duplicates, missing fields) before data hits operations.',
-            'Operational data is available for analytics without manual exports.'
+            'WMS, ERP, EDI, and shipping systems are integrated with near-real-time data flow.',
+            'Master data changes have clear ownership, sync rules, and quality checks before reaching operations.',
+            'System changes and updates have defined rollback and contingency plans.'
         ]
     },
     {
-        id: 'reporting',
-        name: 'Reporting & Analytics',
+        id: 'reporting-productivity',
+        name: 'Reporting & Productivity',
         icon: 'bi-graph-up',
         questions: [
-            'Daily operational KPIs are visible without manual spreadsheet consolidation.',
-            'You can attribute labor/time to customers, workflows, or value-added services.',
-            'Root-cause analysis is possible (where errors happened, who/when/why).'
-        ]
-    },
-    {
-        id: 'exception-management',
-        name: 'Exception Management',
-        icon: 'bi-exclamation-triangle',
-        questions: [
-            'Most "fires" are preventable with system guardrails and alerts (not tribal knowledge).',
-            'There is a defined rollback/contingency for new process changes and system updates.'
-        ]
-    },
-    {
-        id: 'labor-productivity',
-        name: 'Labor & Productivity',
-        icon: 'bi-person-workspace',
-        questions: [
-            'Labor standards exist and are measured (units/hour, touches/order, dock-to-stock time).',
-            'Work is balanced across waves/teams using system visibility (not ad hoc dispatch).'
+            'Operational KPIs and analytics are available in real time — no manual exports or spreadsheet consolidation.',
+            'Labor standards exist and are measured (units/hour, dock-to-stock), with time attributable to customers and services.',
+            'Root-cause analysis and work balancing are possible using system data (who/when/why, wave planning).'
         ]
     }
 ];
 
 // Score button labels
-const scoreLabels = ['Manual', 'Minimal', 'Hybrid', 'Mostly', 'Full'];
+const scoreLabels = ['Spreadsheets / Email', 'Mostly Manual', 'System + Workarounds', 'Mostly Systemized', 'Fully Integrated'];
+
+// Score button tooltips
+const scoreTooltips = [
+    'Process runs on spreadsheets, email, or paper',
+    'Some system use but mostly manual steps',
+    'System exists but frequent workarounds needed',
+    'System-driven with rare manual overrides',
+    'End-to-end integrated and automated'
+];
 
 // State
 const scores = {};
 let totalQuestions = 0;
-const STORAGE_KEY = 'hwa-scorecard-data';
+const STORAGE_KEY = 'hwa-scorecard-data-v2';
 let isInitialLoad = true;
 let scorecardStarted = false;
 let scorecardCompleteFired = false;
@@ -293,8 +277,9 @@ function renderQuestionCard(category, question, qIndex) {
                             data-category="${category.id}"
                             data-question="${qIndex}"
                             data-score="${score}"
+                            title="${scoreTooltips[score]}"
                             aria-label="Score ${score}: ${scoreLabels[score]}">
-                        <span class="score-value">${score}</span>
+                        <span class="score-badge">${score}</span>
                         <span class="score-btn-label">${scoreLabels[score]}</span>
                     </button>
                 `).join('')}
