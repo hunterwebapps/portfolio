@@ -808,12 +808,20 @@ async function handleSubmit() {
     const message = buildResultsMessage(companyName, assessmentDate, overallPercentage, maturityLevel, categoryResults);
 
     try {
+        // Get reCAPTCHA token
+        const recaptchaToken = await new Promise((resolve, reject) => {
+            grecaptcha.enterprise.ready(async () => {
+                resolve(await grecaptcha.enterprise.execute('6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9', { action: 'CONTACT' }));
+            });
+        });
+
         // Submit to Salesforce WebToLead
         webToLead(email, phone, companyName, message);
 
         // Submit to Azure email endpoint
         const response = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
             method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 type: 'ScorecardSubmission',
                 email: email,
@@ -822,7 +830,8 @@ async function handleSubmit() {
                 message: message,
                 overallScore: overallPercentage,
                 maturityLevel: maturityLevel,
-                categoryResults: categoryResults
+                categoryResults: categoryResults,
+                recaptchaToken: recaptchaToken
             }),
             mode: 'cors',
         });
