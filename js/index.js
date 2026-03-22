@@ -40,7 +40,9 @@ function initOperatingHours() {
   document.getElementById('OperatingHours').innerHTML = `${open} to ${close} ${zone}`;
 }
 
-async function handleSubmitContact() {
+async function handleSubmitContact(e) {
+  e.preventDefault();
+
   if (!validateContactForm()) {
     return;
   }
@@ -59,6 +61,12 @@ async function handleSubmitContact() {
   const message = document.getElementById('message').value;
 
   try {
+    const token = await new Promise((resolve) => {
+      grecaptcha.enterprise.ready(async () => {
+        resolve(await grecaptcha.enterprise.execute('6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9', { action: 'CONTACT' }));
+      });
+    });
+
     const emailResponse = await fetch('https://hunterwebservices-prod.azurewebsites.net/api/SendEmail', {
       method: 'POST',
       body: JSON.stringify({
@@ -67,6 +75,7 @@ async function handleSubmitContact() {
         email,
         confirmEmail,
         message,
+        recaptchaToken: token,
       }),
       mode: 'cors',
     });
