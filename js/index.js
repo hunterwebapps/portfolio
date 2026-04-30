@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initOperatingHours();
+  initRevealOnScroll();
+  initNavbarScrollState();
+  initActiveSectionHighlight();
 });
 
 function initNavbar() {
@@ -18,6 +21,56 @@ function initNavbar() {
       document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
     });
   }
+}
+
+function initRevealOnScroll() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || els.length === 0) {
+    els.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    }
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+}
+
+function initNavbarScrollState() {
+  const nav = document.querySelector('.navbar');
+  if (!nav) return;
+  const update = () => {
+    if (window.scrollY > 12) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+}
+
+function initActiveSectionHighlight() {
+  const sections = ['Home', 'AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'Contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  const links = new Map(
+    Array.from(document.querySelectorAll('.navbar-nav .nav-link[href^="#"]'))
+      .map(a => [a.getAttribute('href').substring(1), a])
+  );
+  if (!('IntersectionObserver' in window) || sections.length === 0) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      const link = links.get(entry.target.id);
+      if (!link) continue;
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.navbar-nav .nav-link.active').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    }
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  sections.forEach(s => io.observe(s));
 }
 
 function initOperatingHours() {

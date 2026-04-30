@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ec8b5e">
+    <meta name="theme-color" content="#0A0E2E">
 
-    <!-- ——— PRECONNECT (critical resources only) ——— -->
+    <!-- ---PRECONNECT (critical resources only) ----->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://use.typekit.net" crossorigin>
     <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://p.typekit.net/p.css?s=1&k=jgk1kms&ht=tk&f=175.305&a=104673495&app=typekit&e=css" as="style">
     <!-- DNS prefetch for deferred/late resources -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -18,7 +20,7 @@
     <link rel="dns-prefetch" href="https://webto.salesforce.com">
     <link rel="dns-prefetch" href="https://js.hs-scripts.com">
 
-    <!-- ——— META & SOCIAL ——— -->
+    <!-- ---META & SOCIAL ----->
     <meta name="description"
           content="Hunter Web Apps partners with 3PL and Supply-Chain providers to uncover margin-boosting opportunities and build the custom cloud software that turns them into reality."/>
     <meta name="author" content="Hunter Web Apps">
@@ -38,7 +40,7 @@
     <meta name="twitter:description"
           content="Partner with specialists who understand logistics and turn opportunity into software-powered results.">
 
-    <!-- ——— STRUCTURED DATA ——— -->
+    <!-- ---STRUCTURED DATA ----->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -154,12 +156,13 @@
 
     <title>Hunter Web Apps | Custom Software & Strategy for 3PLs</title>
 
-    <!-- ——— SCRIPTS & STYLES ——— -->
+    <!-- ---SCRIPTS & STYLES ----->
     <script src="js/google-tag-manager.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/typekit.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=2.0">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -183,8 +186,8 @@
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 
-<!-- ——— NAV BAR ——— -->
-<nav id="Home" class="navbar navbar-expand-lg shadow-lg">
+<!-- ---NAV BAR ----->
+<nav id="Home" class="navbar navbar-expand-lg">
     <div class="container navbar-container">
         <a class="navbar-brand" href="/">
             <img src="images/main-mixed.svg" alt="Hunter Web Apps" class="logo" width="135" height="40"/>
@@ -197,9 +200,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#AboutUs">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#AboutUs">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="#ServicePackages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ServicePackages">Engagement</a></li>
                 <li class="nav-item"><a class="nav-link" href="#MeasuredApproach">Approach</a></li>
                 <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
@@ -209,533 +212,571 @@
 </nav>
 
 <main id="main-content">
-    <!-- ——— HERO ——— -->
+
+    <!-- ---HERO ----->
     <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col-12 mt-1 text-center">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-eyebrow">
+                        <span class="dot" aria-hidden="true"></span>
+                        <span>For independent 3PL &amp; supply-chain operators</span>
+                    </div>
                     <h1>
-                        <span class="text-white">Custom Software +&nbsp;Strategy</span><br>
-                        for High-Performance Logistics
+                        Custom Software<br>
+                        <span class="accent">+&nbsp;Strategy</span><br>
+                        <span class="line-2">for High-Performance Logistics.</span>
                     </h1>
-                    <p class="lead mt-3 mb-2">
+                    <p class="lead">
                         Identify bottlenecks, unlock new margin, and scale throughput
                         with a partner who turns opportunities into working code.
                     </p>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">
+                            <span class="hero-meta-label">Engagements</span>
+                            <span class="hero-meta-value">$3K – $50K</span>
+                        </div>
+                        <div class="hero-meta-item">
+                            <span class="hero-meta-label">Assessment</span>
+                            <span class="hero-meta-value">1&#8209;week deep dive</span>
+                        </div>
+                        <div class="hero-meta-item">
+                            <span class="hero-meta-label">Guarantee</span>
+                            <span class="hero-meta-value">1&#8209;year bug&#8209;free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-viz-wrap" aria-hidden="true">
+                    <svg class="hero-viz" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="pulsePath1" d="M 300 300 L 473 200 Q 540 130 473 200" />
+                        </defs>
+
+                        <!-- Grid lines -->
+                        <g>
+                            <line class="grid-line" x1="0" y1="300" x2="600" y2="300"/>
+                            <line class="grid-line" x1="300" y1="0" x2="300" y2="600"/>
+                            <line class="grid-line" x1="80" y1="80" x2="520" y2="520" opacity="0.4"/>
+                            <line class="grid-line" x1="80" y1="520" x2="520" y2="80" opacity="0.4"/>
+                        </g>
+
+                        <!-- Reference rings -->
+                        <circle class="ring" cx="300" cy="300" r="200"/>
+                        <circle class="ring" cx="300" cy="300" r="260"/>
+
+                        <!-- Hub spokes -->
+                        <path class="path path-anim"          d="M 300 300 L 473 200"/>
+                        <path class="path path-anim delay-1"  d="M 300 300 L 300 100"/>
+                        <path class="path path-anim delay-2"  d="M 300 300 L 127 200"/>
+                        <path class="path path-anim delay-3"  d="M 300 300 L 127 400"/>
+                        <path class="path path-anim delay-4"  d="M 300 300 L 300 500"/>
+                        <path class="path path-anim delay-2"  d="M 300 300 L 473 400"/>
+
+                        <!-- Inter-node curves -->
+                        <path class="path alt path-anim delay-2" d="M 473 200 Q 410 130 300 100"/>
+                        <path class="path alt path-anim delay-3" d="M 300 100 Q 195 135 127 200"/>
+                        <path class="path alt path-anim delay-4" d="M 127 200 Q 60 300 127 400"/>
+                        <path class="path alt path-anim delay-1" d="M 127 400 Q 195 470 300 500"/>
+                        <path class="path alt path-anim delay-2" d="M 300 500 Q 410 470 473 400"/>
+                        <path class="path alt path-anim delay-3" d="M 473 400 Q 540 300 473 200"/>
+
+                        <!-- Hub -->
+                        <g class="delay-a">
+                            <circle class="node hub" cx="300" cy="300" r="20"/>
+                            <text x="300" y="304" text-anchor="middle" dy=".35em"
+                                  style="font-family: var(--mono-font-family); font-size: 9px; letter-spacing: 0.1em; fill: #0A0E2E; font-weight: 500;">HQ</text>
+                        </g>
+
+                        <!-- Facility nodes with labels -->
+                        <g class="delay-b">
+                            <circle class="node" cx="473" cy="200" r="10"/>
+                            <text class="node-num" x="490" y="195">01</text>
+                            <text class="node-label" x="490" y="208">CUSTOMERS</text>
+                        </g>
+                        <g class="delay-c">
+                            <circle class="node" cx="300" cy="100" r="10"/>
+                            <text class="node-num" x="316" y="95">02</text>
+                            <text class="node-label" x="316" y="108">WMS</text>
+                        </g>
+                        <g class="delay-d">
+                            <circle class="node" cx="127" cy="200" r="10"/>
+                            <text class="node-num" x="110" y="195" text-anchor="end">03</text>
+                            <text class="node-label" x="110" y="208" text-anchor="end">EDI / API</text>
+                        </g>
+                        <g class="delay-e">
+                            <circle class="node" cx="127" cy="400" r="10"/>
+                            <text class="node-num" x="110" y="395" text-anchor="end">04</text>
+                            <text class="node-label" x="110" y="408" text-anchor="end">INVENTORY</text>
+                        </g>
+                        <g class="delay-f">
+                            <circle class="node" cx="300" cy="500" r="10"/>
+                            <text class="node-num" x="316" y="495">05</text>
+                            <text class="node-label" x="316" y="508">CARRIERS</text>
+                        </g>
+                        <g class="delay-b">
+                            <circle class="node" cx="473" cy="400" r="10"/>
+                            <text class="node-num" x="490" y="395">06</text>
+                            <text class="node-label" x="490" y="408">REPORTING</text>
+                        </g>
+
+                        <!-- Pulses traveling along spokes -->
+                        <circle class="pulse" r="3.5" style="offset-path: path('M 300 300 L 473 200'); offset-distance: 0%; animation: pulse-travel-1 3.6s linear 2.6s infinite;"/>
+                        <circle class="pulse" r="3.5" style="offset-path: path('M 300 300 L 127 400'); offset-distance: 0%; animation: pulse-travel-1 3.6s linear 3.4s infinite;"/>
+                        <circle class="pulse" r="3.5" style="offset-path: path('M 300 300 L 300 100'); offset-distance: 0%; animation: pulse-travel-1 3.6s linear 4.2s infinite;"/>
+
+                        <!-- Legend -->
+                        <g>
+                            <text class="node-num" x="20" y="30">FIG. 01</text>
+                            <text class="node-label" x="20" y="44">OPERATIONS GRAPH</text>
+                        </g>
+                        <g>
+                            <text class="node-num" x="580" y="588" text-anchor="end">N→</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ——— PAIN POINTS / PROBLEM AWARENESS ——— -->
+    <!-- ---DIAGNOSIS ----->
     <section class="section section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <h2 class="h3 mb-3">Sound Familiar?</h2>
-                    <p class="paragraph mb-5">You're not the only one facing these challenges</p>
+            <header class="section-header">
+                <div>
+                    <span class="eyebrow">02 / Diagnosis</span>
+                    <h2 class="section-title">Sound&nbsp;Familiar?</h2>
+                </div>
+                <p class="lede">Four patterns we hear over and over from operators. If any sound like your shop, the tech is the bottleneck. Not your team.</p>
+            </header>
+
+            <div class="diagnosis-list">
+                <div class="diagnosis-item reveal">
+                    <span class="diagnosis-num">01</span>
+                    <div class="diagnosis-icon">
+                        <i class="bi-file-spreadsheet" aria-hidden="true"></i>
+                    </div>
+                    <p class="diagnosis-text">
+                        If your team's spending more time in spreadsheets than moving freight, you're not alone.
+                    </p>
+                </div>
+                <div class="diagnosis-item reveal">
+                    <span class="diagnosis-num">02</span>
+                    <div class="diagnosis-icon">
+                        <i class="bi-sliders" aria-hidden="true"></i>
+                    </div>
+                    <p class="diagnosis-text">
+                        Your software vendor says it's "customizable," but you can't customize what actually matters.
+                    </p>
+                </div>
+                <div class="diagnosis-item reveal">
+                    <span class="diagnosis-num">03</span>
+                    <div class="diagnosis-icon">
+                        <i class="bi-gear" aria-hidden="true"></i>
+                    </div>
+                    <p class="diagnosis-text">
+                        Automation sounds great until you realize it doesn't fit your process.
+                    </p>
+                </div>
+                <div class="diagnosis-item reveal">
+                    <span class="diagnosis-num">04</span>
+                    <div class="diagnosis-icon">
+                        <i class="bi-arrow-left-right" aria-hidden="true"></i>
+                    </div>
+                    <p class="diagnosis-text">
+                        Your team's stuck between what your system can do… and what your customers actually need.
+                    </p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-6 col-12">
-                    <div class="pain-point-card h-100">
-                        <div class="pain-point-icon">
-                            <i class="bi-file-spreadsheet" aria-hidden="true"></i>
-                        </div>
-                        <p class="pain-point-text">
-                            If your team's spending more time in spreadsheets than moving freight, you're not alone.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="pain-point-card h-100">
-                        <div class="pain-point-icon">
-                            <i class="bi-sliders" aria-hidden="true"></i>
-                        </div>
-                        <p class="pain-point-text">
-                            Your software vendor says it's "customizable," but you can't customize what actually matters.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="pain-point-card h-100">
-                        <div class="pain-point-icon">
-                            <i class="bi-gear" aria-hidden="true"></i>
-                        </div>
-                        <p class="pain-point-text">
-                            Automation sounds great until you realize it doesn't fit your process.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="pain-point-card h-100">
-                        <div class="pain-point-icon">
-                            <i class="bi-arrow-left-right" aria-hidden="true"></i>
-                        </div>
-                        <p class="pain-point-text">
-                            Your team's stuck between what your system can do... and what your customers actually need.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <h4 class="mb-3">If you're tired of bending your operation around your tech, you're not alone.</h4>
-                    <p class="lead-text">It's time your tech started working the way your operation actually runs.</p>
-                </div>
+
+            <div class="diagnosis-conclusion">
+                <h3>If you're tired of bending your operation around your tech, you're not alone.</h3>
+                <p class="resolution">It's time your tech started working the way your operation actually runs.</p>
             </div>
         </div>
     </section>
 
-    <section class="parallax-image"></section>
-
-    <!-- ——— ABOUT US ——— -->
+    <!-- ---ABOUT ----->
     <section id="AboutUs" class="section section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center mb-lg-5 mb-4">Hunter Web Apps</h2>
+            <header class="section-header">
+                <div>
+                    <span class="eyebrow">03 / About</span>
+                    <h2 class="section-title">Hunter Web&nbsp;Apps</h2>
                 </div>
+                <p class="lede">We work with one kind of business: independent logistics operators. Learn the operation first, write code second, and stick around long enough for the numbers to move.</p>
+            </header>
 
-                <!-- WHY US -->
-                <div class="offset-xl-1 col-lg-6 col-12">
-                    <div class="row why-reasons">
-                        <div class="col-12 d-flex">
-                            <i class="bi-patch-check-fill" aria-hidden="true"></i>
-                            <div>
-                                <h5>Logistics Specialists</h5>
-                                <p><em>Exclusively</em> focused on independent logistics providers.</p>
-                            </div>
+            <div class="about-grid">
+                <div class="why-reasons">
+                    <div class="reason reveal">
+                        <span class="reason-icon"><i class="bi-patch-check-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Logistics Specialists</h5>
+                            <p><em>Exclusively</em> focused on independent logistics providers.</p>
                         </div>
-                        <div class="col-12 d-flex">
-                            <i class="bi-lightbulb-fill" aria-hidden="true"></i>
-                            <div>
-                                <h5>Opportunity Discovery</h5>
-                                <p>Rapid strategic assessments to expose margin-killers, process bottlenecks, and quick
-                                    wins.</p>
-                            </div>
+                    </div>
+                    <div class="reason reveal">
+                        <span class="reason-icon"><i class="bi-lightbulb-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Opportunity Discovery</h5>
+                            <p>Rapid strategic assessments to expose margin-killers, process bottlenecks, and quick wins.</p>
                         </div>
-                        <div class="col-12 d-flex">
-                            <i class="bi-award-fill" aria-hidden="true"></i>
-                            <div>
-                                <h5>Engineering Excellence</h5>
-                                <p>Cloud-native and full-stack development experience honed over decades.</p>
-                            </div>
+                    </div>
+                    <div class="reason reveal">
+                        <span class="reason-icon"><i class="bi-award-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Engineering Excellence</h5>
+                            <p>Cloud-native and full-stack development experience honed over decades.</p>
                         </div>
-                        <div class="col-12 d-flex">
-                            <i class="bi-people-fill" aria-hidden="true"></i>
-                            <div>
-                                <h5>Partnership Mindset</h5>
-                                <p>Shared success drives every engagement. We win when your KPIs move.</p>
-                            </div>
+                    </div>
+                    <div class="reason reveal">
+                        <span class="reason-icon"><i class="bi-people-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Partnership Mindset</h5>
+                            <p>Shared success drives every engagement. We win when your KPIs move.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- CREDENTIALS -->
-                <div class="col-xl-4 col-lg-6 col-12 text-center">
-                    <img src="images/credentials/ascm.webp" alt="Association for Supply Chain Management"
-                         class="ascm-card" width="355" height="242" loading="lazy" decoding="async">
-                </div>
-
-                <div class="col-12 text-center mt-5">
-                    <div class="value-prop-highlight">
-                        <h4 class="mb-3">We partner with growth-minded 3PLs to design and deploy custom technology that bridges system gaps, automates workflows, and drives measurable ROI.</h4>
-                        <p class="paragraph mb-0">
-                            We help independent logistics providers turn operational complexity into competitive advantage with custom software, automation, and strategy built to unlock hidden margin and scale throughput.
-                        </p>
+                <aside class="about-aside">
+                    <div class="about-aside-frame">
+                        <span class="credential-label">Credentialed</span>
+                        <img src="images/credentials/ascm.webp" alt="Association for Supply Chain Management"
+                             class="ascm-card" width="355" height="242" loading="lazy" decoding="async">
                     </div>
-                </div>
+                </aside>
+            </div>
+
+            <div class="value-prop-highlight reveal">
+                <h4>We partner with growth-minded 3PLs to design and deploy custom technology that bridges system gaps, automates workflows, and drives measurable ROI.</h4>
+                <p>
+                    We help independent logistics providers turn operational complexity into competitive advantage with custom software, automation, and strategy built to unlock hidden margin and scale throughput.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="parallax-image"></section>
-
-    <!-- ——— SERVICES ——— -->
-    <section id="Services" class="section section-padding">
+    <!-- ---SOLUTIONS / CAPABILITIES ----->
+    <section id="Services" class="section section-padding section-dark">
         <div class="container">
-            <div class="row">
-                <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">Solutions We Deliver</h2>
+            <header class="section-header">
+                <div>
+                    <span class="eyebrow eyebrow-on-dark">04 / Capabilities</span>
+                    <h2 class="section-title">Solutions We Deliver</h2>
+                </div>
+                <p class="lede">Cloud software, automation, and integrations we've built before. From the receiving dock to the customer dashboard.</p>
+            </header>
 
-                <div class="col-12 service-examples">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/material_requirements_planning.svg"
-                                 alt="Strategic Assessment & Roadmapping" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Strategic Assessment & Roadmapping</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/barcode.svg" alt="Barcode & RFID Tracking" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Barcode & RFID Tracking</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/inventory_management.svg" alt="Inventory Management" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Inventory Management</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/order_processing.svg" alt="Order Processing" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Order Processing</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/shipping_logistics.svg" alt="Shipping & Logistics" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Shipping & Logistics</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/warehouse_management.svg" alt="Warehouse Management Systems" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Warehouse Management Systems</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/third_party_integrations.svg" alt="Third-Party Integrations" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Third-Party Integrations (EDI, FedEx, ArcGIS, ERP, etc.)</p>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-12 service-example">
-                            <img src="images/icons/analytics.svg" alt="Operational Analytics" width="48" height="48" loading="lazy" decoding="async">
-                            <p>Operational Analytics</p>
-                        </div>
-                    </div>
+            <div class="capability-matrix">
+                <div class="capability">
+                    <img src="images/icons/material_requirements_planning.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Strategic Assessment &amp; Roadmapping</p>
                 </div>
+                <div class="capability">
+                    <img src="images/icons/barcode.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Barcode &amp; RFID Tracking</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/inventory_management.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Inventory Management</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/order_processing.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Order Processing</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/shipping_logistics.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Shipping &amp; Logistics</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/warehouse_management.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Warehouse Management Systems</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/third_party_integrations.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Third-Party Integrations</p>
+                </div>
+                <div class="capability">
+                    <img src="images/icons/analytics.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+                    <p>Operational Analytics</p>
+                </div>
+            </div>
 
-                <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">Technology</h2>
+            <div class="subsection-header">
+                <h3>Technology Stack</h3>
+                <span class="eyebrow eyebrow-on-dark">04.B / Stack</span>
+            </div>
 
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="tech-card mb-4">
-                        <img src="images/technology/automation.webp" class="img-fluid tech-card-image" alt="Custom software development for logistics and warehouse operations" width="350" height="233" loading="lazy" decoding="async">
-                        <div class="tech-card-overlay">
-                            <h5 class="mt-2 tech-card-title">Software</h5>
-                        </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="images/technology/automation.webp" class="tech-card-image" alt="Custom software development for logistics and warehouse operations" width="350" height="233" loading="lazy" decoding="async">
+                    <div class="tech-card-overlay">
+                        <span class="tech-card-num">/ 01</span>
+                        <h5 class="tech-card-title">Software</h5>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="tech-card mb-4">
-                        <img src="images/technology/web3.webp" class="img-fluid tech-card-image" alt="Workflow automation and process optimization for 3PL providers" width="350" height="233" loading="lazy" decoding="async">
-                        <div class="tech-card-overlay">
-                            <h5 class="mt-2 tech-card-title">Automation</h5>
-                        </div>
+                <div class="tech-card">
+                    <img src="images/technology/web3.webp" class="tech-card-image" alt="Workflow automation and process optimization for 3PL providers" width="350" height="233" loading="lazy" decoding="async">
+                    <div class="tech-card-overlay">
+                        <span class="tech-card-num">/ 02</span>
+                        <h5 class="tech-card-title">Automation</h5>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="tech-card mb-4">
-                        <img src="images/technology/iot.webp" class="img-fluid tech-card-image" alt="Internet of Things integration for warehouse and fleet tracking" width="350" height="233" loading="lazy" decoding="async">
-                        <div class="tech-card-overlay">
-                            <h5 class="mt-2 tech-card-title">IoT</h5>
-                        </div>
+                <div class="tech-card">
+                    <img src="images/technology/iot.webp" class="tech-card-image" alt="Internet of Things integration for warehouse and fleet tracking" width="350" height="233" loading="lazy" decoding="async">
+                    <div class="tech-card-overlay">
+                        <span class="tech-card-num">/ 03</span>
+                        <h5 class="tech-card-title">IoT</h5>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-12">
-                    <div class="tech-card mb-4">
-                        <img src="images/technology/ai.webp" class="img-fluid tech-card-image" alt="Artificial intelligence solutions for logistics optimization" width="350" height="233" loading="lazy" decoding="async">
-                        <div class="tech-card-overlay">
-                            <h5 class="mt-2 tech-card-title">AI</h5>
-                        </div>
+                <div class="tech-card">
+                    <img src="images/technology/ai.webp" class="tech-card-image" alt="Artificial intelligence solutions for logistics optimization" width="350" height="233" loading="lazy" decoding="async">
+                    <div class="tech-card-overlay">
+                        <span class="tech-card-num">/ 04</span>
+                        <h5 class="tech-card-title">AI</h5>
                     </div>
                 </div>
+            </div>
 
-                <!-- The Playing Field Just Leveled -->
-                <div class="col-12 text-center mt-5 mb-4">
-                    <h2 class="h3 mb-3">The Playing Field Just Leveled</h2>
-                    <p class="lead-text">
-                        With today's AI tools, independent operators can move faster than enterprise competitors.
-                    </p>
+            <div class="advantage-stack">
+                <div class="advantage-stack-header">
+                    <span class="eyebrow eyebrow-on-dark">04.C / Advantage</span>
+                    <h3>The Playing Field<br>Just Leveled.</h3>
+                    <p class="lede">With today's AI tools, independent operators can move faster than enterprise competitors.</p>
                 </div>
-
-                <div class="col-lg-6 col-12">
-                    <div class="advantage-card h-100">
-                        <div class="advantage-icon">
-                            <i class="bi-lightning-charge-fill" aria-hidden="true"></i>
+                <div class="advantage-list">
+                    <div class="advantage-card reveal">
+                        <span class="advantage-icon"><i class="bi-lightning-charge-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Speed Without the Price Tag</h5>
+                            <p>AI and automation can now deliver what custom dev used to take years to do. Get enterprise-grade solutions at 3PL speed and budget.</p>
                         </div>
-                        <h5 class="mb-3">Speed Without the Price Tag</h5>
-                        <p class="mb-0">
-                            AI and automation can now deliver what custom dev used to take years to do. Get enterprise-grade solutions at 3PL speed and budget.
-                        </p>
+                        <span class="advantage-num">/ 01</span>
                     </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="advantage-card h-100">
-                        <div class="advantage-icon">
-                            <i class="bi-trophy-fill" aria-hidden="true"></i>
+                    <div class="advantage-card reveal">
+                        <span class="advantage-icon"><i class="bi-trophy-fill" aria-hidden="true"></i></span>
+                        <div>
+                            <h5>Your Operations, Your Way</h5>
+                            <p>We help logistics providers outgrow their off-the-shelf software using AI-driven systems and custom cloud tools that move pallets, profit, and performance.</p>
                         </div>
-                        <h5 class="mb-3">Your Operations, Your Way</h5>
-                        <p class="mb-0">
-                            We help logistics providers outgrow their off-the-shelf software using AI-driven systems and custom cloud tools that move pallets, profit, and performance.
-                        </p>
+                        <span class="advantage-num">/ 02</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="parallax-image"></section>
-
-    <!-- ——— SERVICE PACKAGES ——— -->
+    <!-- ---ENGAGEMENT ----->
     <section id="ServicePackages" class="section section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">How We Partner</h2>
-                    <p class="paragraph mb-5">
-                        Two proven paths to operational excellence
-                    </p>
+            <header class="section-header">
+                <div>
+                    <span class="eyebrow">05 / Engagement</span>
+                    <h2 class="section-title">How We Partner</h2>
                 </div>
-                <div class="col-12">
-                    <!-- Path 1: The Journey -->
-                    <div class="package-journey mb-5">
-                        <h4 class="text-center mb-4">Path 1: The Transformation Journey</h4>
-                        <p class="text-center mb-4">Our proven three-step process for sustainable growth</p>
-                        <div class="row align-items-stretch g-4">
-                            <!-- Step 1: Discovery Call -->
-                            <div class="col-lg-4 col-12">
-                                <div class="package-card package-light h-100 package-step">
-                                    <div class="package-step-number">Step 1</div>
-                                    <div class="package-header">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-chat-dots-fill package-icon me-2 text-coral" aria-hidden="true"></i>
-                                            <h5 class="mb-0">Discovery</h5>
-                                        </div>
-                                        <div class="package-price">FREE</div>
-                                        <p class="package-subtitle">30-minute Call, 1-hour Onsite</p>
-                                    </div>
-                                    <div class="package-body">
-                                        <p class="mb-3">Let's explore if we're the right fit to accelerate your logistics operations.</p>
-                                        <ul class="package-features">
-                                            <li>Review your current pain points</li>
-                                            <li>Identify quick wins and blockers</li>
-                                            <li>Discuss potential ROI opportunities</li>
-                                            <li>No commitment required</li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-footer">
-                                        <div class="package-next">
-                                            <i class="bi-arrow-right me-2" aria-hidden="true"></i>
-                                            Leads to Strategy Assessment
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <p class="lede">Two proven paths to operational excellence. Most engagements follow the assessment-led journey, but if you already know what you need, we'll skip ahead.</p>
+            </header>
 
-                            <!-- Step 2: Strategy Assessment -->
-                            <div class="col-lg-4 col-12">
-                                <div class="package-card package-navy h-100 package-step">
-                                    <div class="package-step-number">Step 2</div>
-                                    <div class="package-header">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-compass-fill package-icon me-2" aria-hidden="true"></i>
-                                            <h5 class="mb-0">Strategy Assessment</h5>
-                                        </div>
-                                        <div class="package-price">$3K – $5K</div>
-                                        <p class="package-subtitle">1-week deep dive</p>
-                                    </div>
-                                    <div class="package-body">
-                                        <p class="mb-3">Uncover exactly where margin lives in your operation, and create the roadmap to capture it.</p>
-                                        <ul class="package-features">
-                                            <li>Complete workflow analysis</li>
-                                            <li>Technology gap assessment</li>
-                                            <li>Prioritized opportunity roadmap</li>
-                                            <li>ROI projections for each phase</li>
-                                            <li>Implementation blueprint included</li>
-                                            <li><strong>100% credited to Phase 1</strong></li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-footer">
-                                        <div class="package-next">
-                                            <i class="bi-arrow-right me-2" aria-hidden="true"></i>
-                                            Blueprint for Implementation
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="engagement-intro">
+                <h4>Path 01<br>The Transformation Journey</h4>
+                <p>Three steps. Each one de-risks the next. A free conversation, then a paid week of deep analysis, then phased implementation. Whatever you spend on the assessment comes off Phase 1 if you keep going.</p>
+            </div>
 
-                            <!-- Step 3: Phased Implementation -->
-                            <div class="col-lg-4 col-12">
-                                <div class="package-card package-coral h-100 package-step">
-                                    <div class="package-step-number">Step 3</div>
-                                    <div class="package-header">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="bi-rocket-takeoff-fill package-icon me-2" aria-hidden="true"></i>
-                                            <h5 class="mb-0">Phased Implementation</h5>
-                                        </div>
-                                        <div class="package-price">$30K – $50K</div>
-                                        <p class="package-subtitle">Per phase (typically 3-4 months)</p>
-                                    </div>
-                                    <div class="package-body">
-                                        <p class="mb-3">Execute the strategy with measured, risk-managed phases based on your assessment roadmap.</p>
-                                        <ul class="package-features">
-                                            <li>Custom software development</li>
-                                            <li>Integration with existing systems</li>
-                                            <li>Parallel testing & validation</li>
-                                            <li>Team training & documentation</li>
-                                            <li>Performance metrics tracking</li>
-                                            <li>30-day post-launch support</li>
-                                            <li><strong>1-year bug-free guarantee</strong></li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-footer">
-                                        <div class="package-cta">
-                                            <i class="bi-trophy-fill me-2" aria-hidden="true"></i>
-                                            Where transformation happens
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="engagement-track">
+                <!-- Step 1 -->
+                <div class="engagement-step">
+                    <span class="step-num">Step 01 / Discovery</span>
+                    <div class="step-head">
+                        <span class="step-icon"><i class="bi-chat-dots-fill" aria-hidden="true"></i></span>
+                        <h5>Discovery</h5>
                     </div>
-
-                    <!-- Divider -->
-                    <div class="package-divider">
-                        <span>OR</span>
+                    <div class="price">FREE</div>
+                    <p class="step-subtitle">30-min Call · 1-hour Onsite</p>
+                    <div class="step-body">
+                        <p>Let's explore if we're the right fit to accelerate your logistics operations.</p>
+                        <ul class="features">
+                            <li>Review your current pain points</li>
+                            <li>Identify quick wins and blockers</li>
+                            <li>Discuss potential ROI opportunities</li>
+                            <li>No commitment required</li>
+                        </ul>
                     </div>
-
-                    <!-- Path 2: Direct to Solution -->
-                    <div class="row mt-5">
-                        <div class="col-12">
-                            <h4 class="text-center mb-4">Path 2: Direct to Solution</h4>
-                            <p class="text-center mb-4">When you already know exactly what you need</p>
-                        </div>
-                        <div class="col-lg-6 offset-lg-3 col-12">
-                            <div class="package-card package-premium h-100">
-                                <div class="package-header">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="bi-lightning-charge-fill package-icon me-2" aria-hidden="true"></i>
-                                        <h5 class="mb-0">Custom Solution</h5>
-                                    </div>
-                                    <div class="package-price">Custom Pricing</div>
-                                    <p class="package-subtitle">Skip the assessment, straight to execution</p>
-                                </div>
-                                <div class="package-body">
-                                    <p class="mb-3">You've done the analysis. You know the solution. Let's build it together.</p>
-                                    <ul class="package-features">
-                                        <li>Specific integrations or features</li>
-                                        <li>Emergency performance fixes</li>
-                                        <li>Scaling existing systems</li>
-                                        <li>White-glove migration support</li>
-                                        <li><strong>1-year bug-free guarantee included</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="package-footer">
-                                    <div class="package-cta">
-                                        <i class="bi-arrow-right-circle me-2" aria-hidden="true"></i>
-                                        For teams ready to move fast
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Trust Signal -->
-                    <div class="row mt-5">
-                        <div class="col-12 text-center">
-                            <div class="package-trust">
-                                <i class="bi-shield-check me-2" aria-hidden="true"></i>
-                                <span><strong>Risk-Free Promise:</strong> Every engagement starts with clear success metrics and includes a 1-year bug-free guarantee.</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="step-foot">→ Leads to Strategy Assessment</div>
                 </div>
+
+                <!-- Step 2 -->
+                <div class="engagement-step is-key">
+                    <span class="step-num">Step 02 / Assessment</span>
+                    <div class="step-head">
+                        <span class="step-icon"><i class="bi-compass-fill" aria-hidden="true"></i></span>
+                        <h5>Strategy Assessment</h5>
+                    </div>
+                    <div class="price">$3K – $5K</div>
+                    <p class="step-subtitle">1-week deep dive</p>
+                    <div class="step-body">
+                        <p>Uncover exactly where margin lives in your operation, and create the roadmap to capture it.</p>
+                        <ul class="features">
+                            <li>Complete workflow analysis</li>
+                            <li>Technology gap assessment</li>
+                            <li>Prioritized opportunity roadmap</li>
+                            <li>ROI projections for each phase</li>
+                            <li>Implementation blueprint included</li>
+                            <li><strong>100% credited to Phase 1</strong></li>
+                        </ul>
+                    </div>
+                    <div class="step-foot">→ Blueprint for Implementation</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="engagement-step is-accent">
+                    <span class="step-num">Step 03 / Implementation</span>
+                    <div class="step-head">
+                        <span class="step-icon"><i class="bi-rocket-takeoff-fill" aria-hidden="true"></i></span>
+                        <h5>Phased Implementation</h5>
+                    </div>
+                    <div class="price">$30K – $50K</div>
+                    <p class="step-subtitle">Per phase · 3-4 months</p>
+                    <div class="step-body">
+                        <p>Execute the strategy with measured, risk-managed phases based on your assessment roadmap.</p>
+                        <ul class="features">
+                            <li>Custom software development</li>
+                            <li>Integration with existing systems</li>
+                            <li>Parallel testing &amp; validation</li>
+                            <li>Team training &amp; documentation</li>
+                            <li>Performance metrics tracking</li>
+                            <li>30-day post-launch support</li>
+                            <li><strong>1-year bug-free guarantee</strong></li>
+                        </ul>
+                    </div>
+                    <div class="step-foot">★ Where transformation happens</div>
+                </div>
+            </div>
+
+            <div class="engagement-divider"><span>OR</span></div>
+
+            <div class="engagement-intro">
+                <h4>Path 02<br>Direct to Solution</h4>
+                <p>When you already know exactly what you need. You've done the analysis. Let's build it together.</p>
+            </div>
+
+            <div class="engagement-direct reveal">
+                <div class="engagement-direct-meta">
+                    <span class="step-num">Direct / Custom</span>
+                    <h4>Custom Solution</h4>
+                    <div class="price">Custom Pricing</div>
+                    <p class="step-subtitle">Skip the assessment, straight to execution</p>
+                </div>
+                <div class="engagement-direct-body">
+                    <p>You've done the analysis. You know the solution. Let's build it together.</p>
+                    <ul class="features">
+                        <li>Specific integrations or features</li>
+                        <li>Emergency performance fixes</li>
+                        <li>Scaling existing systems</li>
+                        <li>White-glove migration support</li>
+                        <li><strong>1-year bug-free guarantee included</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="engagement-promise reveal">
+                <i class="bi-shield-check" aria-hidden="true"></i>
+                <span><strong>Risk-Free Promise:</strong> Every engagement starts with clear success metrics and includes a 1-year bug-free guarantee.</span>
             </div>
         </div>
     </section>
 
-    <section class="parallax-image"></section>
-
-    <!-- ——— A MEASURED APPROACH ——— -->
-    <section id="MeasuredApproach" class="section section-padding">
+    <!-- ---A MEASURED APPROACH ----->
+    <section id="MeasuredApproach" class="section section-padding section-dark">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="h3 text-center mb-lg-4 mb-3 mt-3">A Measured Approach</h2>
-                    <p class="paragraph mb-5">
-                        The guiding principles for sustainable growth and disciplined process enhancement
-                    </p>
+            <header class="section-header">
+                <div>
+                    <span class="eyebrow eyebrow-on-dark">06 / Principles</span>
+                    <h2 class="section-title">A Measured Approach</h2>
                 </div>
-                <div class="col-12">
-                    <div class="row align-items-stretch g-4">
-                        <!-- Intro -->
-                        <div class="col-lg-6 col-12">
-                            <div class="h-100 d-flex align-items-center">
-                                <p class="approach-intro lh-base mb-0">
-                                    The <strong>goal</strong> of <em>A Measured Approach</em> is to automate and error-proof facilities
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Progressive Enhancement -->
-                        <div class="col-lg-6 col-12">
-                            <div class="approach-card approach-navy h-100">
-                                <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-lightning-charge-fill approach-icon me-2" aria-hidden="true"></i>
-                                    <h5 class="mb-0">Progressive Enhancement</h5>
-                                </div>
-                                <p class="mb-3">Deliver consistent, iterative improvements, without waiting for a full
-                                    overhaul.</p>
-                                <div class="approach-why">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
-                                        matters
-                                    </div>
-                                    <ul class="mb-0 ps-3">
-                                        <li>Reduces risk and downtime through small, testable steps.</li>
-                                        <li>Ships value continuously while validating impact with real data.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <p class="lede">How we keep risk down and prove every change pays off. Small steps. Testable. Evidence-based.</p>
+            </header>
 
-                        <!-- Built-In Guardrails -->
-                        <div class="col-lg-6 col-12">
-                            <div class="approach-card approach-coral h-100">
-                                <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-shield-fill-check approach-icon me-2" aria-hidden="true"></i>
-                                    <h5 class="mb-0">Built-In Guardrails</h5>
-                                </div>
-                                <p class="mb-3">New workflows run in parallel with safety fallbacks until real data proves stability.</p>
-                                <div class="approach-why">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
-                                        matters
-                                    </div>
-                                    <ul class="mb-0 ps-3">
-                                        <li>Prevents surprises by comparing old vs. new in production.</li>
-                                        <li>Creates clear rollback points and evidence-based go-lives.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <div class="approach-statement">
+                <p class="approach-intro">
+                    The <strong>goal</strong> of <em>A Measured Approach</em> is to automate and error-proof facilities.
+                </p>
+            </div>
 
-                        <!-- Quantified Returns -->
-                        <div class="col-lg-6 col-12">
-                            <div class="approach-card approach-light h-100">
-                                <div class="d-flex align-items-center mb-1">
-                                    <i class="bi-bar-chart-fill approach-icon me-2 text-coral" aria-hidden="true"></i>
-                                    <h5 class="mb-0">Quantified Returns</h5>
-                                </div>
-                                <p class="mb-3">Financial and operational metrics are tracked phase-by-phase to prove
-                                    value.</p>
-                                <div class="approach-why approach-why-light">
-                                    <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this
-                                        matters
-                                    </div>
-                                    <ul class="mb-0 ps-3">
-                                        <li>Focuses investment on work that proves ROI early.</li>
-                                        <li>Builds trust with transparent, compounding gains over time.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <div class="approach-grid">
+                <div class="approach-cell">
+                    <span class="approach-num">Principle 01</span>
+                    <div class="approach-head">
+                        <span class="approach-icon"><i class="bi-lightning-charge-fill" aria-hidden="true"></i></span>
+                        <h5>Progressive Enhancement</h5>
+                    </div>
+                    <p>Deliver consistent, iterative improvements, without waiting for a full overhaul.</p>
+                    <div class="approach-why">
+                        <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this matters</div>
+                        <ul>
+                            <li>Reduces risk and downtime through small, testable steps.</li>
+                            <li>Ships value continuously while validating impact with real data.</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="approach-cell">
+                    <span class="approach-num">Principle 02</span>
+                    <div class="approach-head">
+                        <span class="approach-icon"><i class="bi-shield-fill-check" aria-hidden="true"></i></span>
+                        <h5>Built-In Guardrails</h5>
+                    </div>
+                    <p>New workflows run in parallel with safety fallbacks until real data proves stability.</p>
+                    <div class="approach-why">
+                        <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this matters</div>
+                        <ul>
+                            <li>Prevents surprises by comparing old vs. new in production.</li>
+                            <li>Creates clear rollback points and evidence-based go-lives.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="approach-cell">
+                    <span class="approach-num">Principle 03</span>
+                    <div class="approach-head">
+                        <span class="approach-icon"><i class="bi-bar-chart-fill" aria-hidden="true"></i></span>
+                        <h5>Quantified Returns</h5>
+                    </div>
+                    <p>Financial and operational metrics are tracked phase-by-phase to prove value.</p>
+                    <div class="approach-why">
+                        <div class="approach-why-label"><i class="bi-question-circle me-2" aria-hidden="true"></i>Why this matters</div>
+                        <ul>
+                            <li>Focuses investment on work that proves ROI early.</li>
+                            <li>Builds trust with transparent, compounding gains over time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-block reveal">
+                <div>
+                    <h3>Ready to see where margin is hiding in your operation?</h3>
+                    <p>Start with a free 30-minute discovery call. No commitment, no pitch deck. Just an honest conversation about whether we can help.</p>
+                </div>
+                <a href="#Contact" class="cta-button">Book Discovery Call <span aria-hidden="true">→</span></a>
             </div>
         </div>
     </section>
 </main>
 
-<!-- ——— FOOTER ——— -->
-<footer id="Contact" class="site-footer section-padding">
+<!-- ---FOOTER ----->
+<footer id="Contact" class="site-footer">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h4 class="text-white mb-4 me-5">Hunter Web Apps</h4>
-            </div>
+        <div class="footer-grid">
+            <!-- LEFT: brand statement + contact form -->
+            <div>
+                <span class="footer-eyebrow">07 / Contact</span>
+                <div class="footer-lead">
+                    <h3>Hunter Web Apps</h3>
+                    <p>Tell us what you're trying to fix. We respond within 2–4 hours on business days.</p>
+                </div>
 
-            <!-- CONTACT FORM -->
-            <div class="col-xl-4 col-lg-5 col-md-7 col-12 mt30">
-                <h6 class="text-white mb-lg-4 mb-3">Contact Form</h6>
+                <h6 class="footer-label" style="margin-top: 2.5rem;">Project inquiry</h6>
                 <form id="ContactForm" class="custom-form contact-form" action="#" method="post">
                     <label for="name" class="visually-hidden">Your Name</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" autocomplete="name">
@@ -754,11 +795,11 @@
                                 class="form-control"
                                 onclick="handleSubmitContact(event)">
                             <div id="submit-loading" class="loading d-none"></div>
-                            Send
+                            Send Message
                         </button>
                     </div>
                 </form>
-                <div id="ContactThanksForm" class="d-none" aria-live="polite">
+                <div id="ContactThanksForm" class="thank-you-message d-none" aria-live="polite">
                     <p>Thanks for reaching out. We respond within 2-4 hours on business days.</p>
                 </div>
                 <div id="ContactFormFail" class="thank-you-message d-none" aria-live="polite">
@@ -773,34 +814,56 @@
                 </div>
             </div>
 
-            <!-- HOURS & SOCIAL -->
-            <div class="offset-xl-1 col-lg-7 col-md-5 col-12">
-                <div class="row">
-                    <div class="col-lg-6 col-12">
-                        <div class="mt30">
-                            <h6 class="text-white mb-lg-4 mb-3">Operating Hours</h6>
-                            <p class="mb-2">Monday – Friday</p>
-                            <p id="OperatingHours"></p>
-                            <p>Tel: <a href="tel:+14073493633">(407)&nbsp;349-3633</a></p>
+            <!-- RIGHT: hours, contact, social -->
+            <div>
+                <div class="footer-info-grid">
+                    <div class="footer-info-block">
+                        <h6 class="footer-label">Operating Hours</h6>
+                        <div class="hours-block">
+                            <div class="hours-row">
+                                <span class="hours-label">Mon – Fri</span>
+                                <span class="hours-value" id="OperatingHours">9:00 – 18:00 ET</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-label">Sat – Sun</span>
+                                <span class="hours-value">Closed</span>
+                            </div>
                         </div>
-                        <p class="copyright-text">
-                            <copyright-year></copyright-year>
+                        <p class="tel-row">
+                            <a href="tel:+14073493633">(407)&nbsp;349-3633</a>
                         </p>
                     </div>
-                    <div class="col-lg-6 col-12 mt30">
-                        <h6 class="text-white mb-lg-4 mb-3">Social</h6>
+
+                    <div class="footer-info-block">
+                        <h6 class="footer-label">Connect</h6>
                         <ul class="social-icon">
                             <li><a href="https://www.linkedin.com/in/hunterwebapps/" target="_blank" rel="noopener noreferrer"
                                    class="social-icon-link bi-linkedin" aria-label="Visit Hunter Web Apps on LinkedIn"></a></li>
                         </ul>
+
+                        <h6 class="footer-label" style="margin-top: 2rem;">Direct</h6>
+                        <p>
+                            <a href="mailto:hunter@hunterwebapps.com">hunter@hunterwebapps.com</a>
+                        </p>
                     </div>
+                </div>
+
+                <div class="footer-info-block" style="margin-top: 2.5rem;">
+                    <h6 class="footer-label">Specialization</h6>
+                    <p>We work with independent 3PL operators across the U.S. Strategy. Custom software. Automation. AI integration.</p>
                 </div>
             </div>
         </div>
+
+        <p class="copyright-text">
+            <copyright-year></copyright-year>
+            <span>·</span>
+            <span>Hunter Web Apps · All rights reserved</span>
+        </p>
     </div>
 </footer>
 
-<!-- ——— FLOATING PHONE CTA ——— -->
+<!-- ---FLOATING PHONE CTA ----->
 <div id="floating-phone-cta" class="floating-phone-cta">
     <a href="tel:+14073493633" class="phone-cta-link">
         <i class="bi-telephone-fill phone-icon" aria-hidden="true"></i>
@@ -808,7 +871,7 @@
     </a>
 </div>
 
-<!-- ——— SCRIPTS ——— -->
+<!-- ---SCRIPTS ----->
 <script type="text/javascript" id="hs-script-loader" async defer
   src="//js.hs-scripts.com/243002124.js"></script>
 <script src="js/tracking.js?v=1.0"></script>
@@ -816,7 +879,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/page-transitions.js?v=1.0"></script>
 <script src="js/components/index.js?v=1.2" type="module"></script>
-<script src="js/index.js?v=1.2"></script>
+<script src="js/index.js?v=2.0"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>
