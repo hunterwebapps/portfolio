@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "description": "Hunter Web Apps Portfolio Site",
-  "author": "Hunter Web Apps",
+  "description": "Applied 3PL Systems Portfolio Site",
+  "author": "Applied 3PL Systems",
   "scripts": {
     "dev": "live-server --host=localhost"
   },

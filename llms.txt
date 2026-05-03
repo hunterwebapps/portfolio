@@ -1,4 +1,4 @@
-# Hunter Web Apps
+# Applied 3PL Systems
 
 > Custom software development and strategic consulting for 3PL logistics providers.
 
@@ -45,8 +45,8 @@
 - 1-year bug-free guarantee on all implementations
 
 ## Contact
-- Website: https://hunterwebapps.dev
-- Email: hunter@hunterwebapps.com
+- Website: https://applied3pl.com
+- Email: hunter@applied3pl.com
 - Phone: (407) 349-3633
 - LinkedIn: https://www.linkedin.com/in/hunterwebapps/
 - Location: Serving clients across the United States

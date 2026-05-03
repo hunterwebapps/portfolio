@@ -1,5 +1,5 @@
 /*
-  Hunter Web Apps - design system
+  Applied 3PL Systems - design system
   Operations Intelligence Editorial
 */
 
@@ -40,11 +40,11 @@
   --border-radius-default: 2px;
 
   /* Typography */
-  --header-font-family: Coolvetica, "Helvetica Neue", Helvetica, sans-serif;
-  --body-font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --header-font-family: "neue-haas-unica", "Helvetica Neue", Helvetica, sans-serif;
+  --body-font-family: "acumin-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono-font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  --h1-font-size: clamp(2.5rem, 3.6vw + 1rem, 4.75rem);
+  --h1-font-size: clamp(2rem, 3.6vw + 1rem, 4.75rem);
   --h2-font-size: clamp(2rem, 2.6vw + 1rem, 3.5rem);
   --h3-font-size: clamp(1.6rem, 1.4vw + 1rem, 2.4rem);
   --h4-font-size: clamp(1.35rem, 0.6vw + 1rem, 1.75rem);
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3 {
   font-family: var(--header-font-family);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
 }
 h4, h5, h6 {
   font-family: var(--body-font-family);
@@ -194,7 +194,7 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 
 .section-title {
   font-family: var(--header-font-family);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.015em;
   color: var(--ink);
 }
@@ -408,7 +408,7 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
   gap: clamp(2rem, 3vw, 4rem);
   align-items: center;
   width: 100%;
@@ -450,12 +450,12 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 .hero h1 {
   font-family: var(--header-font-family);
   font-size: var(--h1-font-size);
-  font-weight: var(--font-weight-medium);
-  line-height: 0.96;
+  font-weight: var(--font-weight-semibold);
+  line-height: 0.98;
   letter-spacing: -0.02em;
   color: #fff;
   margin: 0 0 1.5rem;
-  max-width: 18ch;
+  max-width: 26ch;
 }
 .hero h1 .accent {
   display: inline;
@@ -493,6 +493,18 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 }
 .hero-meta-item:first-child { padding-left: 0; }
 .hero-meta-item:last-child { border-right: 0; padding-right: 0; }
+
+@media (max-width: 600px) {
+  .hero-meta { flex-direction: column; gap: 1.25rem; }
+  .hero-meta-item {
+    flex: 1 1 100%;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-dark);
+    padding-bottom: 1.25rem;
+  }
+  .hero-meta-item:last-child { border-bottom: 0; padding-bottom: 0; }
+}
 .hero-meta-label {
   font-family: var(--mono-font-family);
   font-size: 0.7rem;
@@ -510,7 +522,11 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
   letter-spacing: -0.015em;
   line-height: 1.05;
   display: block;
+  white-space: nowrap;
 }
+
+/* Inline utility to keep a phrase on one line wherever it appears */
+.nowrap { white-space: nowrap; }
 
 /* Hero visualization */
 .hero-viz-wrap {
@@ -623,15 +639,26 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 .section-header {
   display: grid;
   grid-template-columns: 0.55fr 1fr;
-  gap: clamp(1.5rem, 3vw, 4rem);
-  align-items: end;
+  grid-template-areas:
+    "eyebrow ."
+    "title   lede";
+  column-gap: clamp(1.5rem, 3vw, 4rem);
+  row-gap: 0;
+  align-items: start;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--rule);
   margin-bottom: clamp(2.5rem, 4vw, 4.5rem);
 }
+.section-header > div { display: contents; }
+.section-header .eyebrow { grid-area: eyebrow; }
+.section-header h2,
+.section-header h3 { grid-area: title; }
+.section-header .lede { grid-area: lede; }
+
 .section-dark .section-header { border-bottom-color: var(--rule-dark); }
 .section-header.center {
   grid-template-columns: 1fr;
+  grid-template-areas: "eyebrow" "title" "lede";
   text-align: center;
   border-bottom: 0;
   padding-bottom: 0;
@@ -649,8 +676,8 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 @media (max-width: 800px) {
   .section-header {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    align-items: start;
+    grid-template-areas: "eyebrow" "title" "lede";
+    row-gap: 1rem;
   }
 }
 
@@ -714,16 +741,20 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 .diagnosis-conclusion {
   margin-top: clamp(3rem, 5vw, 5rem);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
   padding-top: 2.5rem;
   border-top: 1px solid var(--rule);
 }
+.diagnosis-conclusion-text {
+  display: grid;
+  gap: 1.25rem;
+}
 .diagnosis-conclusion h3 {
   font-family: var(--header-font-family);
   font-size: clamp(1.5rem, 1.8vw + 0.6rem, 2.4rem);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.1;
   letter-spacing: -0.015em;
   margin: 0;
@@ -744,13 +775,49 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
   width: 1rem; height: 1px;
   background: var(--coral);
 }
+.diagnosis-conclusion-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.diagnosis-conclusion .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.05rem 1.85rem;
+  background: var(--coral);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  border: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.diagnosis-conclusion .cta-button:hover {
+  background: var(--coral-deep);
+  transform: translateY(-2px);
+}
+.diagnosis-conclusion .cta-meta {
+  font-family: var(--mono-font-family);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
 
 @media (max-width: 800px) {
   .diagnosis-list { grid-template-columns: 1fr; }
   .diagnosis-item:nth-child(odd) { border-right: 0; }
   .diagnosis-item { padding: 2rem 1.5rem 2rem 4rem; }
   .diagnosis-num { left: 1rem; top: 2.15rem; }
-  .diagnosis-conclusion { grid-template-columns: 1fr; gap: 1.5rem; }
+  .diagnosis-conclusion { grid-template-columns: 1fr; gap: 1.75rem; }
+  .diagnosis-conclusion-cta { align-items: stretch; }
+  .diagnosis-conclusion .cta-button { width: 100%; justify-content: center; }
+  .diagnosis-conclusion .cta-meta { text-align: center; }
 }
 
 /*---------------------------------------
@@ -1120,6 +1187,15 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
   align-items: start;
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
+.engagement-intro .path-num {
+  display: block;
+  font-family: var(--mono-font-family);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--coral);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
 .engagement-intro h4 {
   font-family: var(--header-font-family);
   font-weight: var(--font-weight-medium);
@@ -1128,6 +1204,13 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
   letter-spacing: -0.01em;
 }
 .engagement-intro p { margin: 0; }
+
+@media (max-width: 800px) {
+  .engagement-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
 
 .engagement-track {
   display: grid;
@@ -1633,7 +1716,7 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 
 .footer-lead h3 {
   font-family: var(--header-font-family);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: clamp(2rem, 3vw + 0.6rem, 3.25rem);
   letter-spacing: -0.02em;
   line-height: 1.0;
@@ -1921,6 +2004,41 @@ h6.footer-label {
 }
 @media screen and (max-width: 768px) {
   .floating-phone-cta { bottom: 1rem; right: 1rem; }
+}
+
+/*---------------------------------------
+  RECAPTCHA — hide badge, inline disclosure
+-----------------------------------------*/
+.grecaptcha-badge { visibility: hidden !important; }
+
+.recaptcha-notice {
+  margin: 1rem 0 0;
+  font-family: var(--mono-font-family);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--steel-light);
+  line-height: 1.5;
+}
+.recaptcha-notice a {
+  color: var(--steel-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(139, 146, 171, 0.4);
+}
+.recaptcha-notice a:hover {
+  color: var(--coral);
+  text-decoration-color: var(--coral);
+}
+.site-footer .recaptcha-notice {
+  color: rgba(255, 255, 255, 0.45);
+}
+.site-footer .recaptcha-notice a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+}
+.site-footer .recaptcha-notice a:hover {
+  color: var(--coral);
+  text-decoration-color: var(--coral);
 }
 
 /*---------------------------------------

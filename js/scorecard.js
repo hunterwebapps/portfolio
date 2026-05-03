@@ -910,9 +910,9 @@ function webToLead(email, phone, company, description) {
     form.target = 'salesforce';
 
     form.appendChild(createHiddenInput('oid', '00D8b000002byl2'));
-    form.appendChild(createHiddenInput('retURL', 'https://hunterwebapps.dev/scorecard.html'));
+    form.appendChild(createHiddenInput('retURL', 'https://applied3pl.com/scorecard.html'));
     form.appendChild(createHiddenInput('debug', '1'));
-    form.appendChild(createHiddenInput('debugEmail', 'hunter@hunterwebapps.com'));
+    form.appendChild(createHiddenInput('debugEmail', 'hunter@applied3pl.com'));
     form.appendChild(createHiddenInput('email', email));
     form.appendChild(createHiddenInput('phone', phone));
     form.appendChild(createHiddenInput('company', company));

@@ -227,9 +227,9 @@ function webToLead(firstName, lastName, email, description) {
   form.target = 'salesforce';
 
   form.appendChild(createHiddenInput('oid', '00D8b000002byl2'));
-  form.appendChild(createHiddenInput('retURL', 'https://hunterwebapps.dev'));
+  form.appendChild(createHiddenInput('retURL', 'https://applied3pl.com'));
   form.appendChild(createHiddenInput('debug', '1'));
-  form.appendChild(createHiddenInput('debugEmail', 'hunter@hunterwebapps.com'));
+  form.appendChild(createHiddenInput('debugEmail', 'hunter@applied3pl.com'));
   form.appendChild(createHiddenInput('first_name', firstName));
   form.appendChild(createHiddenInput('last_name', lastName));
   form.appendChild(createHiddenInput('email', email));
