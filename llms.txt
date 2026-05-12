@@ -46,12 +46,21 @@
 
 ## Contact
 - Website: https://applied3pl.com
-- Email: hunter@applied3pl.com
+- Email: hello@applied3pl.com
 - Phone: (407) 349-3633
-- LinkedIn: https://www.linkedin.com/in/applied3pl/
+- LinkedIn: https://www.linkedin.com/company/applied3plsystems/
 - Location: Serving clients across the United States
 
 ## Core Philosophy: A Measured Approach
 1. **Progressive Enhancement** - Iterative improvements without waiting for full overhauls
 2. **Built-In Guardrails** - New workflows run in parallel with safety fallbacks
 3. **Quantified Returns** - Financial and operational metrics tracked phase-by-phase
+
+## Case Studies
+Five case studies on the real world platform — a modern shipment and order-management operating system layered on top of a decades-old legacy ERP. Each is written for owner / officer / director-level decision-makers at small-to-mid-size 3PLs.
+
+- **[Scaling Warehouse Operations Without Scaling the Team](https://applied3pl.com/case-studies/ai-vision-agent.html)** — A supervised virtual operator drives legacy and retailer-portal screens around the clock, with a live web console for one-supervisor oversight. Seven workflows automated with a vision-model fallback for portal changes.
+- **[Retailer-Grade Scorecards, Automatically](https://applied3pl.com/case-studies/retailer-scorecards.html)** — A self-refreshing analytics layer turns ERP and operational data into PIFOT, on-time, and fill-rate scorecards. Embedded inside the operations app and refreshed every fifteen minutes.
+- **[Modern Operations on Top of a Legacy ERP — Without Rip-and-Replace](https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html)** — A real-time, multi-user shipment cockpit with 30+ validation checks and customer-specific ship-window math, layered on a decades-old ERP. No system-of-record migration required.
+- **[Your Team Lives in Your Customers' Portals. We Brought Your Data With Them.](https://applied3pl.com/case-studies/portal-extension.html)** — A Chrome extension that overlays operations data on top of ShipIQ, Amazon Vendor Central, and Seller Central. Auto-fill, PO highlighting, and a docked side panel.
+- **[From Amazon Routing Request to Confirmed Shipment — Without a Human in the Loop](https://applied3pl.com/case-studies/amazon-routing.html)** — An end-to-end automation chain from inbound email through Amazon SP-API submission, asynchronous polling, and legacy close-out. Always-on, fully audited.

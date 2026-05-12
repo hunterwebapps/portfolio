@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FAF7F2">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://webto.salesforce.com">
+    <link rel="dns-prefetch" href="https://js.hs-scripts.com">
+
+    <meta name="description"
+          content="How we put a real-time, validated operations dashboard on top of a legacy ERP a 3PL can't replace, so the team can work the modern way without an 18-month rip-and-replace."/>
+    <meta name="author" content="Applied 3PL Systems">
+
+    <meta property="og:title" content="Modern Operations on Top of a Legacy ERP | Applied 3PL Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html">
+    <meta property="og:image" content="https://applied3pl.com/images/case-studies/modern-ops-on-legacy-erp.webp">
+    <meta property="og:description"
+          content="A real-time shipment dashboard with 30+ validation checks and per-retailer ship-window math, on top of a legacy ERP. No rip-and-replace.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@applied3pl">
+    <meta name="twitter:title" content="Modern Operations on Top of a Legacy ERP | Applied 3PL Systems">
+    <meta name="twitter:image" content="https://applied3pl.com/images/case-studies/modern-ops-on-legacy-erp.webp">
+    <meta name="twitter:description"
+          content="A real-time shipment dashboard with 30+ validation checks and per-retailer ship-window math, on top of a legacy ERP. No rip-and-replace.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Modern Operations on Top of a Legacy ERP, Without Rip-and-Replace",
+        "description": "A live, validated shipment dashboard on top of a decades-old ERP.",
+        "image": "https://applied3pl.com/images/case-studies/modern-ops-on-legacy-erp.webp",
+        "author": { "@type": "Organization", "name": "Applied 3PL Systems" },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Applied 3PL Systems",
+            "logo": { "@type": "ImageObject", "url": "https://applied3pl.com/images/logo_applied_main.svg" }
+        },
+        "mainEntityOfPage": "https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html",
+        "articleSection": "Case Study"
+    }
+    </script>
+
+    <link rel="icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html">
+
+    <title>Case Study 03: Modern Ops on a Legacy ERP | Applied 3PL Systems</title>
+
+    <script src="/js/google-tag-manager.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/css/styles.css?v=2.5">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Q2E6ZZL9BM');
+    </script>
+
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+    o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+    o.onload=function(){window.trackingFunctions.onLoad({appId:"69a8a44c9bf8490011723d34"})},
+    document.head.appendChild(o)}initApollo();</script>
+</head>
+
+<body class="cs-page">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW53W2L" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container navbar-container">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
+                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+
+    <section class="cs-hero">
+        <div class="cs-container">
+            <div class="cs-hero-eyebrow">
+                <span class="cs-hero-eyebrow-divider" aria-hidden="true"></span>
+                <span>Case Study 03 · Distribution &amp; Third-Party Logistics</span>
+            </div>
+            <h1 class="cs-hero-title">Modern Operations on Top of a Legacy ERP, Without Rip-and-Replace</h1>
+            <p class="cs-hero-lede">A live shipment dashboard sitting on top of a decades-old ERP. The team gets to work in a normal modern app, and the business doesn't have to commit to an 18-month rip-and-replace.</p>
+
+            <div class="cs-meta-strip">
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Problem</span>
+                    <p class="cs-meta-value">You can't really replace the ERP, but the way it makes the team work isn't sustainable either.</p>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Result</span>
+                    <p class="cs-meta-value">A live ops dashboard on top of the legacy ERP. 30+ automated validation checks, per-retailer ship-window math, and everyone working off the same view.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-hero-image-wrap">
+        <div class="cs-container">
+            <img src="/images/case-studies/modern-ops-on-legacy-erp.webp"
+                 alt="Real-time Ship List grid with validation badges and exception highlighting layered on top of the legacy ERP"
+                 width="1536" height="1024" class="cs-hero-image"
+                 loading="eager" decoding="async">
+        </div>
+    </div>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">At a Glance</span>
+            <div class="cs-at-a-glance reveal">
+                <ul>
+                    <li>The legacy ERP <strong>stays where it is</strong> as the system of record. A modern ops app sits on top, reading orders continuously and showing them in a live grid.</li>
+                    <li><strong>30+ automated checks</strong> catch exceptions <em>before</em> they become chargebacks. Things like bad freight terms, PO Box on hazmat, missing customer item setup, zero ship time, the wrong workcenter, and a lot more.</li>
+                    <li>A <strong>ship-window calculator</strong> does the date math for every shipment (first and last ship, first and last tender). It knows the customer-specific cases (Walmart, Target, Walgreens each have their own), UPS transit times, holidays, and weekends.</li>
+                    <li><strong>Real-time updates</strong> push to every screen over SignalR, so the whole team's looking at the same view at the same time. No more "hang on, let me refresh."</li>
+                    <li><strong>Per-customer "acceptable error" rules</strong> let the team quiet down noise they've already decided is fine, so the exception queue only shows what actually needs attention.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-results reveal">
+                <span class="cs-results-label">Results</span>
+                <div class="results-tiles">
+                    <div class="results-tile">
+                        <span class="tile-number">$0</span>
+                        <span class="tile-label">spent on ERP replacement</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number">30+</span>
+                        <span class="tile-label">validation rules per shipment</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number"><span class="tile-prefix">~</span>30</span>
+                        <span class="tile-label">sec lag from legacy ERP to live grid</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Exceptions show up as soon as the data lands, not weeks later when a chargeback hits the mailbox.</li>
+                    <li>Every shipment gets re-checked against the rulebook every time something on it changes, so fewer chargebacks slip through.</li>
+                    <li>There's no system-of-record migration to do, so training, integrations, and historical data all stay where they are.</li>
+                    <li>Onboarding new customers and retailers gets easier. Adding a validation rule or a new ship-window case becomes a normal engineering task.</li>
+                    <li>The shadow spreadsheets quietly retire. Once the ops app is the live view, the side-of-desk stuff just stops getting opened.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">The Problem</span>
+            <h2>The system you can't replace is the one holding you back.</h2>
+            <p>If you've been in 3PL for any length of time, you already know the shape of this one. The WMS, TMS, or ERP you've been running for a decade or two is the system of record. It owns the customer master, the orders, the financials, all of it. It isn't going anywhere. Replacing it is an 18-month, seven-figure project with months of dual running, and the upside just doesn't pay back the risk.</p>
+            <p>The catch is that it was never really designed for the way ops actually runs today. The team needs to see live status across thousands of active shipments at once. Several people need to work the same exception queue without stepping on each other. Every retailer has its own ship-window math and its own definition of "on time." And every retailer has its own list of things you have to validate before tendering (freight terms, hazmat rules, address rules, account-number formats), and a chargeback shows up the moment one of them's wrong.</p>
+            <p>Doing that work inside a legacy ERP screen is slow. Doing it across the ERP and a pile of spreadsheets is slower, and you pick up errors along the way. The longer it goes on, the more shadow systems show up. Sticky-noted whiteboards, side databases, the inevitable master spreadsheet living in someone's OneDrive. None of them scale, all of them are key-person risks, and they don't really agree with each other.</p>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">What We Built</span>
+            <h2>A modern dashboard that sits on top of the legacy ERP.</h2>
+            <p>A live shipment dashboard sits on top of the legacy ERP. The ERP stays the system of record; we don't touch it. Every thirty seconds or so, a background worker pulls fresh orders into a modern data layer, runs the validation rules, and pushes anything that changed out to every operator's screen. The team works in a normal app, the ERP keeps doing what it does, and the business doesn't have to pay for a rip-and-replace.</p>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">How It Works</span>
+            <h2>Five pieces that made this work.</h2>
+
+            <div class="cs-action-grid">
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 01</span>
+                        <h3 class="cs-action-name">Get the ERP's data into a modern store, live</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Orders, customers, items, and addresses all live inside the legacy ERP, which we can get to over ODBC. The data is authoritative, but reading it straight into modern interfaces every time someone clicks something is slow and chatty.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Get a clean, always-current copy of the orders somewhere the rest of the app can actually work with them.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">A background worker pulls new and changed orders every thirty seconds, writes them as Order and Shipment records into a modern SQL Server schema, and keeps customer and address data in sync alongside them.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The legacy ERP is still the system of record. The ops app reads from a modern layer that's never more than a few seconds behind it.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 02</span>
+                        <h3 class="cs-action-name">Validate every shipment against thirty-plus rules</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Every retailer has its own chargeback rulebook. Freight terms have to match carrier types. Hazmat can't go by air. PO Boxes need a specific carrier. Account numbers have format rules. Some customers want their items pre-configured for label-pack quantities. The list is long and it looks a little different for every retailer.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Catch the violations before the shipment leaves the building, not weeks later when a debit lands.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">A shipment validator runs more than thirty checks against every shipment. Things like address completeness, ship and tender date math, customer ship-window rules, freight terms vs. carrier compatibility, hazmat pairing, account-number format, and customer item setup. Every error has a stable code, and the validator re-runs whenever anything on a shipment changes.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The exception queue isn't a guessing game anymore. Anything the rules can catch shows up with a clear code, a message, and the shipment it belongs to.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 03</span>
+                        <h3 class="cs-action-name">Calculate ship windows the way each customer defines them</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">"When does this shipment have to leave?" depends on who's getting it. Some retailers measure the window backwards from a fixed delivery date. Some let the math run through weekends. Some have their own named tenders, like Target's two-day, Walmart's one-day, and Walgreens' rules. And every window still has to respect UPS transit times and the holiday calendar.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Figure out first ship, last ship, first tender, and last tender dates for every shipment, using whichever customer case applies and the right calendar.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">A ship-window calculator encodes all of those customer cases and the per-customer carve-outs. It takes the required date, applies whichever math fits, counts UPS business days, skips holidays and weekends, and hands back four dates: first ship, last ship, first tender, last tender.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The ship windows in the ops app line up with the ones each retailer actually enforces. So when someone asks "is this at risk?" the app gives the same answer the retailer would.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 04</span>
+                        <h3 class="cs-action-name">Push updates live to every screen</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Multiple operators work the same queue at the same time, and a list that's even a refresh out of date is a list where work gets done twice or not at all.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Make sure every operator's looking at the same view at the same time.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">The shipment grid is built on ag-Grid with custom validation badges and filtering. A SignalR hub pushes every change (new shipment, validation update, status change) out to every connected client as it happens.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">Everyone's looking at the same thing. The race conditions and double-work that come with legacy ERP screens mostly go away.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 05</span>
+                        <h3 class="cs-action-name">Quiet the noise per customer with "acceptable errors"</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Not every rule applies the same way to every customer. Some retailers explicitly allow things that the generic rule would flag.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Quiet down the noise the team's already decided is fine, without softening the rules for everyone else.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">A per-customer "acceptable errors" config lets the team mark specific error codes as fine for specific customers. The validator still runs every check; the filtered output just leaves out the ones the team has already accepted.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The exception queue stays focused, and operators aren't dismissing the same false positive a hundred times a day.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <details class="cs-tech-details">
+                <summary>Technical detail (for the engineers in the room)</summary>
+                <div class="cs-tech-body">
+                    <p>A .NET 8 API sits on top of the legacy ERP through ODBC. A background worker writes orders into a modern SQL Server schema every thirty seconds or so. The shipment validator handles both per-shipment and cross-shipment rules. The ship-window calculator does the customer-case date math and takes the holiday calendar and UPS transit days as inputs. The React/MUI client uses ag-Grid for the live grid and SignalR for live push.</p>
+                    <p><strong>The stack at a glance:</strong></p>
+                    <ul>
+                        <li><code class="cs-code">.NET 8 · ODBC · SQL Server</code> pull orders out of the legacy ERP every thirty seconds and write them as Order and Shipment records into the modern operational store</li>
+                        <li><code class="cs-code">Shipment validator</code> runs the thirty-plus per-shipment and cross-shipment rules, with per-customer acceptable-error filtering on the way out</li>
+                        <li><code class="cs-code">Ship-window calculator</code> encodes the per-customer ship and tender date math, and takes the holiday calendar and UPS transit days as inputs</li>
+                        <li><code class="cs-code">ASP.NET Core · SignalR</code> push shipment changes out to every connected client as they happen</li>
+                        <li><code class="cs-code">React · MUI · ag-Grid</code> make up the live operations grid that operators actually work in</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-why reveal">
+                <span class="cs-why-label">Why this matters for your 3PL</span>
+                <h2>Keep the system of record. Change how the team works on top of it.</h2>
+                <p>If you're running on a WMS, TMS, or ERP you can't realistically replace, and your team has built up the usual pile of spreadsheets, dashboards, and side databases just to work around it, our take is to leave the system of record alone. Put a live, validated app on top of it. Get the customer-specific rules out of someone's head and into code. The team gets a normal app to work in, and you stop having the rip-and-replace conversation every quarter.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-cta">
+        <div class="cs-container">
+            <div class="cta-block reveal">
+                <div>
+                    <h3>Stuck with a legacy WMS, TMS, or ERP you can't replace?</h3>
+                    <p>Book a free 30-minute call. We'll walk through where your team's working around the legacy system today and what the right modern layer would look like sitting on top of it.</p>
+                </div>
+                <a href="/#Contact" class="cta-button">Book Discovery Call <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-related">
+        <div class="cs-container">
+            <div class="cs-related-header">
+                <span class="cs-related-label">Related case studies</span>
+                <h2 class="cs-related-title">Where this fits in the bigger picture</h2>
+            </div>
+            <div class="cs-related-grid">
+                <a href="/case-studies/ai-vision-agent.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/ai-vision-agent.webp"
+                             alt="Operator Console showing the virtual operator's live desktop stream and action log"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 01 · Automation</span>
+                        <h3 class="cs-related-card-title">Scaling warehouse operations without scaling the team</h3>
+                    </div>
+                </a>
+                <a href="/case-studies/retailer-scorecards.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/retailer-scorecards.webp"
+                             alt="Embedded Power BI dashboard showing PIFOT and on-time scorecards"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 02 · Analytics</span>
+                        <h3 class="cs-related-card-title">Retailer-grade scorecards, automatically</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<div id="floating-phone-cta" class="floating-phone-cta">
+    <a href="tel:+14073493633" class="phone-cta-link">
+        <i class="bi-telephone-fill phone-icon" aria-hidden="true"></i>
+        <span class="phone-number">(407) 349-3633</span>
+    </a>
+</div>
+
+<script type="text/javascript" id="hs-script-loader" async defer
+  src="//js.hs-scripts.com/243002124.js"></script>
+<script src="/js/tracking.js?v=1.0"></script>
+<iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/js/page-transitions.js?v=1.0"></script>
+<script src="/js/components/index.js?v=1.7" type="module"></script>
+<script src="/js/index.js?v=2.5"></script>
+<script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
+</body>
+</html>

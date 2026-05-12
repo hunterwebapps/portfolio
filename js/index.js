@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealOnScroll();
   initNavbarScrollState();
   initActiveSectionHighlight();
+  initContactForm();
+  initImageLightbox();
 });
 
 function initNavbar() {
@@ -52,7 +54,7 @@ function initNavbarScrollState() {
 }
 
 function initActiveSectionHighlight() {
-  const sections = ['Home', 'AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'Contact']
+  const sections = ['Home', 'AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'CaseStudies', 'Contact']
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const links = new Map(
@@ -73,6 +75,88 @@ function initActiveSectionHighlight() {
   sections.forEach(s => io.observe(s));
 }
 
+function initImageLightbox() {
+  const triggers = document.querySelectorAll('.cs-hero-image');
+  if (triggers.length === 0) return;
+
+  let lightbox = null;
+  let lightboxImage = null;
+  let closeBtn = null;
+  let lastFocused = null;
+
+  const closeLightbox = () => {
+    if (!lightbox || lightbox.getAttribute('data-open') !== 'true') return;
+    lightbox.setAttribute('data-open', 'false');
+    document.body.classList.remove('cs-lightbox-open');
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  };
+
+  const createLightbox = () => {
+    lightbox = document.createElement('div');
+    lightbox.className = 'cs-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Image viewer');
+    lightbox.setAttribute('data-open', 'false');
+
+    lightboxImage = document.createElement('img');
+    lightboxImage.className = 'cs-lightbox-image';
+    lightboxImage.alt = '';
+
+    closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'cs-lightbox-close';
+    closeBtn.setAttribute('aria-label', 'Close image viewer');
+    closeBtn.innerHTML = '&times;';
+
+    lightbox.append(lightboxImage, closeBtn);
+    document.body.appendChild(lightbox);
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxImage) {
+        closeLightbox();
+      }
+    });
+    lightbox.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        closeBtn.focus();
+      }
+    });
+  };
+
+  const openLightbox = (src, alt) => {
+    if (!lightbox) createLightbox();
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || '';
+    lightbox.setAttribute('data-open', 'true');
+    document.body.classList.add('cs-lightbox-open');
+    lastFocused = document.activeElement;
+    requestAnimationFrame(() => closeBtn.focus());
+  };
+
+  for (const trigger of triggers) {
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-label', `Click to enlarge: ${trigger.alt || 'image'}`);
+
+    trigger.addEventListener('click', () => openLightbox(trigger.src, trigger.alt));
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(trigger.src, trigger.alt);
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
 function initOperatingHours() {
   const openHour = 9;
   const closeHour = 18;
@@ -90,28 +174,116 @@ function initOperatingHours() {
     .formatToParts(new Date())
     .find(p => p.type === 'timeZoneName')?.value || '';
 
-  document.getElementById('OperatingHours').innerHTML = `${open} to ${close} ${zone}`;
+  const el = document.getElementById('OperatingHours');
+  if (el) el.innerHTML = `${open} to ${close} ${zone}`;
+}
+
+const EMAIL_REGEX = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+function initContactForm() {
+  const form = document.getElementById('ContactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', handleSubmitContact);
+
+  const emailEl = document.getElementById('email');
+  const messageEl = document.getElementById('message');
+
+  if (emailEl) {
+    // Blur: only flag format errors when there's content to validate.
+    emailEl.addEventListener('blur', () => {
+      if (emailEl.value.trim()) validateEmailField(emailEl);
+    });
+    // Input: clear existing error as soon as it's valid.
+    emailEl.addEventListener('input', () => {
+      if (emailEl.getAttribute('aria-invalid') === 'true' && EMAIL_REGEX.test(emailEl.value)) {
+        clearFieldError(emailEl, 'email-error');
+      }
+    });
+  }
+
+  if (messageEl) {
+    // Clear empty-required error as soon as the user types.
+    messageEl.addEventListener('input', () => {
+      if (messageEl.getAttribute('aria-invalid') === 'true' && messageEl.value.trim()) {
+        clearFieldError(messageEl, 'message-error');
+      }
+    });
+  }
+}
+
+function validateEmailField(el) {
+  if (!el.value.trim() || !EMAIL_REGEX.test(el.value)) {
+    setFieldError(el, 'email-error');
+    return false;
+  }
+  clearFieldError(el, 'email-error');
+  return true;
+}
+
+function validateMessageField(el) {
+  if (!el.value.trim()) {
+    setFieldError(el, 'message-error');
+    return false;
+  }
+  clearFieldError(el, 'message-error');
+  return true;
+}
+
+function setFieldError(inputEl, errorId) {
+  inputEl.setAttribute('aria-invalid', 'true');
+  inputEl.classList.add('is-invalid');
+  const err = document.getElementById(errorId);
+  if (err) err.classList.remove('d-none');
+}
+
+function clearFieldError(inputEl, errorId) {
+  inputEl.removeAttribute('aria-invalid');
+  inputEl.classList.remove('is-invalid');
+  const err = document.getElementById(errorId);
+  if (err) err.classList.add('d-none');
+}
+
+function validateContactForm() {
+  const emailEl = document.getElementById('email');
+  const messageEl = document.getElementById('message');
+
+  const emailOk = validateEmailField(emailEl);
+  const messageOk = validateMessageField(messageEl);
+
+  if (!emailOk) {
+    emailEl.focus();
+    return false;
+  }
+  if (!messageOk) {
+    messageEl.focus();
+    return false;
+  }
+  return true;
 }
 
 async function handleSubmitContact(e) {
   e.preventDefault();
 
-  if (!validateContactForm()) {
-    return;
-  }
+  const serverErrorEl = document.getElementById('server-error');
+  serverErrorEl.classList.add('d-none');
+  serverErrorEl.textContent = '';
 
-  const submitLoading = document.getElementById('submit-loading');
+  if (!validateContactForm()) return;
 
-  submitLoading.classList.remove('d-none');
-
+  const submitBtn = document.getElementById('recaptcha-submit');
+  const labelEl = submitBtn.querySelector('.submit-btn-label');
   const contactForm = document.getElementById('ContactForm');
   const formThanks = document.getElementById('ContactThanksForm');
 
-  const name = document.getElementById('name').value;
-  const names = name.split(' ');
-  const email = document.getElementById('email').value;
+  const name = document.getElementById('name').value.trim();
+  const names = name ? name.split(/\s+/) : [];
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone')?.value.trim() || '';
   const confirmEmail = document.getElementById('confirm_email').value;
-  const message = document.getElementById('message').value;
+  const message = document.getElementById('message').value.trim();
+
+  setSubmitting(submitBtn, labelEl, true);
 
   try {
     const token = await new Promise((resolve) => {
@@ -127,6 +299,7 @@ async function handleSubmitContact(e) {
         type: 'PortfolioContact',
         name,
         email,
+        phone,
         confirmEmail,
         message,
         recaptchaToken: token,
@@ -134,14 +307,12 @@ async function handleSubmitContact(e) {
       mode: 'cors',
     });
 
-    const serverErrorEl = document.getElementById('server-error');
-
     if (emailResponse.status === 400) {
       const raw = await emailResponse.text();
       const errorText = raw.replace(/^"|"$/g, '');
       serverErrorEl.textContent = errorText || 'Please check your email and try again.';
       serverErrorEl.classList.remove('d-none');
-      submitLoading.classList.add('d-none');
+      setSubmitting(submitBtn, labelEl, false);
       return;
     }
 
@@ -149,60 +320,51 @@ async function handleSubmitContact(e) {
       throw new Error('Submission failed');
     }
 
-    serverErrorEl.classList.add('d-none');
+    webToLead(names.at(0) || '', names.length > 1 ? names.at(-1) : '', email, phone, message);
 
-    webToLead(names.at(0), names.at(-1), email, message);
+    showThankYou(contactForm, formThanks, names.at(0), email);
 
-    contactForm.classList.add('d-none');
-    formThanks.classList.remove('d-none');
-
-    // Tracking
-    HWA_TRACKING.identifyVisitor(email, { firstname: names.at(0), lastname: names.at(-1) });
+    HWA_TRACKING.identifyVisitor(email, { firstname: names.at(0), lastname: names.at(-1), phone });
     HWA_TRACKING.trackHubSpotEvent('pe_contact_form_submit');
     HWA_TRACKING.pushDataLayerEvent('contact_form_submit', { formType: 'contact', userEmail: email });
     HWA_TRACKING.sendToClayWebhook(Object.assign({
       source: 'contact_form',
       firstName: names.at(0),
-      lastName: names.at(-1),
-      email: email,
-      message: message,
+      lastName: names.length > 1 ? names.at(-1) : '',
+      email,
+      phone,
+      message,
       pageUrl: window.location.href,
       timestamp: new Date().toISOString()
     }, HWA_TRACKING.getUtmParams()));
-
-    submitLoading.classList.add('d-none');
   } catch (ex) {
     handleContactFormFailure(ex, message);
   }
 }
 
-function validateContactForm() {
-  const emailEl = document.getElementById('email');
-  const emailErrorEl = document.getElementById('email-error');
-  const serverErrorEl = document.getElementById('server-error');
-  const messageEl = document.getElementById('message');
-  const messageErrorEl = document.getElementById('message-error');
+function setSubmitting(btn, labelEl, isSubmitting) {
+  if (!btn) return;
+  btn.disabled = isSubmitting;
+  btn.classList.toggle('is-submitting', isSubmitting);
+  btn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
+  if (labelEl) labelEl.textContent = isSubmitting ? 'Sending…' : 'Send Message';
+}
 
-  serverErrorEl.classList.add('d-none');
+function showThankYou(formEl, thanksEl, firstName, email) {
+  const nameSpan = document.getElementById('ThankYouName');
+  if (nameSpan) nameSpan.textContent = firstName ? `, ${firstName}` : '';
 
-  let isValid = true;
+  const emailSpan = document.getElementById('ThankYouEmail');
+  if (emailSpan) emailSpan.textContent = email || 'your inbox';
 
-  const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  if (!emailRegex.test(emailEl.value)) {
-    emailErrorEl.classList.remove('d-none');
-    isValid = false;
-  } else {
-    emailErrorEl.classList.add('d-none');
-  }
+  formEl.classList.add('d-none');
+  thanksEl.classList.remove('d-none');
 
-  if (!messageEl.value) {
-    messageErrorEl.classList.remove('d-none');
-    isValid = false;
-  } else {
-    messageErrorEl.classList.add('d-none');
-  }
-
-  return isValid;
+  // Soft focus + scroll for screen readers and visual continuity
+  requestAnimationFrame(() => {
+    thanksEl.focus({ preventScroll: true });
+    thanksEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 }
 
 function handleContactFormFailure(ex, originalMessage) {
@@ -215,11 +377,15 @@ function handleContactFormFailure(ex, originalMessage) {
   originalMessageEl.value = originalMessage;
   contactFormEl.classList.add('d-none');
   contactFailEl.classList.remove('d-none');
-  originalMessageEl.focus();
-  originalMessageEl.select();
+
+  requestAnimationFrame(() => {
+    contactFailEl.focus({ preventScroll: true });
+    contactFailEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    originalMessageEl.select();
+  });
 }
 
-function webToLead(firstName, lastName, email, description) {
+function webToLead(firstName, lastName, email, phone, description) {
   const form = document.createElement('form');
 
   form.method = 'POST';
@@ -229,10 +395,11 @@ function webToLead(firstName, lastName, email, description) {
   form.appendChild(createHiddenInput('oid', '00D8b000002byl2'));
   form.appendChild(createHiddenInput('retURL', 'https://applied3pl.com'));
   form.appendChild(createHiddenInput('debug', '1'));
-  form.appendChild(createHiddenInput('debugEmail', 'hunter@applied3pl.com'));
+  form.appendChild(createHiddenInput('debugEmail', 'hello@applied3pl.com'));
   form.appendChild(createHiddenInput('first_name', firstName));
   form.appendChild(createHiddenInput('last_name', lastName));
   form.appendChild(createHiddenInput('email', email));
+  if (phone) form.appendChild(createHiddenInput('phone', phone));
   form.appendChild(createHiddenInput('description', description));
 
   document.body.appendChild(form);

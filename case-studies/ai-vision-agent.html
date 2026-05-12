@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FAF7F2">
+
+    <!-- ---PRECONNECT ----->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://webto.salesforce.com">
+    <link rel="dns-prefetch" href="https://js.hs-scripts.com">
+
+    <!-- ---META & SOCIAL ----->
+    <meta name="description"
+          content="How we put a virtual operator on the legacy ERP and retailer-portal screens a 3PL works in every day, so the team can grow output without piling on hires."/>
+    <meta name="author" content="Applied 3PL Systems">
+
+    <meta property="og:title" content="Scaling Warehouse Operations Without Scaling the Team | Applied 3PL Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://applied3pl.com/case-studies/ai-vision-agent.html">
+    <meta property="og:image" content="https://applied3pl.com/images/case-studies/ai-vision-agent.webp">
+    <meta property="og:description"
+          content="A virtual operator handles the legacy and retailer-portal screens, with a live web console so a supervisor can keep an eye on it.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@applied3pl">
+    <meta name="twitter:title" content="Scaling Warehouse Operations Without Scaling the Team | Applied 3PL Systems">
+    <meta name="twitter:image" content="https://applied3pl.com/images/case-studies/ai-vision-agent.webp">
+    <meta name="twitter:description"
+          content="A virtual operator handles the legacy and retailer-portal screens, with a live web console so a supervisor can keep an eye on it.">
+
+    <!-- ---STRUCTURED DATA ----->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Scaling Warehouse Operations Without Scaling the Warehouse Team",
+        "description": "A virtual operator that runs EDI imports, shipment builds, label printing, and customer-portal close-outs.",
+        "image": "https://applied3pl.com/images/case-studies/ai-vision-agent.webp",
+        "author": {
+            "@type": "Organization",
+            "name": "Applied 3PL Systems"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Applied 3PL Systems",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://applied3pl.com/images/logo_applied_main.svg"
+            }
+        },
+        "mainEntityOfPage": "https://applied3pl.com/case-studies/ai-vision-agent.html",
+        "articleSection": "Case Study"
+    }
+    </script>
+
+    <link rel="icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://applied3pl.com/case-studies/ai-vision-agent.html">
+
+    <title>Case Study 01: Scaling Warehouse Operations | Applied 3PL Systems</title>
+
+    <!-- ---SCRIPTS & STYLES ----->
+    <script src="/js/google-tag-manager.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/css/styles.css?v=2.5">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Q2E6ZZL9BM');
+    </script>
+
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+    o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+    o.onload=function(){window.trackingFunctions.onLoad({appId:"69a8a44c9bf8490011723d34"})},
+    document.head.appendChild(o)}initApollo();</script>
+</head>
+
+<body class="cs-page">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW53W2L" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<!-- ---NAV BAR ----->
+<nav class="navbar navbar-expand-lg">
+    <div class="container navbar-container">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
+                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+
+    <!-- ---HERO ----->
+    <section class="cs-hero">
+        <div class="cs-container">
+            <div class="cs-hero-eyebrow">
+                <span class="cs-hero-eyebrow-divider" aria-hidden="true"></span>
+                <span>Case Study 01 · Distribution &amp; Third-Party Logistics</span>
+            </div>
+            <h1 class="cs-hero-title">Scaling Warehouse Operations Without Scaling the Warehouse Team</h1>
+            <p class="cs-hero-lede">A virtual operator drives the same screens your team does. EDI imports, picking dialogs, label printing, customer-portal close-outs. A supervisor watches the live feed from a web console.</p>
+
+            <div class="cs-meta-strip">
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Problem</span>
+                    <p class="cs-meta-value">Your ops team spends most of its day clicking through portals and typing into a legacy ERP. The work is required, repetitive, and you can't hire your way out of it.</p>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Result</span>
+                    <p class="cs-meta-value">A virtual operator that runs those workflows. One supervisor watches from a web page, and every action is logged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---HERO IMAGE ----->
+    <div class="cs-hero-image-wrap">
+        <div class="cs-container">
+            <img src="/images/case-studies/ai-vision-agent.webp"
+                 alt="Operator Console showing the virtual operator's live desktop stream and synchronized action log alongside legacy WMS screens"
+                 width="1536" height="1024" class="cs-hero-image"
+                 loading="eager" decoding="async">
+        </div>
+    </div>
+
+    <!-- ---AT A GLANCE ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">At a Glance</span>
+            <div class="cs-at-a-glance reveal">
+                <ul>
+                    <li>The agent runs <strong>seven workflows</strong> right now: EDI order imports from retailer portals, building shipments in the legacy OpShip app, order printing, order cancellation, ship-via updates, work-order number updates, and PDF stamping.</li>
+                    <li>An <strong>Operator Console</strong> in the ops app shows the agent's live desktop and its action log. Supervisors don't have to RDP into the VM to see what it's doing.</li>
+                    <li>If a screen doesn't look right (a popup, a layout change) the agent hands off to a <strong>vision model</strong> that reads what's there and picks the next move instead of giving up.</li>
+                    <li>One supervisor can watch several agent sessions at a time. Adding capacity stops requiring new hires.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---RESULTS CALLOUT ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-results reveal">
+                <span class="cs-results-label">Results</span>
+                <div class="results-tiles">
+                    <div class="results-tile">
+                        <span class="tile-number"><span class="tile-prefix">&gt;</span>70</span>
+                        <span class="tile-label">hrs/wk of manual workflows eliminated</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number">7</span>
+                        <span class="tile-label">workflows automated end-to-end</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number">24/7</span>
+                        <span class="tile-label">always-on coverage, no business-hours gap</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>More capacity, no new hires.</li>
+                    <li>EDI imports and close-outs run overnight and on weekends, not just during business hours.</li>
+                    <li>Every action is timestamped and replayable, so chargeback disputes have real evidence to point at.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---THE PROBLEM ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">The Problem</span>
+            <h2>You can't hire your way out of screen work.</h2>
+            <p>A lot of what a 3PL ops team does every day isn't warehouse work. It's screen work. Someone has to import EDI files through the retailer's portal. Pick tickets and packing slips have to print at the right printer at the right facility. Orders get cancelled at the last minute and need to be backed out of the ERP. Ship-via codes change. Work-order numbers need fixing. This stuff happens hundreds of times a day.</p>
+            <p>The obvious move is to hire more people. The problem: staff who can navigate a retailer portal and a 90s-era ERP at the same time are hard to find, and harder to keep. The work burns them out. It's repetitive, you can't batch it, and they take heat every time a chargeback shows up. Every uptick in volume means either more hires or more risk of falling behind.</p>
+            <p>And there's no clean API path. Retailer portals are HTML pages. The ERP is a Windows desktop app from the 90s. So historically your options have been: write scraping scripts that snap when a button moves, or hire more people.</p>
+        </div>
+    </section>
+
+    <!-- ---WHAT WE BUILT ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">What We Built</span>
+            <h2>An agent that drives the same screens your team does.</h2>
+            <p>A Windows agent runs on a dedicated VM. It logs into the ERP, navigates the retailer portals, fills out dialogs, prints to the right printers, and reports back. It runs on a schedule, when ops asks it to, or in response to events elsewhere in the system. Its desktop and action log stream live into an <strong>Operator Console</strong> inside the ops app, so a supervisor can watch and step in if something looks off.</p>
+        </div>
+    </section>
+
+    <!-- ---HOW IT WORKS ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">How It Works</span>
+            <h2>Four pieces that made this work.</h2>
+
+            <div class="cs-action-grid">
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 01</span>
+                        <h3 class="cs-action-name">Pick the seven workflows to automate first</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Seven workflows were eating up the team's time: EDI imports, building shipments in OpShip, order printing, cancellations, ship-via updates, WO-number updates, and PDF stamping. All manual, all repetitive, all required every day.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Take them off people's plates without losing the judgment the team brings when something doesn't go to plan.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">We broke each workflow into explicit steps. Every step knows what should be on screen, how to check it worked, and what to do if a popup gets in the way. Each one gets logged.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">All seven workflows now run the same way, at the same speed, every time. Overnight and on weekends included.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 02</span>
+                        <h3 class="cs-action-name">Make the agent watchable from a browser</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Automation that runs out of sight makes ops leaders nervous, and they're right to be. When something goes sideways, you find out when the chargeback lands.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Give supervisors the same view they'd have standing behind a person at a desk.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">The agent streams its desktop as an HLS feed into the ops app. Next to it, an action log shows the current step, the last one it finished, and what's coming next.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">Supervisors can audit it from any browser, no RDP needed. One person can watch several sessions at once.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 03</span>
+                        <h3 class="cs-action-name">A vision model for when the screen changes</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Retailer portals and legacy apps change. A button moves, dialog text shifts, a session expires in some weird way. Traditional UI automation snaps the moment that happens.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Keep the agent going through small changes without paging someone at 2am.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">When a step doesn't see what it expects, it hands the screen over to a vision model. The model reads what's there the way a person would and picks the next move. Small surprises stay small. Real problems still escalate.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The supervisor's exception queue ends up full of actual problems instead of "the button moved."</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 04</span>
+                        <h3 class="cs-action-name">Log everything</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">When an automated system is touching customer-facing data, you need to be able to point to exactly what happened, and when.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Get an audit trail at least as good as the one a person would leave.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">Every click, every step start, every success or failure gets a timestamp and a session ID. The same log feeds the Operator Console live, and the database for after-the-fact review.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">A full audit trail behind every automated action, available to ops, IT, and compliance.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---UNDER THE HOOD ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <details class="cs-tech-details">
+                <summary>Technical detail (for the engineers in the room)</summary>
+                <div class="cs-tech-body">
+                    <p>The agent is a WPF desktop app running on its own VM. UI automation runs on FlaUI (which wraps UIA primitives), with an Azure OpenAI vision model as the fallback. The Operator Console lives in the React/MUI client and streams the agent's desktop over HLS via FFmpeg. The action log comes through SignalR. Jobs land on the agent's queue over HTTP from the ops app, and the orchestrator picks them up.</p>
+                    <p><strong>The stack at a glance:</strong></p>
+                    <ul>
+                        <li><code class="cs-code">WPF · FlaUI</code> drives the legacy ERP and retailer portals through UI Automation primitives, all on a dedicated Windows VM</li>
+                        <li><code class="cs-code">Azure OpenAI</code> picks up as the vision fallback when a UIA target isn't where the workflow expects it</li>
+                        <li><code class="cs-code">React · MUI · FFmpeg · SignalR</code> power the Operator Console — an HLS desktop stream alongside the synchronized action log</li>
+                        <li><code class="cs-code">HTTP queue · orchestrator</code> handle job intake from the ops app and dispatch on the agent side</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- ---WHY THIS MATTERS ----->
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-why reveal">
+                <span class="cs-why-label">Why this matters for your 3PL</span>
+                <h2>Switching ERPs won't fix this. Switching the screen work will.</h2>
+                <p>If you run a 3PL, your people spend more time in retailer portals and a legacy WMS, TMS, or ERP than you'd like. Switching systems won't really change that. The pattern we built for our client works elsewhere: figure out the workflows that eat up the most time, put an agent on them, and let a supervisor watch from a browser. You add capacity, and the institutional knowledge tied up in your senior ops people stops being a single point of failure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---CTA ----->
+    <section class="cs-cta">
+        <div class="cs-container">
+            <div class="cta-block reveal">
+                <div>
+                    <h3>Want this pattern in your operation?</h3>
+                    <p>Book a free 30-minute call. We'll talk through where your team is spending time and whether a virtual operator is a fit.</p>
+                </div>
+                <a href="/#Contact" class="cta-button">Book Discovery Call <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---RELATED CASE STUDIES ----->
+    <section class="cs-related">
+        <div class="cs-container">
+            <div class="cs-related-header">
+                <span class="cs-related-label">Related case studies</span>
+                <h2 class="cs-related-title">Where this fits in the bigger picture</h2>
+            </div>
+            <div class="cs-related-grid">
+                <a href="/case-studies/modern-ops-on-legacy-erp.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/modern-ops-on-legacy-erp.webp"
+                             alt="Real-time Ship List grid with validation badges layered on the legacy ERP"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 03 · Operations</span>
+                        <h3 class="cs-related-card-title">Modern ops on top of a legacy ERP</h3>
+                    </div>
+                </a>
+                <a href="/case-studies/amazon-routing.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/amazon-routing.webp"
+                             alt="End-to-end automation timeline for Amazon routing from email intake to confirmed shipment"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 05 · Amazon</span>
+                        <h3 class="cs-related-card-title">From routing request to confirmed shipment</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ---FOOTER ----->
+<site-footer></site-footer>
+
+<!-- ---FLOATING PHONE CTA ----->
+<div id="floating-phone-cta" class="floating-phone-cta">
+    <a href="tel:+14073493633" class="phone-cta-link">
+        <i class="bi-telephone-fill phone-icon" aria-hidden="true"></i>
+        <span class="phone-number">(407) 349-3633</span>
+    </a>
+</div>
+
+<!-- ---SCRIPTS ----->
+<script type="text/javascript" id="hs-script-loader" async defer
+  src="//js.hs-scripts.com/243002124.js"></script>
+<script src="/js/tracking.js?v=1.0"></script>
+<iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/js/page-transitions.js?v=1.0"></script>
+<script src="/js/components/index.js?v=1.7" type="module"></script>
+<script src="/js/index.js?v=2.5"></script>
+<script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
+</body>
+</html>

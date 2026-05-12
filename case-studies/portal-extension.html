@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FAF7F2">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://webto.salesforce.com">
+    <link rel="dns-prefetch" href="https://js.hs-scripts.com">
+
+    <meta name="description"
+          content="A Chrome extension that puts your shipment data inside ShipIQ and Amazon Vendor and Seller Central, so the team isn't copy-pasting between two screens all day."/>
+    <meta name="author" content="Applied 3PL Systems">
+
+    <meta property="og:title" content="Your Team Lives in Your Customers' Portals | Applied 3PL Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://applied3pl.com/case-studies/portal-extension.html">
+    <meta property="og:image" content="https://applied3pl.com/images/case-studies/portal-extension.webp">
+    <meta property="og:description"
+          content="A Chrome extension that puts your shipment data inside ShipIQ, Amazon Vendor Central, and Seller Central. Auto-fill, PO highlights, and a docked side panel.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@applied3pl">
+    <meta name="twitter:title" content="Your Team Lives in Your Customers' Portals | Applied 3PL Systems">
+    <meta name="twitter:image" content="https://applied3pl.com/images/case-studies/portal-extension.webp">
+    <meta name="twitter:description"
+          content="A Chrome extension that puts your shipment data inside ShipIQ, Amazon Vendor Central, and Seller Central. Auto-fill, PO highlights, and a docked side panel.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Your Team Lives in Your Customers' Portals. We Brought Your Data With Them.",
+        "description": "A Chrome extension that overlays operations data on top of customer portals like ShipIQ and Amazon Vendor Central.",
+        "image": "https://applied3pl.com/images/case-studies/portal-extension.webp",
+        "author": { "@type": "Organization", "name": "Applied 3PL Systems" },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Applied 3PL Systems",
+            "logo": { "@type": "ImageObject", "url": "https://applied3pl.com/images/logo_applied_main.svg" }
+        },
+        "mainEntityOfPage": "https://applied3pl.com/case-studies/portal-extension.html",
+        "articleSection": "Case Study"
+    }
+    </script>
+
+    <link rel="icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://applied3pl.com/case-studies/portal-extension.html">
+
+    <title>Case Study 04: Your Team Lives in Your Customers' Portals | Applied 3PL Systems</title>
+
+    <script src="/js/google-tag-manager.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/css/styles.css?v=2.5">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Q2E6ZZL9BM');
+    </script>
+
+    <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+    o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+    o.onload=function(){window.trackingFunctions.onLoad({appId:"69a8a44c9bf8490011723d34"})},
+    document.head.appendChild(o)}initApollo();</script>
+</head>
+
+<body class="cs-page">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW53W2L" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container navbar-container">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
+                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+
+    <section class="cs-hero">
+        <div class="cs-container">
+            <div class="cs-hero-eyebrow">
+                <span class="cs-hero-eyebrow-divider" aria-hidden="true"></span>
+                <span>Case Study 04 · Distribution &amp; Third-Party Logistics</span>
+            </div>
+            <h1 class="cs-hero-title">Your Team Lives in Your Customers' Portals. We Brought Your Data With Them.</h1>
+            <p class="cs-hero-lede">A Chrome extension that runs inside the customer portals your team is already in every day. It highlights the POs that match active shipments, fills in form fields, and drops your shipment data into a side panel so nobody has to alt-tab to find it.</p>
+
+            <div class="cs-meta-strip">
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Problem</span>
+                    <p class="cs-meta-value">Operations staff spend a big part of every day inside ShipIQ and Amazon's portals, copying and pasting data their own system already knows.</p>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="cs-meta-label">The Result</span>
+                    <p class="cs-meta-value">The extension drops your own data into the portal pages, so the operator can see it without flipping back and forth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-hero-image-wrap">
+        <div class="cs-container">
+            <img src="/images/case-studies/portal-extension.webp"
+                 alt="Chrome extension active inside ShipIQ and Amazon Vendor Central, highlighting matching POs and showing shipment data in a docked side panel"
+                 width="1536" height="1024" class="cs-hero-image"
+                 loading="eager" decoding="async">
+        </div>
+    </div>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">At a Glance</span>
+            <div class="cs-at-a-glance reveal">
+                <ul>
+                    <li>Runs directly inside the <strong>customer portals the team is in every day</strong>: ShipIQ (Target / partnersonline), Amazon Vendor Central, and Amazon Seller Central.</li>
+                    <li><strong>Highlights POs</strong> on the portal page that match active shipments, so the operator can tell at a glance which work has already been touched.</li>
+                    <li><strong>Auto-fills ShipIQ form fields</strong> from the operator's own shipment data, so the copy-paste round trip basically goes away.</li>
+                    <li>A <strong>side panel</strong> carries shipment context and a couple of calculator utilities (pallet calc, Walmart confirmation) right inside the browser.</li>
+                    <li><strong>Auto-detects environment</strong> (dev, test, or prod) so the same extension binary works for everyone, and the team can switch back-ends without reinstalling.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-results reveal">
+                <span class="cs-results-label">Results</span>
+                <div class="results-tiles">
+                    <div class="results-tile">
+                        <span class="tile-number">3</span>
+                        <span class="tile-label">retailer portals, one signed extension</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number"><span class="tile-prefix">~</span>2</span>
+                        <span class="tile-label">hrs/operator/day reclaimed</span>
+                    </div>
+                    <div class="results-tile">
+                        <span class="tile-number"><span class="tile-prefix">~</span>0</span>
+                        <span class="tile-label">transcription errors on auto-filled fields</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Real hours back per operator-shift. The small frictions of copy-paste and PO-lookup add up over the course of a day.</li>
+                    <li>Fewer transcription errors on retailer portals, because the auto-fill takes out the step where most of those errors were getting introduced in the first place.</li>
+                    <li>Faster portal-driven exception handling. When a retailer flags something, the operator can resolve it from inside the portal with their own data already on screen.</li>
+                    <li>Lower onboarding cost for new operators. The "two-screen dance" basically goes away.</li>
+                    <li>Deployable via Group Policy and updated centrally, so IT isn't chasing down end-user machines one at a time.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">The Problem</span>
+            <h2>Your team isn't in your system. They're in your customer's.</h2>
+            <p>Walk into a 3PL's operations room and watch what the team is actually doing. A lot of the day, they're not in your WMS or your TMS or your ERP. They're in your <em>customers'</em> portals. ShipIQ for Target. Vendor Central for Amazon. Seller Central for the marketplace side. Those portals are the gates the work has to pass through, and they were built for the customer, not for you.</p>
+            <p>So your operators end up with two screens open most of the day. On one, the customer's portal is asking them to pick a PO, type a date, set a quantity, click submit. On the other, your own system already knows the answers: which shipment that PO is on, when it's planned to ship, the right quantity. The operator copy-pastes, alt-tabs, mistypes a digit, starts over. That happens hundreds of times a day across the floor.</p>
+            <p>The cost of all this is real, but it doesn't look like one problem you can take to a leadership team. It's a lot of small frictions adding up to real hours and real errors over a week. Nobody really complains about it, because "this is just how the job works." But the time spent flipping between two screens is time the team doesn't spend on the exceptions that actually need a human.</p>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">What We Built</span>
+            <h2>A browser extension that brings your data into your customer's portal.</h2>
+            <p>It's a Chrome extension that runs inside the customer portals the team is already using every day. It reads what's on the page, looks up the matching POs and shipments in your own system, and shows that data right there in the portal. The team stops alt-tabbing.</p>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <span class="cs-section-label">How It Works</span>
+            <h2>Four pieces that took the friction tax off the portal day.</h2>
+
+            <div class="cs-action-grid">
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 01</span>
+                        <h3 class="cs-action-name">Highlight matching POs on the customer's page</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">An operator lands on a ShipIQ or Amazon page with a long list of POs and has to find the ones that match their active shipments. Until now that meant scrolling, Ctrl+F, and a fair amount of gut feel.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Make the relevant POs visually obvious without making the operator do the work.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">Content scripts read the POs displayed on the portal page, ask the operations backend which ones match active shipments, and apply a visual highlight to those rows.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">"Where am I in this list?" becomes a glance instead of a scroll.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 02</span>
+                        <h3 class="cs-action-name">Pre-fill ShipIQ form fields from operator data</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">ShipIQ asks the operator to type in fields the operations system already knows: quantities, item identifiers, dates.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Get rid of the typing round-trip.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">An auto-fill module reads the ShipIQ form, matches it against the operator's own shipment data, and populates the fields for them.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The transcription step, which is where most of the mistakes were getting introduced anyway, basically disappears for the common cases.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 03</span>
+                        <h3 class="cs-action-name">Put shipment context and calculators in a side panel inside the browser</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Even with the highlight and the auto-fill, operators occasionally need to look up shipment details, run a pallet calculation, or fill out a Walmart confirmation form.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Keep that work in the browser the portal already lives in, instead of in some other app the operator has to go open.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">The extension carries a side panel with shipment status tracking, a pallet calculator UI, and a Walmart-confirmation calculator that's backed by an Excel sheet under the hood.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">The supplementary tools live right next to the customer portal instead of in some other window the operator has to go hunt down.</p>
+                    </div>
+                </article>
+
+                <article class="cs-action-card reveal">
+                    <header class="cs-action-header">
+                        <span class="cs-action-num">Step 04</span>
+                        <h3 class="cs-action-name">Auto-detect dev, test, or prod so the team can switch back-ends without reinstalling</h3>
+                    </header>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Situation</span>
+                        <p class="cs-action-step-body">Operations staff, QA, and developers all need the same extension pointing at different back-ends at different times. Forcing each group to install a different build is fragile and breaks during testing.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Task</span>
+                        <p class="cs-action-step-body">Ship one extension binary that everyone uses.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Action</span>
+                        <p class="cs-action-step-body">An environment manager inside the extension auto-detects which back-end is reachable and routes API calls accordingly. Users can also flip environments manually from the side panel.</p>
+                    </div>
+                    <div class="cs-action-step">
+                        <span class="cs-action-step-label">Result</span>
+                        <p class="cs-action-step-body">A single signed extension, deployed through Group Policy, that works for everyone. QA can flip it into the test environment without redeploying anything.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <details class="cs-tech-details">
+                <summary>Technical detail (for the engineers in the room)</summary>
+                <div class="cs-tech-body">
+                    <p>A Manifest V3 Chrome extension with environment auto-detection, a service-worker background script that handles API calls and caching, content scripts that inject into ShipIQ and Amazon's portals, and a Chrome side panel for shipment status and calculator utilities. The whole thing is signed, packaged through the same CI pipeline as the rest of the platform, and deployed to operator workstations through Group Policy.</p>
+                    <p><strong>The stack at a glance:</strong></p>
+                    <ul>
+                        <li><code class="cs-code">Chrome MV3 · Service Worker</code> runs as the background script, handling API calls to the operations backend and caching responses so the page-side scripts stay snappy</li>
+                        <li><code class="cs-code">ShipIQ content scripts</code> highlight matching POs on the portal page and auto-fill the form fields from the operator's own shipment data</li>
+                        <li><code class="cs-code">Amazon content scripts</code> cover Vendor Central and Seller Central, doing the same kind of highlighting for POs that match active shipments</li>
+                        <li><code class="cs-code">Environment manager</code> figures out which back-end is reachable (dev, test, or prod) and routes API calls accordingly</li>
+                        <li><code class="cs-code">Chrome side panel</code> carries shipment status tracking, a pallet calculator UI, and the Walmart-confirmation calculator</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-why reveal">
+                <span class="cs-why-label">Why this matters for your 3PL</span>
+                <h2>The portals aren't going away. Bring your data with you.</h2>
+                <p>The portals your customers make you use aren't getting better, and every new retail account brings another one. What we built for our client isn't really portal-specific. The same idea works anywhere: figure out which portals are eating your team's time, write a small extension that drops your own data into them, and push it out through Group Policy. That takes the small daily tax of two-screen work off the table.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-cta">
+        <div class="cs-container">
+            <div class="cta-block reveal">
+                <div>
+                    <h3>Watching your team live in customer portals all day?</h3>
+                    <p>Book a free 30-minute call. Tell us which portals are eating up the most time, and we'll talk through what a targeted browser extension could do for your operation.</p>
+                </div>
+                <a href="/#Contact" class="cta-button">Book Discovery Call <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cs-related">
+        <div class="cs-container">
+            <div class="cs-related-header">
+                <span class="cs-related-label">Related case studies</span>
+                <h2 class="cs-related-title">Where this fits in the bigger picture</h2>
+            </div>
+            <div class="cs-related-grid">
+                <a href="/case-studies/modern-ops-on-legacy-erp.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/modern-ops-on-legacy-erp.webp"
+                             alt="Real-time Ship List grid with validation badges layered on the legacy ERP"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 03 · Operations</span>
+                        <h3 class="cs-related-card-title">Modern ops on top of a legacy ERP</h3>
+                    </div>
+                </a>
+                <a href="/case-studies/ai-vision-agent.html" class="cs-related-card">
+                    <div class="cs-related-card-media">
+                        <img src="/images/case-studies/ai-vision-agent.webp"
+                             alt="Operator Console showing the virtual operator's live desktop stream and action log"
+                             width="1536" height="1024" loading="lazy" decoding="async">
+                    </div>
+                    <div class="cs-related-card-body">
+                        <span class="cs-related-card-eyebrow">Case 01 · Automation</span>
+                        <h3 class="cs-related-card-title">Scaling warehouse operations without scaling the team</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<div id="floating-phone-cta" class="floating-phone-cta">
+    <a href="tel:+14073493633" class="phone-cta-link">
+        <i class="bi-telephone-fill phone-icon" aria-hidden="true"></i>
+        <span class="phone-number">(407) 349-3633</span>
+    </a>
+</div>
+
+<script type="text/javascript" id="hs-script-loader" async defer
+  src="//js.hs-scripts.com/243002124.js"></script>
+<script src="/js/tracking.js?v=1.0"></script>
+<iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/js/page-transitions.js?v=1.0"></script>
+<script src="/js/components/index.js?v=1.7" type="module"></script>
+<script src="/js/index.js?v=2.5"></script>
+<script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
+</body>
+</html>
