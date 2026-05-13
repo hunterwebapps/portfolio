@@ -42,7 +42,7 @@ class SiteFooter extends HTMLElement {
                     <span id="server-error" class="field-error d-none" role="alert" aria-live="assertive"></span>
                     <div class="col-12 submit-container">
                         <button type="submit" id="recaptcha-submit"
-                                class="form-control submit-btn">
+                                class="submit-btn">
                             <span class="submit-btn-label">Send Message</span>
                             <span class="submit-btn-spinner" aria-hidden="true"></span>
                         </button>

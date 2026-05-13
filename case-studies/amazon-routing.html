@@ -64,8 +64,8 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/css/styles.css?v=2.5">
-    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+    <link rel="stylesheet" href="/css/styles.css?v=2.7">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.7">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -88,30 +88,7 @@
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container navbar-container">
-        <a class="navbar-brand" href="/">
-            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
-                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<site-nav data-active="case-studies"></site-nav>
 
 <main id="main-content">
 
@@ -151,11 +128,9 @@
             <span class="cs-section-label">At a Glance</span>
             <div class="cs-at-a-glance reveal">
                 <ul>
-                    <li><strong>The whole flow runs without anyone driving it</strong>, from the inbound routing email all the way through the legacy-system close-out.</li>
-                    <li><strong>Amazon SP-API integration</strong> handles authentication, shipment submission, and the asynchronous transaction polling, so operations isn't babysitting tokens or refreshing status by hand.</li>
-                    <li>The <strong>virtual operator</strong> (from Case Study 01) handles the legacy-system close-out steps that don't have APIs. Without that piece, the chain would still need someone at the end clicking through screens.</li>
-                    <li><strong>Always-on coverage.</strong> The chain runs the same way at 2am as it does at 2pm. Amazon doesn't care what time zone you're in, and the automation doesn't either.</li>
-                    <li><strong>A full audit trail</strong> at every step, which is useful both for the compliance disputes that come up later and for digging into the rare exceptions that do need a human look.</li>
+                    <li><strong>The whole flow runs without anyone driving it</strong>, from the inbound routing email through the legacy-system close-out.</li>
+                    <li><strong>Amazon SP-API integration</strong> handles authentication, submission, and asynchronous transaction polling. Operations isn't babysitting tokens or refreshing status by hand.</li>
+                    <li>The <strong>virtual operator</strong> (from Case Study 01) handles the legacy close-out steps that don't have APIs. Without it, the chain would still need someone at the end clicking through screens.</li>
                 </ul>
             </div>
         </div>
@@ -180,11 +155,8 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Fewer chargebacks. Every link in the chain that used to depend on someone doing it correctly under time pressure now runs the same way every time.</li>
-                    <li>Routing requests turn around in minutes instead of waiting for the next staffed shift.</li>
-                    <li>Room to grow Amazon volume without growing the Amazon team. The chain doesn't really care if the volume doubles.</li>
-                    <li>Always-on coverage, so weekends and overnight stop being backlog-generating events.</li>
-                    <li>A defensible audit trail at every step, which is useful both for compliance disputes and for figuring out what happened in the rare cases that do need a human.</li>
+                    <li>Fewer chargebacks. Every link that used to depend on someone doing it correctly under time pressure now runs the same way every time.</li>
+                    <li>Room to grow Amazon volume without growing the Amazon team. Weekends and overnight stop being backlog-generating events.</li>
                 </ul>
             </div>
         </div>
@@ -194,9 +166,8 @@
         <div class="cs-container">
             <span class="cs-section-label">The Problem</span>
             <h2>Amazon is high-margin and unforgiving in equal measure.</h2>
-            <p>Amazon vendor business is some of the most demanding work a 3PL can take on. The economics work, because Amazon volume can be a meaningful chunk of revenue. But if you get any of it wrong, the chargebacks are automatic, the late ships get logged, and you see it all on the next invoice.</p>
-            <p>The flow itself is what gets you. An Amazon routing request comes in by email. Someone has to read it, find the shipment in the ops system, work out the cartons, group the orders correctly, submit the shipment data to Amazon's Selling Partner API, manage OAuth tokens, and then deal with the fact that the submission is asynchronous. You don't get an immediate yes or no, you get a transaction ID and have to poll for status until Amazon makes up its mind. Once it's confirmed, you go back to the legacy systems and close out the records there. Miss any link, or get sloppy anywhere along it, and you eat the chargeback.</p>
-            <p>For most 3PLs, that means a dedicated Amazon team, careful training, a lot of knowledge living in just a few heads, and the chargebacks that happen anyway when someone's out sick or the inbox backs up over a weekend. Volume keeps growing, the team keeps growing, and the compliance risk doesn't really go away.</p>
+            <p>Amazon vendor business is some of the most demanding work a 3PL can take on. The economics work because Amazon volume can be a meaningful chunk of revenue. But if you get any of it wrong, the chargebacks are automatic and you see it on the next invoice.</p>
+            <p>The flow is what gets you. A routing request comes in by email. Someone has to read it, find the shipment in the ops system, work out the cartons, group the orders, submit to Amazon's SP-API, manage OAuth tokens, and deal with the fact that submission is asynchronous — you get back a transaction ID and have to poll until Amazon makes up its mind. Once it's confirmed, you go back to the legacy systems and close out the records there. Miss any link and you eat the chargeback. For most 3PLs that means a dedicated Amazon team, careful training, a lot of knowledge living in just a few heads, and the chargebacks that happen anyway when someone's out sick or the inbox backs up over a weekend.</p>
         </div>
     </section>
 
@@ -219,22 +190,7 @@
                         <span class="cs-action-num">Step 01</span>
                         <h3 class="cs-action-name">Read the inbound routing request automatically</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Amazon routing requests land in the operations mailbox by email. Someone has to open each one, figure out which shipment it's about, and pull out the data Amazon is going to want back.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Get the data out of the email and into the system without an operator having to open the message.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">A scheduled email-processing worker watches the operations mailbox, classifies incoming messages by what they actually are, and runs a specialized extractor for Amazon shipment-routing requests that pulls out the structured fields like PO numbers, dates, and the rest.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The inbound side stops being an inbox-watching exercise.</p>
-                    </div>
+                    <p class="cs-action-body">Amazon routing requests land in the operations mailbox by email. Someone has to open each one, figure out which shipment it's about, and pull out the data Amazon will want back. A scheduled email-processing worker watches the mailbox, classifies incoming messages, and runs a specialized extractor for Amazon routing requests that pulls out the structured fields (PO numbers, dates, and the rest). The inbound side stops being an inbox-watching exercise.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -242,22 +198,7 @@
                         <span class="cs-action-num">Step 02</span>
                         <h3 class="cs-action-name">Enrich the shipment data the way Amazon expects it</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Amazon's API doesn't accept whatever the operations system happens to have on file. It wants the orders grouped a particular way, validated carton counts, and shipment data shaped the way the SP-API expects it.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Get from "what we have" to "what Amazon will accept" without anyone hand-prepping the data.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">A pre-tendering manager groups the orders correctly, runs validation (using the same rule engine from Case Study 03), counts cartons, and assembles the payload Amazon's API is going to accept.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The payload comes out right by construction, so the most common cause of Amazon rejections, which is shipment data that's just slightly wrong, basically goes away.</p>
-                    </div>
+                    <p class="cs-action-body">Amazon's API doesn't accept whatever the operations system happens to have on file. It wants the orders grouped a particular way, validated carton counts, and shipment data shaped the way the SP-API expects. A pre-tendering manager groups the orders, runs validation (using the same rule engine from Case Study 03), counts cartons, and assembles the payload. The most common cause of Amazon rejections — shipment data that's just slightly wrong — basically goes away.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -265,22 +206,7 @@
                         <span class="cs-action-num">Step 03</span>
                         <h3 class="cs-action-name">Submit, then track the asynchronous transaction to completion</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Submitting to Amazon's SP-API is the easy part. The harder part is that the submission is asynchronous. You get back a transaction ID and have to keep polling Amazon's transaction-status endpoint until it tells you the shipment is confirmed (or rejected).</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Handle the submission and the polling without making the operations team deal with OAuth tokens and a manual refresh loop.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">The SP-API integration handles Login-with-Amazon (LWA) OAuth token acquisition and refresh, submits the shipment, and then a background worker keeps polling the transaction-status endpoint until it terminates one way or the other. Successful confirmations update the operational record, and failures get routed to an exception queue.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">Operations doesn't see tokens, doesn't poll, and doesn't refresh. They just see "confirmed" or "needs attention."</p>
-                    </div>
+                    <p class="cs-action-body">Submitting to the SP-API is the easy part. The harder part is that submission is asynchronous — you get back a transaction ID and have to keep polling until Amazon tells you the shipment is confirmed (or rejected). The SP-API integration handles Login-with-Amazon (LWA) OAuth token acquisition and refresh, submits the shipment, and a background worker polls the transaction-status endpoint until it terminates. Operations doesn't see tokens or poll loops. They just see "confirmed" or "needs attention."</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -288,22 +214,7 @@
                         <span class="cs-action-num">Step 04</span>
                         <h3 class="cs-action-name">Close out the legacy systems automatically</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Even after Amazon confirms, the work isn't done. The legacy ERP and OpShip still have to be updated to reflect what just happened, and those systems don't have APIs. Historically someone just clicked through them by hand.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Close the legacy loop without putting a human back at the end of the chain.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">The virtual operator from Case Study 01 does the legacy close-out clicks (pre-tendering finalization), with supervision available through the Operator Console.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">"Lights-out" Amazon flows. The chain runs the same way overnight as it does during the day.</p>
-                    </div>
+                    <p class="cs-action-body">Even after Amazon confirms, the work isn't done. The legacy ERP and OpShip have to be updated, and those systems don't have APIs. Historically someone just clicked through them by hand. The virtual operator from Case Study 01 handles the close-out clicks (pre-tendering finalization), with supervision available through the Operator Console. The chain runs the same way overnight as it does during the day.</p>
                 </article>
             </div>
         </div>
@@ -314,8 +225,6 @@
             <details class="cs-tech-details">
                 <summary>Technical detail (for the engineers in the room)</summary>
                 <div class="cs-tech-body">
-                    <p>A chain of cooperating components. An email-processing worker reads and classifies inbound messages, then dispatches an Amazon-routing extractor. A pre-tendering manager enriches and validates the shipment data. The Amazon SP-API integration handles LWA OAuth and SP-API calls. A background worker polls the transaction-status endpoint. The virtual operator handles the legacy-system close-out at the end.</p>
-                    <p><strong>The stack at a glance:</strong></p>
                     <ul>
                         <li><code class="cs-code">Email worker · classifier</code> watches the operations mailbox, sorts messages by what they actually are, and dispatches the Amazon-routing extractor when it sees one</li>
                         <li><code class="cs-code">Pre-tendering manager</code> groups orders, counts cartons, runs validation, and shapes the SP-API payload before anything goes out</li>
@@ -333,7 +242,7 @@
             <div class="cs-why reveal">
                 <span class="cs-why-label">Why this matters for your 3PL</span>
                 <h2>Amazon today. Every retailer next.</h2>
-                <p>If you're running any real Amazon volume, the routing-and-confirmation flow is probably the riskiest piece of your operation. What we built isn't really Amazon-specific, though. Every major retailer is moving the same direction: more API calls, more async submissions, more compliance pressure. The shape (email in, enrich and validate, submit through an API, poll until it confirms, close out the legacy systems on the back) is the same shape you'll want for whichever retailer's flow shows up next. Build it once, and you stop having to grow the team every time a retailer turns up the chargeback heat.</p>
+                <p>If you're running real Amazon volume, the routing-and-confirmation flow is probably the riskiest piece of your operation. But this isn't Amazon-specific. Every major retailer is moving the same direction: more API calls, more async submissions, more compliance pressure. Email in, enrich and validate, submit, poll, close out the legacy systems — that's the shape you'll want for whichever retailer's flow shows up next.</p>
             </div>
         </div>
     </section>
@@ -400,8 +309,8 @@
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/page-transitions.js?v=1.0"></script>
-<script src="/js/components/index.js?v=1.7" type="module"></script>
-<script src="/js/index.js?v=2.5"></script>
+<script src="/js/components/index.js?v=2.0" type="module"></script>
+<script src="/js/index.js?v=2.8"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>

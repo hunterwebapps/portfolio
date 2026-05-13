@@ -6,10 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveSectionHighlight();
   initContactForm();
   initImageLightbox();
+  initFloatingCtaContrast();
 });
 
 function initNavbar() {
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  const navLinks = document.querySelectorAll('.nav-link[href*="#"]');
   const navbarNav = document.getElementById('navbarNav');
   const bsNavbar = new bootstrap.Collapse(navbarNav, {
     toggle: false
@@ -17,10 +18,12 @@ function initNavbar() {
 
   for (const link of navLinks) {
     link.addEventListener('click', (e) => {
+      const target = link.getAttribute('href').split('#')[1];
+      const el = target && document.getElementById(target);
+      if (!el) return; // let the browser navigate (e.g. /#X from a sub-page)
       e.preventDefault();
       bsNavbar.hide();
-      const target = link.getAttribute('href').substring(1);
-      document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth' });
     });
   }
 }
@@ -54,25 +57,60 @@ function initNavbarScrollState() {
 }
 
 function initActiveSectionHighlight() {
-  const sections = ['Home', 'AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'CaseStudies', 'Contact']
+  const siteNav = document.querySelector('site-nav');
+  if (siteNav && siteNav.dataset.active) return;
+
+  const sectionIds = ['AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'CaseStudies', 'Contact'];
+  const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const links = new Map(
-    Array.from(document.querySelectorAll('.navbar-nav .nav-link[href^="#"]'))
-      .map(a => [a.getAttribute('href').substring(1), a])
+    Array.from(document.querySelectorAll('.navbar-nav .nav-link[href*="#"]'))
+      .map(a => [a.getAttribute('href').split('#')[1], a])
   );
   if (!('IntersectionObserver' in window) || sections.length === 0) return;
+
+  const visible = new Set();
+  let lastActiveId = null;
+
+  const computeActiveId = () => {
+    if (visible.size > 0) {
+      return sectionIds.find(id => visible.has(id)) || null;
+    }
+    return window.scrollY < 100 ? 'Home' : null;
+  };
+
+  const updateActive = () => {
+    const next = computeActiveId();
+    if (next === lastActiveId) return;
+    lastActiveId = next;
+    document.querySelectorAll('.navbar-nav .nav-link.active').forEach(a => a.classList.remove('active'));
+    if (next) {
+      const link = links.get(next);
+      if (link) link.classList.add('active');
+    }
+  };
+
   const io = new IntersectionObserver((entries) => {
     for (const entry of entries) {
-      const link = links.get(entry.target.id);
-      if (!link) continue;
-      if (entry.isIntersecting) {
-        document.querySelectorAll('.navbar-nav .nav-link.active').forEach(a => a.classList.remove('active'));
-        link.classList.add('active');
-      }
+      if (entry.isIntersecting) visible.add(entry.target.id);
+      else visible.delete(entry.target.id);
     }
+    updateActive();
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
   sections.forEach(s => io.observe(s));
+
+  let pending = false;
+  window.addEventListener('scroll', () => {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(() => {
+      pending = false;
+      updateActive();
+    });
+  }, { passive: true });
+
+  updateActive();
 }
 
 function initImageLightbox() {
@@ -155,6 +193,36 @@ function initImageLightbox() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
   });
+}
+
+function initFloatingCtaContrast() {
+  const cta = document.getElementById('floating-cta');
+  if (!cta) return;
+  const sections = Array.from(document.querySelectorAll('section, footer'));
+  if (sections.length === 0) return;
+  let raf = null;
+  const update = () => {
+    raf = null;
+    const ctaRect = cta.getBoundingClientRect();
+    const probeY = ctaRect.top + ctaRect.height / 2;
+    for (const section of sections) {
+      const r = section.getBoundingClientRect();
+      if (r.top <= probeY && r.bottom >= probeY) {
+        const isDark =
+          section.classList.contains('section-dark') ||
+          section.classList.contains('hero') ||
+          section.classList.contains('site-footer');
+        cta.classList.toggle('is-on-dark', isDark);
+        return;
+      }
+    }
+  };
+  const onScroll = () => {
+    if (!raf) raf = requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
 }
 
 function initOperatingHours() {

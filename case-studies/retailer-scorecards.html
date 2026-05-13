@@ -67,8 +67,8 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/css/styles.css?v=2.5">
-    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+    <link rel="stylesheet" href="/css/styles.css?v=2.7">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.7">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -91,30 +91,7 @@
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container navbar-container">
-        <a class="navbar-brand" href="/">
-            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
-                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<site-nav data-active="case-studies"></site-nav>
 
 <main id="main-content">
 
@@ -154,10 +131,9 @@
             <span class="cs-section-label">At a Glance</span>
             <div class="cs-at-a-glance reveal">
                 <ul>
-                    <li>An <strong>automated ETL pipeline</strong> pulls fresh data from both the legacy ERP and the operational database every fifteen minutes during business hours, plus a deeper refresh overnight.</li>
-                    <li>A <strong>star-schema warehouse</strong> pre-computes the SLA flags (picked-in-full, shipped-on-time, PIFOT, fill rate, days early or late) at both the shipment and the line-item level.</li>
-                    <li>A <strong>Power BI report</strong>, embedded right inside the operations app, surfaces daily and monthly rollups with year-over-year and month-over-month comparisons, drillable by customer, workcenter, and channel.</li>
-                    <li>Every ETL run is <strong>logged with row counts, timing, and per-loader success or failure</strong>, so the numbers are defensible to a retailer compliance team.</li>
+                    <li>An <strong>ETL pipeline</strong> pulls fresh data from the legacy ERP and the operational database every fifteen minutes during business hours, with a deeper refresh overnight.</li>
+                    <li>A <strong>star-schema warehouse</strong> pre-computes SLA flags (PIFOT, on-time, fill rate, days late) at both the shipment and line-item level.</li>
+                    <li>A <strong>Power BI report</strong> is embedded inside the operations app, drillable by customer, workcenter, and channel.</li>
                 </ul>
             </div>
         </div>
@@ -182,11 +158,8 @@
                     </div>
                 </div>
                 <ul>
-                    <li>PIFOT and on-time visibility within minutes, not days.</li>
                     <li>Hours of analyst time recovered each week. The weekly spreadsheet exercise turns into a refresh-and-glance.</li>
-                    <li>A defensible source of truth for retailer scorecard disputes, with every metric reproducible and every ETL run logged.</li>
                     <li>A shift from reactive to proactive ops: catching shipments at risk at 11am instead of explaining the miss after the fact.</li>
-                    <li>Customer-facing scorecard capability. The same dashboard can be shared out to retailers and brands with the data scoped appropriately.</li>
                 </ul>
             </div>
         </div>
@@ -196,9 +169,8 @@
         <div class="cs-container">
             <span class="cs-section-label">The Problem</span>
             <h2>Every retailer produces a number. Yours rarely matches.</h2>
-            <p>Every retailer who matters (Amazon, Walmart, Target, CVS, Dick's, and the rest) measures your performance pretty much the same way. They want PIFOT (picked in full, on time), on-time delivery, and fill rate, broken down by DC, by week, and by channel. And they'll produce their own version of the number, send it to you, and dispute yours if it doesn't line up.</p>
-            <p>For most 3PLs, answering that question is a weekly fire drill. An analyst pulls extracts from the WMS, reconciles them by hand against the TMS or the ERP, fights with a couple of timezone bugs, drops the result into a spreadsheet, and emails it around. The number is already a few days stale by the time anyone reads it. It rarely matches the retailer's number exactly. And by the time it lands on someone's desk, the week is already over. There's no fixing the misses, just explaining them.</p>
-            <p>Underneath all that is the fact that the data lives in two places that don't agree: the legacy ERP (the system of record for orders and customers) and the modern operational database (where shipment status, ship windows, and validation events actually happen). Reconciling them by hand is what makes the weekly report slow. Reconciling them once, properly, is the work nobody has time to do.</p>
+            <p>Every retailer who matters (Amazon, Walmart, Target, CVS, Dick's, and the rest) measures you the same way. PIFOT, on-time delivery, fill rate, broken down by DC, by week, by channel. They'll produce their own version of the number, send it to you, and dispute yours if it doesn't line up.</p>
+            <p>For most 3PLs, answering that is a weekly fire drill. An analyst pulls extracts from the WMS, reconciles them by hand against the TMS or ERP, drops the result in a spreadsheet, emails it around. The number is days stale by the time anyone reads it, rarely matches the retailer's exactly, and the week's already over. There's no fixing the misses, just explaining them. The underlying issue: orders and customers live in the legacy ERP; shipment status, ship windows, and validation events live in the modern operational database. Reconciling them by hand is what makes the report slow.</p>
         </div>
     </section>
 
@@ -221,22 +193,7 @@
                         <span class="cs-action-num">Step 01</span>
                         <h3 class="cs-action-name">Unify the legacy ERP and the operational data into one model</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Orders, customers, and historical financial data live in the legacy ERP. Shipment status, ship windows, validation outcomes, and customer-specific rules live in the modern operational system. Neither side, on its own, can answer "did we hit PIFOT this week."</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Pull both sources into a single query-able model that's authoritative for SLA reporting.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">An ETL service reads from the legacy ERP through its own data layer and from the operational SQL Server, lands the data in a clean star schema with eleven dimension tables and seven fact tables, and exposes pre-aggregated views for the queries that run most often.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">One source of operational truth that reconciles back to both sides and is friendly to BI tools.</p>
-                    </div>
+                    <p class="cs-action-body">Orders, customers, and historical financial data live in the legacy ERP. Shipment status, ship windows, validation outcomes, and customer-specific rules live in the modern operational system. Neither side alone can answer "did we hit PIFOT this week." An ETL service reads from both, lands the data in a clean star schema (eleven dimension tables, seven fact tables), and exposes pre-aggregated views for the queries that run most often.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -244,22 +201,7 @@
                         <span class="cs-action-num">Step 02</span>
                         <h3 class="cs-action-name">Pre-compute the SLA flags that matter, at the right grain</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">PIFOT, fill rate, on-time, days late. Every one of those metrics has a precise definition, and every one of them can be argued about if it's computed differently in different places.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Compute them once, store them, and let every downstream use lean on the same numbers.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">A shipment-fact loader computes the SLA flags at the shipment level: picked-in-full, shipped-on-time, PIFOT, and the rest. A line-item-fact loader does the same at the line level. Pre-aggregated views roll those flags up for daily and monthly reporting.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">Whether you're looking at a corporate KPI tile or the retailer-facing scorecard, the same definition produces the same number.</p>
-                    </div>
+                    <p class="cs-action-body">PIFOT, fill rate, on-time, days late. Every one of those has a precise definition, and every one can be argued about if it's computed differently in different places. A shipment-fact loader computes the flags at the shipment level; a line-item loader does the same at the line level. Whether you're looking at a corporate KPI tile or the retailer-facing scorecard, the same definition produces the same number.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -267,22 +209,7 @@
                         <span class="cs-action-num">Step 03</span>
                         <h3 class="cs-action-name">Refresh fast enough to be operational, not just retrospective</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">A weekly report tells you what already happened. A live dashboard tells you which shipments are at risk <em>right now</em>.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Refresh often enough that operations can act on the data, without crushing the source systems.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">A scheduled worker runs a "frequent" ETL every fifteen minutes during business hours for the metrics that change intra-day, and a deeper "daily" ETL overnight. Run locks keep them from overlapping, and every run is logged with timing and per-loader success.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The PIFOT dashboard reflects the day's performance within minutes, not days. Operations can stop explaining the miss after the fact and start catching it while it's still preventable.</p>
-                    </div>
+                    <p class="cs-action-body">A weekly report tells you what already happened. A live dashboard tells you which shipments are at risk <em>right now</em>. A scheduled worker runs a frequent ETL every fifteen minutes during business hours, and a deeper daily ETL overnight. Run locks keep them from overlapping, and every run is logged. Operations can stop explaining the miss after the fact and start catching it while it's still preventable.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -290,22 +217,7 @@
                         <span class="cs-action-num">Step 04</span>
                         <h3 class="cs-action-name">Embed the dashboard where the operations team already lives</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Reporting tools that live outside the operations app get ignored. People log into the app every day. They don't log into the BI tool every day.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Make the right scorecard one click away from the work.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">A Power BI report is embedded inside the operations app's Analytics page. Authentication is handled at the workspace level through an Azure AD service principal, so there's no token plumbing for the end user.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">PIFOT, on-time, and fill rate live at the same URL as the shipment list. The numbers and the work are right next to each other.</p>
-                    </div>
+                    <p class="cs-action-body">Reporting tools that live outside the operations app get ignored. People log into the app every day; they don't log into the BI tool every day. A Power BI report is embedded inside the operations app's Analytics page, authenticated through an Azure AD service principal so there's no token plumbing for the end user. PIFOT, on-time, and fill rate live at the same URL as the shipment list.</p>
                 </article>
             </div>
         </div>
@@ -316,8 +228,6 @@
             <details class="cs-tech-details">
                 <summary>Technical detail (for the engineers in the room)</summary>
                 <div class="cs-tech-body">
-                    <p>A dedicated .NET 8 ETL service orchestrates eleven dimension loaders and seven fact loaders against a SQL Server analytics database. Pre-aggregated SQL views materialize the daily and monthly PIFOT rollups so Power BI queries stay fast. DAX measures define the canonical KPIs (PIFOT rate, on-time rate, picked-in-full rate, fill rate, plus failure breakdowns and time-intelligence variants). The Power BI report is embedded into the React and Material-UI client through the standard Azure AD service-principal embed flow.</p>
-                    <p><strong>The stack at a glance:</strong></p>
                     <ul>
                         <li><code class="cs-code">.NET 8 · ETL orchestrator</code> sequences dimension-then-fact loader runs, with run locks so two refreshes can't trip over each other</li>
                         <li><code class="cs-code">Scheduled worker</code> runs a frequent ETL every fifteen minutes during business hours (Eastern) and a deeper daily ETL overnight</li>
@@ -336,7 +246,7 @@
             <div class="cs-why reveal">
                 <span class="cs-why-label">Why this matters for your 3PL</span>
                 <h2>The scorecard you produce should be the scorecard you run by.</h2>
-                <p>If your weekly PIFOT report is still being rebuilt by hand, you're paying for it twice. Once for the analyst's time, and again for every chargeback you didn't see coming. What we built for our client isn't fancy. Unify the legacy and operational data once, pre-compute the SLA flags, refresh often, and embed the dashboard where the team already works. The whole point is to turn the scorecard into something the team can run by, not just something you produce for your customers.</p>
+                <p>If your weekly PIFOT report is still being rebuilt by hand, you're paying for it twice — once for the analyst's time, and again for every chargeback you didn't see coming. Unify the legacy and operational data once, pre-compute the SLA flags, refresh often, embed the dashboard where the team already works. Turn the scorecard into something the team runs by, not just something you produce for your customers.</p>
             </div>
         </div>
     </section>
@@ -403,8 +313,8 @@
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/page-transitions.js?v=1.0"></script>
-<script src="/js/components/index.js?v=1.7" type="module"></script>
-<script src="/js/index.js?v=2.5"></script>
+<script src="/js/components/index.js?v=2.0" type="module"></script>
+<script src="/js/index.js?v=2.8"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>

@@ -271,7 +271,8 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 }
 .navbar.scrolled { background: rgba(250, 247, 242, 0.95); }
 
-.navbar + main { padding-top: 0; }
+.navbar + main,
+site-nav + main { padding-top: 0; }
 
 .navbar-container {
   display: flex;
@@ -356,6 +357,129 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 }
 .navbar-toggler .navbar-toggler-icon:before { top: -7px; }
 .navbar-toggler .navbar-toggler-icon:after { top: 7px; }
+
+/*---------------------------------------
+  NAV DROPDOWN (Case Studies)
+-----------------------------------------*/
+.has-dropdown { position: relative; }
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  left: 50%;
+  width: 420px;
+  max-width: calc(100vw - 2rem);
+  padding: 1rem;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: var(--border-radius-default);
+  box-shadow: 0 14px 36px rgba(20, 26, 70, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 180ms var(--ease-out),
+              transform 180ms var(--ease-out),
+              visibility 0s linear 180ms;
+  z-index: 110;
+}
+
+/* Invisible bridge so the dropdown doesn't close as the mouse crosses the gap */
+.nav-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 0.75rem;
+}
+
+.has-dropdown:hover .nav-dropdown,
+.has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 180ms var(--ease-out),
+              transform 180ms var(--ease-out);
+}
+
+.nav-dropdown-eyebrow {
+  display: block;
+  font-family: var(--mono-font-family);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral-deep);
+  font-weight: var(--font-weight-medium);
+  padding: 0.25rem 0.75rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0.5rem;
+}
+
+.nav-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-dropdown-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--border-radius-default);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+
+.nav-dropdown-link:hover,
+.nav-dropdown-link:focus-visible {
+  background: var(--cream-warm);
+  color: var(--ink);
+  outline: none;
+}
+
+.nav-dropdown-link:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--coral);
+}
+
+.nav-dropdown-num {
+  font-family: var(--mono-font-family);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--coral-deep);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+  min-width: 1.5rem;
+}
+
+.nav-dropdown-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.nav-dropdown-title {
+  font-family: var(--header-font-family);
+  font-size: 0.98rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nav-dropdown-tagline {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--steel);
+}
+
+/* Mobile: the navbar collapses below 992px — hide the dropdown there since
+   the case-studies link still scrolls to the home section. */
+@media (max-width: 991.98px) {
+  .nav-dropdown { display: none; }
+}
 
 /*---------------------------------------
   HERO
@@ -1183,32 +1307,55 @@ b, strong { font-weight: var(--font-weight-bold); color: var(--ink); }
 .engagement-intro {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  grid-template-areas:
+    "pathnum ."
+    "title   body";
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+  row-gap: 0;
   align-items: start;
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .engagement-intro .path-num {
-  display: block;
+  grid-area: pathnum;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--mono-font-family);
   font-size: 0.72rem;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.18em;
   color: var(--coral);
   text-transform: uppercase;
   margin-bottom: 0.85rem;
 }
+.engagement-intro .path-num::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: var(--coral);
+  display: inline-block;
+}
 .engagement-intro h4 {
+  grid-area: title;
   font-family: var(--header-font-family);
   font-weight: var(--font-weight-medium);
   font-size: clamp(1.35rem, 1.4vw + 0.6rem, 1.85rem);
   margin: 0;
   letter-spacing: -0.01em;
 }
-.engagement-intro p { margin: 0; }
+.engagement-intro p {
+  grid-area: body;
+  margin: 0;
+}
 
 @media (max-width: 800px) {
   .engagement-intro {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-areas:
+      "pathnum"
+      "title"
+      "body";
+    row-gap: 1rem;
   }
 }
 
@@ -2448,4 +2595,450 @@ h6.footer-label {
 
 @media (min-width: 991px) {
   .navbar-container { position: relative; }
+}
+
+/*---------------------------------------
+  HERO CTAS + TRUST STRIP
+-----------------------------------------*/
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+  margin: 0 0 1.5rem;
+}
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.05rem 1.85rem;
+  background: var(--coral);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.05rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 0;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.hero-cta-primary:hover {
+  background: var(--coral-deep);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.hero-cta-primary span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 0.25s var(--ease-out);
+}
+.hero-cta-primary:hover span[aria-hidden="true"] { transform: translateX(3px); }
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.05rem 1.6rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 1px solid var(--rule-dark-strong);
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.hero-cta-secondary:hover {
+  color: #fff;
+  border-color: var(--coral-bright);
+  background: rgba(236, 139, 94, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .hero-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .hero-cta-primary, .hero-cta-secondary { justify-content: center; }
+}
+
+/*---------------------------------------
+  CASE CARDS — preserve cream-card text colors when section is dark
+-----------------------------------------*/
+.section-dark .case-card-title { color: var(--ink); }
+.section-dark .case-card-tagline { color: var(--steel); }
+.section-dark .case-card-eyebrow { color: var(--coral-deep); }
+.section-dark .case-card-link { color: var(--coral-deep); }
+.section-dark .case-card { border-color: rgba(255, 255, 255, 0.08); }
+.section-dark .case-card:hover { border-color: rgba(255, 255, 255, 0.2); }
+.section-dark .case-card-media { border-bottom-color: var(--rule); }
+
+/*---------------------------------------
+  CASE CARD ENHANCEMENTS (metric badge + pull-quote)
+-----------------------------------------*/
+.case-card-media { position: relative; }
+.case-card-metric {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  background: var(--navy-deep);
+  color: #fff;
+  font-family: var(--mono-font-family);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-left: 2px solid var(--coral);
+}
+
+/*---------------------------------------
+  ABOUT — compact 2x2 reasons
+-----------------------------------------*/
+.why-reasons-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.why-reasons-compact .reason {
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.why-reasons-compact .reason:nth-child(1),
+.why-reasons-compact .reason:nth-child(2) { padding-top: 0; }
+.why-reasons-compact .reason:nth-child(2n) {
+  border-right: 0;
+  padding-right: 0;
+}
+.why-reasons-compact .reason:nth-child(2n + 1) { padding-left: 0; }
+.why-reasons-compact .reason:nth-last-child(-n + 2) {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .why-reasons-compact { grid-template-columns: 1fr; }
+  .why-reasons-compact .reason {
+    padding: 1.5rem 0;
+    border-right: 0;
+  }
+  .why-reasons-compact .reason:nth-child(2) { padding-top: 1.5rem; }
+  .why-reasons-compact .reason:nth-last-child(2) { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; }
+}
+
+/*---------------------------------------
+  ENGAGEMENT — methodology block (folds in former Approach section)
+-----------------------------------------*/
+.engagement-methodology {
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+.engagement-methodology > .engagement-intro {
+  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
+}
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: var(--cream);
+}
+.methodology-cell {
+  padding: clamp(1.5rem, 2.5vw, 1.9rem);
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: background-color 0.3s var(--ease-out);
+  position: relative;
+}
+.methodology-cell:last-child { border-right: 0; }
+.methodology-cell:hover { background: var(--cream-warm); }
+.methodology-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: var(--coral);
+}
+.methodology-num {
+  font-family: var(--mono-font-family);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.methodology-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--coral);
+  border: 1px solid var(--rule);
+  background: var(--cream-warm);
+  margin: 0.15rem 0 0.35rem;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+.methodology-cell:hover .methodology-icon {
+  background: var(--coral);
+  color: var(--cream);
+  border-color: var(--coral);
+}
+.methodology-cell h6 {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.methodology-cell p {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--steel);
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .methodology-grid { grid-template-columns: 1fr; }
+  .methodology-cell { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .methodology-cell:last-child { border-bottom: 0; }
+}
+
+/*---------------------------------------
+  ENGAGEMENT — credit callout
+-----------------------------------------*/
+.engagement-credit-callout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: clamp(2rem, 3vw, 3rem);
+  background: var(--coral);
+  color: #fff;
+}
+.engagement-credit-callout i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.engagement-credit-callout div {
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+.engagement-credit-callout strong {
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: 600px) {
+  .engagement-credit-callout { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+/*---------------------------------------
+  FINAL CTA — coral "decision punctuation"
+  Sandwiched by neutral (Engagement above) + dark (Footer below);
+  the brand accent becomes the unmistakable conversion moment.
+-----------------------------------------*/
+.final-cta-section {
+  background: var(--coral);
+  color: #fff;
+  padding: clamp(5rem, 7vw, 8rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta-section::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18), transparent 60%);
+  pointer-events: none;
+}
+.final-cta-section .container {
+  position: relative;
+  z-index: 1;
+}
+.final-cta {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.final-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--mono-font-family);
+  font-size: var(--eyebrow-font-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+.final-cta-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.85);
+  display: inline-block;
+}
+.final-cta h2 {
+  font-family: var(--header-font-family);
+  font-size: clamp(2rem, 2.4vw + 1rem, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+.final-cta p {
+  font-size: var(--p-lead);
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 auto 2.25rem;
+  max-width: 56ch;
+  line-height: 1.55;
+}
+
+.final-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.cta-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.15rem 2.25rem;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.05rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 0;
+  white-space: nowrap;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.cta-button-primary:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.cta-button-primary span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 0.25s var(--ease-out);
+}
+.cta-button-primary:hover span[aria-hidden="true"] { transform: translateX(3px); }
+
+.cta-button-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.15rem 1.85rem;
+  background: transparent;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  transition: background-color 0.25s var(--ease-out), border-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.cta-button-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .final-cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-button-primary, .cta-button-ghost { justify-content: center; }
+}
+
+/*---------------------------------------
+  FLOATING STICKY CTA (replaces phone-only on homepage)
+-----------------------------------------*/
+.floating-cta {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0;
+  box-shadow: 0 8px 30px rgba(20, 26, 70, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
+  transition: box-shadow 0.4s var(--ease-out);
+}
+.floating-cta.is-on-dark {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+.floating-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--coral);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.95rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 0;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+.floating-cta-primary:hover { background: var(--coral-deep); color: #fff; }
+.floating-cta-arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out);
+}
+.floating-cta-primary:hover .floating-cta-arrow { transform: translateX(3px); }
+
+.floating-cta-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  background: var(--navy-deep);
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+.floating-cta-phone:hover { background: var(--coral); color: #fff; }
+
+/* Adaptive contrast: when floating CTA is over a dark section, invert the phone */
+.floating-cta.is-on-dark .floating-cta-phone {
+  background: var(--cream);
+  color: var(--navy-deep);
+}
+.floating-cta.is-on-dark .floating-cta-phone:hover {
+  background: #fff;
+  color: var(--coral);
+}
+
+@media (max-width: 600px) {
+  .floating-cta { bottom: 1rem; right: 1rem; }
+  .floating-cta-primary { padding: 0.75rem 1rem; font-size: 0.9rem; }
+  .floating-cta-phone { width: 44px; }
+}
+@media (max-width: 380px) {
+  .floating-cta-label { display: none; }
+  .floating-cta-arrow { display: none; }
+  .floating-cta-primary { width: 48px; height: 48px; padding: 0; justify-content: center; }
+  .floating-cta-primary::after { content: "→"; font-size: 1.1rem; }
 }

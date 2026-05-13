@@ -64,8 +64,8 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/css/styles.css?v=2.5">
-    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+    <link rel="stylesheet" href="/css/styles.css?v=2.7">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.7">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -88,30 +88,7 @@
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container navbar-container">
-        <a class="navbar-brand" href="/">
-            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
-                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<site-nav data-active="case-studies"></site-nav>
 
 <main id="main-content">
 
@@ -151,11 +128,9 @@
             <span class="cs-section-label">At a Glance</span>
             <div class="cs-at-a-glance reveal">
                 <ul>
-                    <li>Runs directly inside the <strong>customer portals the team is in every day</strong>: ShipIQ (Target / partnersonline), Amazon Vendor Central, and Amazon Seller Central.</li>
-                    <li><strong>Highlights POs</strong> on the portal page that match active shipments, so the operator can tell at a glance which work has already been touched.</li>
-                    <li><strong>Auto-fills ShipIQ form fields</strong> from the operator's own shipment data, so the copy-paste round trip basically goes away.</li>
-                    <li>A <strong>side panel</strong> carries shipment context and a couple of calculator utilities (pallet calc, Walmart confirmation) right inside the browser.</li>
-                    <li><strong>Auto-detects environment</strong> (dev, test, or prod) so the same extension binary works for everyone, and the team can switch back-ends without reinstalling.</li>
+                    <li>Runs inside the <strong>customer portals the team is in every day</strong>: ShipIQ (Target / partnersonline), Amazon Vendor Central, and Amazon Seller Central.</li>
+                    <li><strong>Highlights POs</strong> on the portal page that match active shipments, and <strong>auto-fills ShipIQ form fields</strong> from the operator's own data.</li>
+                    <li>A <strong>side panel</strong> carries shipment context and a couple of calculators (pallet calc, Walmart confirmation) right inside the browser.</li>
                 </ul>
             </div>
         </div>
@@ -180,11 +155,8 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Real hours back per operator-shift. The small frictions of copy-paste and PO-lookup add up over the course of a day.</li>
-                    <li>Fewer transcription errors on retailer portals, because the auto-fill takes out the step where most of those errors were getting introduced in the first place.</li>
-                    <li>Faster portal-driven exception handling. When a retailer flags something, the operator can resolve it from inside the portal with their own data already on screen.</li>
-                    <li>Lower onboarding cost for new operators. The "two-screen dance" basically goes away.</li>
-                    <li>Deployable via Group Policy and updated centrally, so IT isn't chasing down end-user machines one at a time.</li>
+                    <li>Real hours back per operator-shift. The small frictions of copy-paste and PO-lookup add up over a day.</li>
+                    <li>Fewer transcription errors, because the auto-fill takes out the step where most errors were getting introduced.</li>
                 </ul>
             </div>
         </div>
@@ -194,9 +166,8 @@
         <div class="cs-container">
             <span class="cs-section-label">The Problem</span>
             <h2>Your team isn't in your system. They're in your customer's.</h2>
-            <p>Walk into a 3PL's operations room and watch what the team is actually doing. A lot of the day, they're not in your WMS or your TMS or your ERP. They're in your <em>customers'</em> portals. ShipIQ for Target. Vendor Central for Amazon. Seller Central for the marketplace side. Those portals are the gates the work has to pass through, and they were built for the customer, not for you.</p>
-            <p>So your operators end up with two screens open most of the day. On one, the customer's portal is asking them to pick a PO, type a date, set a quantity, click submit. On the other, your own system already knows the answers: which shipment that PO is on, when it's planned to ship, the right quantity. The operator copy-pastes, alt-tabs, mistypes a digit, starts over. That happens hundreds of times a day across the floor.</p>
-            <p>The cost of all this is real, but it doesn't look like one problem you can take to a leadership team. It's a lot of small frictions adding up to real hours and real errors over a week. Nobody really complains about it, because "this is just how the job works." But the time spent flipping between two screens is time the team doesn't spend on the exceptions that actually need a human.</p>
+            <p>Walk into a 3PL's operations room and a lot of the day, the team isn't in your WMS or TMS or ERP. They're in your <em>customers'</em> portals. ShipIQ for Target. Vendor Central for Amazon. Seller Central for the marketplace side. Those portals are the gates the work has to pass through, and they were built for the customer, not for you.</p>
+            <p>So operators end up with two screens open most of the day. The customer's portal is asking them to pick a PO, type a date, set a quantity, click submit. The other screen — your own system — already knows the answers. The operator copy-pastes, alt-tabs, mistypes a digit, starts over. Hundreds of times a day across the floor. None of it looks like a problem you can take to leadership; it's a lot of small frictions adding up to real hours and real errors over a week.</p>
         </div>
     </section>
 
@@ -219,22 +190,7 @@
                         <span class="cs-action-num">Step 01</span>
                         <h3 class="cs-action-name">Highlight matching POs on the customer's page</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">An operator lands on a ShipIQ or Amazon page with a long list of POs and has to find the ones that match their active shipments. Until now that meant scrolling, Ctrl+F, and a fair amount of gut feel.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Make the relevant POs visually obvious without making the operator do the work.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">Content scripts read the POs displayed on the portal page, ask the operations backend which ones match active shipments, and apply a visual highlight to those rows.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">"Where am I in this list?" becomes a glance instead of a scroll.</p>
-                    </div>
+                    <p class="cs-action-body">An operator lands on a ShipIQ or Amazon page with a long list of POs and has to find the ones that match their active shipments. Until now that meant scrolling, Ctrl+F, and gut feel. Content scripts read the POs on the page, ask the operations backend which ones match active shipments, and visually highlight those rows. "Where am I in this list?" becomes a glance instead of a scroll.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -242,45 +198,15 @@
                         <span class="cs-action-num">Step 02</span>
                         <h3 class="cs-action-name">Pre-fill ShipIQ form fields from operator data</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">ShipIQ asks the operator to type in fields the operations system already knows: quantities, item identifiers, dates.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Get rid of the typing round-trip.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">An auto-fill module reads the ShipIQ form, matches it against the operator's own shipment data, and populates the fields for them.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The transcription step, which is where most of the mistakes were getting introduced anyway, basically disappears for the common cases.</p>
-                    </div>
+                    <p class="cs-action-body">ShipIQ asks the operator to type in fields the operations system already knows: quantities, item identifiers, dates. An auto-fill module reads the form, matches it against the operator's shipment data, and populates the fields. The transcription step — which is where most of the mistakes were getting introduced anyway — disappears for the common cases.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
                     <header class="cs-action-header">
                         <span class="cs-action-num">Step 03</span>
-                        <h3 class="cs-action-name">Put shipment context and calculators in a side panel inside the browser</h3>
+                        <h3 class="cs-action-name">Put shipment context and calculators in a side panel</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Even with the highlight and the auto-fill, operators occasionally need to look up shipment details, run a pallet calculation, or fill out a Walmart confirmation form.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Keep that work in the browser the portal already lives in, instead of in some other app the operator has to go open.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">The extension carries a side panel with shipment status tracking, a pallet calculator UI, and a Walmart-confirmation calculator that's backed by an Excel sheet under the hood.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The supplementary tools live right next to the customer portal instead of in some other window the operator has to go hunt down.</p>
-                    </div>
+                    <p class="cs-action-body">Even with the highlight and auto-fill, operators occasionally need to look up shipment details, run a pallet calculation, or fill out a Walmart confirmation form. The extension carries a side panel with shipment status tracking, a pallet calculator UI, and a Walmart-confirmation calculator (backed by an Excel sheet under the hood). The supplementary tools live right next to the portal instead of in some other window the operator has to hunt down.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -288,22 +214,7 @@
                         <span class="cs-action-num">Step 04</span>
                         <h3 class="cs-action-name">Auto-detect dev, test, or prod so the team can switch back-ends without reinstalling</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Operations staff, QA, and developers all need the same extension pointing at different back-ends at different times. Forcing each group to install a different build is fragile and breaks during testing.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Ship one extension binary that everyone uses.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">An environment manager inside the extension auto-detects which back-end is reachable and routes API calls accordingly. Users can also flip environments manually from the side panel.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">A single signed extension, deployed through Group Policy, that works for everyone. QA can flip it into the test environment without redeploying anything.</p>
-                    </div>
+                    <p class="cs-action-body">Operations staff, QA, and developers all need the same extension pointing at different back-ends at different times. Forcing each group to install a different build is fragile. An environment manager inside the extension auto-detects which back-end is reachable and routes API calls accordingly; users can also flip environments manually from the side panel. One signed extension, deployed through Group Policy, works for everyone.</p>
                 </article>
             </div>
         </div>
@@ -314,8 +225,6 @@
             <details class="cs-tech-details">
                 <summary>Technical detail (for the engineers in the room)</summary>
                 <div class="cs-tech-body">
-                    <p>A Manifest V3 Chrome extension with environment auto-detection, a service-worker background script that handles API calls and caching, content scripts that inject into ShipIQ and Amazon's portals, and a Chrome side panel for shipment status and calculator utilities. The whole thing is signed, packaged through the same CI pipeline as the rest of the platform, and deployed to operator workstations through Group Policy.</p>
-                    <p><strong>The stack at a glance:</strong></p>
                     <ul>
                         <li><code class="cs-code">Chrome MV3 · Service Worker</code> runs as the background script, handling API calls to the operations backend and caching responses so the page-side scripts stay snappy</li>
                         <li><code class="cs-code">ShipIQ content scripts</code> highlight matching POs on the portal page and auto-fill the form fields from the operator's own shipment data</li>
@@ -333,7 +242,7 @@
             <div class="cs-why reveal">
                 <span class="cs-why-label">Why this matters for your 3PL</span>
                 <h2>The portals aren't going away. Bring your data with you.</h2>
-                <p>The portals your customers make you use aren't getting better, and every new retail account brings another one. What we built for our client isn't really portal-specific. The same idea works anywhere: figure out which portals are eating your team's time, write a small extension that drops your own data into them, and push it out through Group Policy. That takes the small daily tax of two-screen work off the table.</p>
+                <p>The portals your customers make you use aren't getting better, and every new retail account brings another one. Figure out which portals are eating your team's time, write a small extension that drops your own data into them, push it out through Group Policy. That takes the daily tax of two-screen work off the table.</p>
             </div>
         </div>
     </section>
@@ -400,8 +309,8 @@
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/page-transitions.js?v=1.0"></script>
-<script src="/js/components/index.js?v=1.7" type="module"></script>
-<script src="/js/index.js?v=2.5"></script>
+<script src="/js/components/index.js?v=2.0" type="module"></script>
+<script src="/js/index.js?v=2.8"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>

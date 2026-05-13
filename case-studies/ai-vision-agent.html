@@ -74,8 +74,8 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/css/styles.css?v=2.5">
-    <link rel="stylesheet" href="/css/case-study.css?v=1.6">
+    <link rel="stylesheet" href="/css/styles.css?v=2.7">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.7">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -99,30 +99,7 @@
 </noscript>
 
 <!-- ---NAV BAR ----->
-<nav class="navbar navbar-expand-lg">
-    <div class="container navbar-container">
-        <a class="navbar-brand" href="/">
-            <img src="/images/logo_applied_main.svg" alt="Applied 3PL Systems" class="logo" width="135" height="40"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#AboutUs">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Services">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#ServicePackages">Engagement</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#MeasuredApproach">Approach</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/#CaseStudies">Case Studies</a></li>
-                <li class="nav-item"><a class="nav-link" href="/scorecard.html">Scorecard</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#Contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<site-nav data-active="case-studies"></site-nav>
 
 <main id="main-content">
 
@@ -165,10 +142,9 @@
             <span class="cs-section-label">At a Glance</span>
             <div class="cs-at-a-glance reveal">
                 <ul>
-                    <li>The agent runs <strong>seven workflows</strong> right now: EDI order imports from retailer portals, building shipments in the legacy OpShip app, order printing, order cancellation, ship-via updates, work-order number updates, and PDF stamping.</li>
-                    <li>An <strong>Operator Console</strong> in the ops app shows the agent's live desktop and its action log. Supervisors don't have to RDP into the VM to see what it's doing.</li>
-                    <li>If a screen doesn't look right (a popup, a layout change) the agent hands off to a <strong>vision model</strong> that reads what's there and picks the next move instead of giving up.</li>
-                    <li>One supervisor can watch several agent sessions at a time. Adding capacity stops requiring new hires.</li>
+                    <li>The agent runs <strong>seven workflows</strong> end-to-end: EDI imports, shipment builds in the legacy OpShip app, order printing, cancellations, ship-via updates, WO-number fixes, and PDF stamping.</li>
+                    <li>An <strong>Operator Console</strong> streams the agent's live desktop and action log into the ops app, so supervisors don't have to RDP into the VM.</li>
+                    <li>When a screen doesn't look right, the agent hands off to a <strong>vision model</strong> that reads what's there and picks the next move instead of giving up.</li>
                 </ul>
             </div>
         </div>
@@ -194,8 +170,7 @@
                     </div>
                 </div>
                 <ul>
-                    <li>More capacity, no new hires.</li>
-                    <li>EDI imports and close-outs run overnight and on weekends, not just during business hours.</li>
+                    <li>More capacity, no new hires. Imports and close-outs run overnight and weekends.</li>
                     <li>Every action is timestamped and replayable, so chargeback disputes have real evidence to point at.</li>
                 </ul>
             </div>
@@ -207,9 +182,8 @@
         <div class="cs-container">
             <span class="cs-section-label">The Problem</span>
             <h2>You can't hire your way out of screen work.</h2>
-            <p>A lot of what a 3PL ops team does every day isn't warehouse work. It's screen work. Someone has to import EDI files through the retailer's portal. Pick tickets and packing slips have to print at the right printer at the right facility. Orders get cancelled at the last minute and need to be backed out of the ERP. Ship-via codes change. Work-order numbers need fixing. This stuff happens hundreds of times a day.</p>
-            <p>The obvious move is to hire more people. The problem: staff who can navigate a retailer portal and a 90s-era ERP at the same time are hard to find, and harder to keep. The work burns them out. It's repetitive, you can't batch it, and they take heat every time a chargeback shows up. Every uptick in volume means either more hires or more risk of falling behind.</p>
-            <p>And there's no clean API path. Retailer portals are HTML pages. The ERP is a Windows desktop app from the 90s. So historically your options have been: write scraping scripts that snap when a button moves, or hire more people.</p>
+            <p>A lot of what a 3PL ops team does every day isn't warehouse work. It's screen work. Importing EDI files through retailer portals, printing pick tickets at the right facility, backing cancelled orders out of the ERP, updating ship-via codes, fixing work-order numbers. Hundreds of times a day.</p>
+            <p>The obvious move is to hire more people. But staff who can navigate a retailer portal and a 90s-era ERP at the same time are hard to find, harder to keep, and the work burns them out. There's no clean API path either. Portals are HTML pages, the ERP is a Windows desktop app from the 90s. Historically the options have been scraping scripts that snap when a button moves, or more hires.</p>
         </div>
     </section>
 
@@ -234,22 +208,7 @@
                         <span class="cs-action-num">Step 01</span>
                         <h3 class="cs-action-name">Pick the seven workflows to automate first</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Seven workflows were eating up the team's time: EDI imports, building shipments in OpShip, order printing, cancellations, ship-via updates, WO-number updates, and PDF stamping. All manual, all repetitive, all required every day.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Take them off people's plates without losing the judgment the team brings when something doesn't go to plan.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">We broke each workflow into explicit steps. Every step knows what should be on screen, how to check it worked, and what to do if a popup gets in the way. Each one gets logged.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">All seven workflows now run the same way, at the same speed, every time. Overnight and on weekends included.</p>
-                    </div>
+                    <p class="cs-action-body">Seven workflows were eating up the team's time: EDI imports, building shipments in OpShip, order printing, cancellations, ship-via updates, WO-number updates, and PDF stamping. We broke each into explicit steps that know what should be on screen, how to check it worked, and what to do if a popup gets in the way. All seven now run the same way, at the same speed, every time — overnight and weekends included.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -257,22 +216,7 @@
                         <span class="cs-action-num">Step 02</span>
                         <h3 class="cs-action-name">Make the agent watchable from a browser</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Automation that runs out of sight makes ops leaders nervous, and they're right to be. When something goes sideways, you find out when the chargeback lands.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Give supervisors the same view they'd have standing behind a person at a desk.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">The agent streams its desktop as an HLS feed into the ops app. Next to it, an action log shows the current step, the last one it finished, and what's coming next.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">Supervisors can audit it from any browser, no RDP needed. One person can watch several sessions at once.</p>
-                    </div>
+                    <p class="cs-action-body">Automation that runs out of sight makes ops leaders nervous, and they're right to be — you find out something went sideways when the chargeback lands. The agent streams its desktop as an HLS feed into the ops app, with an action log next to it showing the current step, the last one it finished, and what's coming next. Supervisors audit from any browser, no RDP, and one person can watch several sessions at once.</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -280,22 +224,7 @@
                         <span class="cs-action-num">Step 03</span>
                         <h3 class="cs-action-name">A vision model for when the screen changes</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">Retailer portals and legacy apps change. A button moves, dialog text shifts, a session expires in some weird way. Traditional UI automation snaps the moment that happens.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Keep the agent going through small changes without paging someone at 2am.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">When a step doesn't see what it expects, it hands the screen over to a vision model. The model reads what's there the way a person would and picks the next move. Small surprises stay small. Real problems still escalate.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">The supervisor's exception queue ends up full of actual problems instead of "the button moved."</p>
-                    </div>
+                    <p class="cs-action-body">Retailer portals and legacy apps change. A button moves, dialog text shifts, a session expires in some weird way. Traditional UI automation snaps the moment that happens. When a step doesn't see what it expects, the agent hands the screen over to a vision model that reads what's there the way a person would and picks the next move. The exception queue ends up full of actual problems instead of "the button moved."</p>
                 </article>
 
                 <article class="cs-action-card reveal">
@@ -303,22 +232,7 @@
                         <span class="cs-action-num">Step 04</span>
                         <h3 class="cs-action-name">Log everything</h3>
                     </header>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Situation</span>
-                        <p class="cs-action-step-body">When an automated system is touching customer-facing data, you need to be able to point to exactly what happened, and when.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Task</span>
-                        <p class="cs-action-step-body">Get an audit trail at least as good as the one a person would leave.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Action</span>
-                        <p class="cs-action-step-body">Every click, every step start, every success or failure gets a timestamp and a session ID. The same log feeds the Operator Console live, and the database for after-the-fact review.</p>
-                    </div>
-                    <div class="cs-action-step">
-                        <span class="cs-action-step-label">Result</span>
-                        <p class="cs-action-step-body">A full audit trail behind every automated action, available to ops, IT, and compliance.</p>
-                    </div>
+                    <p class="cs-action-body">When automation is touching customer-facing data, you need to point at exactly what happened and when. Every click, every step start, every success or failure gets a timestamp and a session ID. The same log feeds the Operator Console live and the database for after-the-fact review — a full audit trail available to ops, IT, and compliance.</p>
                 </article>
             </div>
         </div>
@@ -330,8 +244,6 @@
             <details class="cs-tech-details">
                 <summary>Technical detail (for the engineers in the room)</summary>
                 <div class="cs-tech-body">
-                    <p>The agent is a WPF desktop app running on its own VM. UI automation runs on FlaUI (which wraps UIA primitives), with an Azure OpenAI vision model as the fallback. The Operator Console lives in the React/MUI client and streams the agent's desktop over HLS via FFmpeg. The action log comes through SignalR. Jobs land on the agent's queue over HTTP from the ops app, and the orchestrator picks them up.</p>
-                    <p><strong>The stack at a glance:</strong></p>
                     <ul>
                         <li><code class="cs-code">WPF · FlaUI</code> drives the legacy ERP and retailer portals through UI Automation primitives, all on a dedicated Windows VM</li>
                         <li><code class="cs-code">Azure OpenAI</code> picks up as the vision fallback when a UIA target isn't where the workflow expects it</li>
@@ -349,7 +261,7 @@
             <div class="cs-why reveal">
                 <span class="cs-why-label">Why this matters for your 3PL</span>
                 <h2>Switching ERPs won't fix this. Switching the screen work will.</h2>
-                <p>If you run a 3PL, your people spend more time in retailer portals and a legacy WMS, TMS, or ERP than you'd like. Switching systems won't really change that. The pattern we built for our client works elsewhere: figure out the workflows that eat up the most time, put an agent on them, and let a supervisor watch from a browser. You add capacity, and the institutional knowledge tied up in your senior ops people stops being a single point of failure.</p>
+                <p>Your people spend more time in retailer portals and a legacy WMS, TMS, or ERP than you'd like. Switching systems won't change that. Figure out which workflows eat up the most time, put an agent on them, let a supervisor watch from a browser. You add capacity without adding hires.</p>
             </div>
         </div>
     </section>
@@ -421,8 +333,8 @@
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/page-transitions.js?v=1.0"></script>
-<script src="/js/components/index.js?v=1.7" type="module"></script>
-<script src="/js/index.js?v=2.5"></script>
+<script src="/js/components/index.js?v=2.0" type="module"></script>
+<script src="/js/index.js?v=2.8"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>
