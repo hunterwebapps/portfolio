@@ -1,48 +1,52 @@
 # Applied 3PL Systems
 
-> Custom software development and strategic consulting for 3PL logistics providers.
+> Workflow control for independent 3PLs running on legacy systems and customer portals. Validation, automation, exception visibility, and live retailer scorecards on top of the WMS, ERP, TMS, and portals you already run — without rip-and-replace.
 
-## What We Do
-- Strategic assessments to identify operational bottlenecks and margin opportunities
-- Custom cloud software development for warehouse and logistics operations
-- Third-party integrations (EDI, FedEx, ArcGIS, ERP systems)
-- Automation solutions tailored to logistics workflows
-- Barcode and RFID tracking systems
-- Inventory management solutions
-- Order processing and shipping logistics
-- Warehouse management systems (WMS)
-- Operational analytics and reporting
+**Entry action:** Book a free Workflow Fit Call at https://applied3pl.com/#Contact. Self-serve alternative: the Margin Leakage Scorecard at https://applied3pl.com/scorecard.html.
 
-## Who We Serve
-- Independent 3PL (third-party logistics) providers
-- Supply chain and warehousing companies
-- Logistics businesses seeking custom technology solutions
-- Growth-minded logistics operations looking to scale throughput
+## Positioning
 
-## Technology Expertise
-- Custom software development (cloud-native, full-stack)
-- Process automation and workflow optimization
-- IoT integration for warehouse and fleet tracking
-- AI-powered logistics optimization
-- System integrations and API development
+Applied 3PL Systems builds the workflow-control layer for independent 3PLs stuck between legacy systems, customer portals, and retailer compliance pressure. We help operations teams catch exceptions earlier, automate repetitive screen work, and get live visibility without replacing the systems that already run the business.
 
-## Engagement Models
+We are a service-led, productizing professional services company. We are not a generic software agency, and we are not a full WMS/TMS replacement vendor.
 
-### Path 1: Transformation Journey
-1. **Discovery Call** (FREE) - 30-minute call to explore fit and identify quick wins
-2. **Strategy Assessment** ($3K-$5K) - 1-week deep dive with workflow analysis, technology gap assessment, and prioritized roadmap
-3. **Phased Implementation** ($30K-$50K per phase) - Custom development with parallel testing, training, and 1-year bug-free guarantee
+## Workflow Packages
+- **Shipment Exception Cockpit** — Live shipment visibility, validation rules, retailer-specific ship windows, and exception queues on top of your existing system of record.
+- **Portal Work Automation** — Browser extensions and supervised agents that reduce copy/paste, portal lookups, form filling, and customer-system context switching.
+- **Retailer Scorecard Layer** — PIFOT, on-time, fill-rate, and SLA dashboards that refresh fast enough to manage the day, not just explain last week.
+- **Legacy System Overlay** — Modern operational apps and data layers around legacy WMS, ERP, and TMS systems when replacement does not pencil.
+- **Retailer Workflow Orchestration** — Email ingestion, validation, API submission, async polling, and legacy close-out for Amazon-like workflows.
+- **Margin Leakage Diagnostic** — A focused assessment that maps manual work, compliance exposure, reporting lag, and automation candidates into a practical 90-day roadmap.
 
-### Path 2: Direct to Solution
-- Custom pricing for specific integrations, emergency fixes, scaling, or migrations
-- For teams who already know exactly what they need
+## Primary ICP (Strong Fit)
+- Independent 3PLs, fulfillment operators, and distributors with legacy WMS, ERP, TMS, or desktop systems that are difficult to replace
+- Retailer-heavy or marketplace-heavy customer accounts
+- Manual portal work in systems like Amazon Vendor Central, Seller Central, ShipIQ, Target/partner portals, Walmart workflows, or similar
+- Chargeback, SLA, PIFOT, on-time, fill-rate, or ship-window exposure
+- Operators copying/pasting between internal systems and customer portals
+- Stale KPI reporting or weekly spreadsheet fire drills
+- A need to add throughput without adding proportional headcount
+
+## Poor Fit
+- Companies looking to buy and implement a new WMS
+- Generic app development unrelated to logistics operations
+- Speculative AI experiments without a measurable workflow
+- Cosmetic dashboards that do not change how operators work
+- Organizations unwilling to expose the workflow, data, systems, and operational constraints needed to quantify ROI
+
+## Engagement (How We De-Risk the Work)
+1. **Workflow Fit Call (Free)** — A focused conversation to determine whether your workflow has enough volume, risk, and operational drag to justify a diagnostic.
+2. **Margin Leakage Diagnostic (Paid assessment)** — A short, structured assessment that maps the workflow, quantifies leakage, identifies integration constraints, and defines the first pilot.
+3. **Workflow Control Pilot (Scoped implementation)** — Build one high-value workflow layer around your existing systems: validation, portal automation, live scorecard, or supervised operator.
+4. **Managed Workflow Layer (Recurring support + expansion)** — Monitor, improve, and expand the workflow layer across more rules, portals, customers, workflows, and sites.
 
 ## Differentiators
-- Exclusively focused on independent 3PLs
-- APICS CSCP Certified (Certified Supply Chain Professional)
-- ASCM Member (Association for Supply Chain Management)
-- Partnership mindset - success tied to client KPIs
-- 1-year bug-free guarantee on all implementations
+- Exclusively focused on independent 3PL operators
+- Service-led: workflow diagnostic before code
+- Supervised automation with full audit logs, not opaque agents
+- No rip-and-replace required when replacement does not pencil
+- APICS CSCP Certified, ASCM Member
+- Engagement starts with a free Workflow Fit Call and a paid Margin Leakage Diagnostic
 
 ## Contact
 - Website: https://applied3pl.com
@@ -51,16 +55,16 @@
 - LinkedIn: https://www.linkedin.com/company/applied3plsystems/
 - Location: Serving clients across the United States
 
-## Core Philosophy: A Measured Approach
-1. **Progressive Enhancement** - Iterative improvements without waiting for full overhauls
-2. **Built-In Guardrails** - New workflows run in parallel with safety fallbacks
-3. **Quantified Returns** - Financial and operational metrics tracked phase-by-phase
+## Core Methodology: A Measured Approach
+1. **Progressive Enhancement** — Small, testable steps; no big-bang risk.
+2. **Built-In Guardrails** — New workflows run in parallel until real data proves stability.
+3. **Quantified Returns** — Financial and operational metrics tracked phase-by-phase.
 
 ## Case Studies
-Five case studies on the real world platform — a modern shipment and order-management operating system layered on top of a decades-old legacy ERP. Each is written for owner / officer / director-level decision-makers at small-to-mid-size 3PLs.
+Five case studies on the real-world platform — a modern shipment and order-management operating system layered on top of a decades-old legacy ERP. Each is written for owner / officer / director-level decision-makers at small-to-mid-size 3PLs.
 
-- **[Scaling Warehouse Operations Without Scaling the Team](https://applied3pl.com/case-studies/ai-vision-agent.html)** — A supervised virtual operator drives legacy and retailer-portal screens around the clock, with a live web console for one-supervisor oversight. Seven workflows automated with a vision-model fallback for portal changes.
-- **[Retailer-Grade Scorecards, Automatically](https://applied3pl.com/case-studies/retailer-scorecards.html)** — A self-refreshing analytics layer turns ERP and operational data into PIFOT, on-time, and fill-rate scorecards. Embedded inside the operations app and refreshed every fifteen minutes.
-- **[Modern Operations on Top of a Legacy ERP — Without Rip-and-Replace](https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html)** — A real-time, multi-user shipment cockpit with 30+ validation checks and customer-specific ship-window math, layered on a decades-old ERP. No system-of-record migration required.
-- **[Your Team Lives in Your Customers' Portals. We Brought Your Data With Them.](https://applied3pl.com/case-studies/portal-extension.html)** — A Chrome extension that overlays operations data on top of ShipIQ, Amazon Vendor Central, and Seller Central. Auto-fill, PO highlighting, and a docked side panel.
-- **[From Amazon Routing Request to Confirmed Shipment — Without a Human in the Loop](https://applied3pl.com/case-studies/amazon-routing.html)** — An end-to-end automation chain from inbound email through Amazon SP-API submission, asynchronous polling, and legacy close-out. Always-on, fully audited.
+- **[Scaling Warehouse Operations Without Scaling the Team](https://applied3pl.com/case-studies/ai-vision-agent.html)** — Workflow pattern: supervised virtual operator for repetitive screen work. 70+ hrs/week eliminated across seven workflows running end-to-end with live supervision and audit logs.
+- **[Retailer-Grade Scorecards, Automatically](https://applied3pl.com/case-studies/retailer-scorecards.html)** — Workflow pattern: operational analytics layer joining legacy ERP and shipment data. PIFOT, on-time, and fill-rate refreshed every ~15 minutes during business hours.
+- **[Modern Operations on Top of a Legacy ERP — Without Rip-and-Replace](https://applied3pl.com/case-studies/modern-ops-on-legacy-erp.html)** — Workflow pattern: modern exception cockpit over a legacy ERP. 30+ shipment validation rules and ~30-second lag from legacy ERP to live grid.
+- **[Your Team Lives in Your Customers' Portals. We Brought Your Data With Them.](https://applied3pl.com/case-studies/portal-extension.html)** — Workflow pattern: browser extension that brings internal shipment context into customer portals. ~2 hrs/operator/day reclaimed.
+- **[From Amazon Routing Request to Confirmed Shipment — Without a Human in the Loop](https://applied3pl.com/case-studies/amazon-routing.html)** — Workflow pattern: end-to-end retailer workflow orchestration. 0 human touches, ~5-minute email-to-SP-API submission.
