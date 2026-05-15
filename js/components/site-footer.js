@@ -6,13 +6,13 @@ class SiteFooter extends HTMLElement {
         <div class="footer-grid">
             <!-- LEFT: brand statement + contact form -->
             <div>
-                <span class="footer-eyebrow">08 / Contact</span>
+                <span class="footer-eyebrow">05 / Contact</span>
                 <div class="footer-lead">
                     <h3>Applied 3PL Systems</h3>
-                    <p>Tell us what you're trying to fix. We respond within 2–4 hours on business days.</p>
+                    <p>Tell us which workflow is hurting most. We respond within 2&ndash;4 hours on business days.</p>
                 </div>
 
-                <h6 class="footer-label" style="margin-top: 2.5rem;">Project inquiry</h6>
+                <h6 class="footer-label" style="margin-top: 2.5rem;">Workflow inquiry</h6>
                 <form id="ContactForm" class="custom-form contact-form" action="#" method="post" novalidate>
                     <div class="form-field">
                         <input type="text" name="name" id="name" class="form-control" placeholder=" "
@@ -85,7 +85,7 @@ class SiteFooter extends HTMLElement {
                                 <span class="thank-you-next-num">/ 02</span>
                                 <div class="thank-you-next-body">
                                     <h6>Score your operation</h6>
-                                    <p>A 2-minute self-assessment that surfaces where margin is leaking before we talk.</p>
+                                    <p>The Margin Leakage Scorecard surfaces where manual workflows, portal work, and stale reporting are quietly consuming capacity.</p>
                                 </div>
                                 <span class="thank-you-next-arrow" aria-hidden="true">→</span>
                             </a>
@@ -158,7 +158,13 @@ class SiteFooter extends HTMLElement {
                 <div class="footer-info-block" style="margin-top: 2.5rem;">
                     <h6 class="footer-label">Specialization</h6>
                     <p>We work with independent 3PL operators across the U.S.</p>
-                    <p>Strategy. Custom software. Automation. AI integration.</p>
+                    <p>Workflow control. Validation. Portal automation. Exception visibility.</p>
+                </div>
+
+                <div class="footer-info-block footer-credential" style="margin-top: 2.5rem;">
+                    <h6 class="footer-label">Credentialed</h6>
+                    <img src="/images/credentials/ascm.webp" alt="Association for Supply Chain Management"
+                         class="footer-ascm-card" width="355" height="242" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>

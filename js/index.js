@@ -60,7 +60,7 @@ function initActiveSectionHighlight() {
   const siteNav = document.querySelector('site-nav');
   if (siteNav && siteNav.dataset.active) return;
 
-  const sectionIds = ['AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'CaseStudies', 'Contact'];
+  const sectionIds = ['CaseStudies', 'WhereWeFit', 'Engagement', 'Contact'];
   const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
