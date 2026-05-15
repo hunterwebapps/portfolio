@@ -18,17 +18,21 @@ url("./fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("wof
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subset: 21 icons actually used on this site */
+/* Subset: icons actually used on this site */
 .bi-arrow-left-right::before { content: "\f12b"; }
+.bi-arrow-repeat::before { content: "\f130"; }
 .bi-arrow-right-circle::before { content: "\f134"; }
 .bi-arrow-right::before { content: "\f138"; }
 .bi-award-fill::before { content: "\f153"; }
 .bi-bar-chart-fill::before { content: "\f17a"; }
 .bi-chat-dots-fill::before { content: "\f249"; }
+.bi-clock-history::before { content: "\f292"; }
 .bi-compass-fill::before { content: "\f2d0"; }
 .bi-envelope-open::before { content: "\f32e"; }
+.bi-exclamation-octagon::before { content: "\f337"; }
 .bi-file-spreadsheet::before { content: "\f3b7"; }
 .bi-gear::before { content: "\f3e5"; }
+.bi-hdd-stack::before { content: "\f411"; }
 .bi-lightbulb-fill::before { content: "\f468"; }
 .bi-lightning-charge-fill::before { content: "\f46c"; }
 .bi-linkedin::before { content: "\f472"; }

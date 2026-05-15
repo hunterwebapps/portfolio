@@ -57,10 +57,10 @@ A **virtual operator**: a Windows-based agent that runs on a dedicated VM and dr
 
 ## Business Outcomes
 
-- **Capacity unlocked without headcount.** The same volume of EDI imports, builds, printing, and cancellations runs continuously without growing the team. *{TBD — confirm exact hours/day saved with operations.}*
+- **Capacity scales without headcount.** The same volume of EDI imports, builds, printing, and cancellations runs continuously without growing the team. *{TBD — confirm exact hours/day saved with operations.}*
 - **24/7 coverage on workflows that used to be blocked by business hours.** EDI imports and printing that piled up overnight now happen overnight. *{TBD — confirm queue depth before/after.}*
 - **Lower key-person risk.** The institutional knowledge of "how to drive OpShip" lives in the agent, not in two people's heads.
-- **Faster onboarding of new retailer portals.** Adding support for a new portal is a defined engineering task with a known shape, not a six-month tribal-knowledge build-up.
+- **Faster onboarding of new retailer portals.** Adding support for a new portal is a defined engineering task with a known shape, not a six-month learning curve.
 - **Defensible audit trail** behind every automated action — defending against retailer chargeback disputes is now backed by timestamped, replayable evidence.
 
 ## Under the Hood
@@ -75,4 +75,4 @@ Related case studies: [Automated Amazon Routing](05-automated-amazon-routing.md)
 
 ## Why This Matters for 3PLs
 
-If you run a 3PL, your people probably spend more of their day in retailer portals and a legacy WMS/TMS/ERP than you'd like to admit — and you can't fix that by switching ERPs. The pattern we built for our client is the pattern that fits your operation too: identify the highest-volume manual workflows, build a supervised virtual operator that runs them, and put the supervisor on a web page they can watch from anywhere. You add capacity without adding headcount, and you de-risk the institutional knowledge that today lives only in your senior ops people.
+If you run a 3PL, your people probably spend more of their day in retailer portals and a legacy WMS/TMS/ERP than you'd like to admit — and you can't fix that by switching ERPs. The pattern we built for our client is the pattern that fits your operation too: identify the highest-volume manual workflows, build a virtual operator that runs them, and put the supervisor on a web page they can watch from anywhere. You add capacity without adding headcount, and you stop the institutional knowledge from living only in your senior ops people.

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initImageLightbox();
   initFloatingCtaContrast();
+  initFloatingCtaScrollReveal();
 });
 
 function initNavbar() {
@@ -60,7 +61,7 @@ function initActiveSectionHighlight() {
   const siteNav = document.querySelector('site-nav');
   if (siteNav && siteNav.dataset.active) return;
 
-  const sectionIds = ['AboutUs', 'Services', 'ServicePackages', 'MeasuredApproach', 'CaseStudies', 'Contact'];
+  const sectionIds = ['CaseStudies', 'WhereWeFit', 'Engagement', 'Contact'];
   const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
@@ -223,6 +224,26 @@ function initFloatingCtaContrast() {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   update();
+}
+
+function initFloatingCtaScrollReveal() {
+  const cta = document.getElementById('floating-cta');
+  if (!cta) return;
+  const sentinel = document.querySelector('.hero .hero-cta') || document.querySelector('.hero');
+  if (!sentinel) {
+    cta.classList.add('is-past-hero');
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    cta.classList.add('is-past-hero');
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      cta.classList.toggle('is-past-hero', !entry.isIntersecting);
+    }
+  }, { threshold: 0 });
+  io.observe(sentinel);
 }
 
 function initOperatingHours() {

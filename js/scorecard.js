@@ -1,6 +1,6 @@
 /**
- * Spreadsheet-to-System Scorecard
- * Interactive scoring tool for 3PLs & Distributors
+ * 3PL Margin Leakage Scorecard
+ * Interactive scoring tool for independent 3PLs & fulfillment operators
  */
 
 // Category data with questions
@@ -11,7 +11,7 @@ const categories = [
         icon: 'bi-truck',
         questions: [
             'Orders flow from intake to shipping labels without manual re-keying or copy/paste between systems.',
-            'Pick/pack tasks, routing rules, and customer-specific requirements are system-directed (not printed lists or tribal knowledge).',
+            'Pick/pack tasks, routing rules, and customer-specific requirements are system-directed (not printed lists or what someone happens to remember).',
             'Exceptions (shorts, holds, substitutions) are caught by system guardrails and tracked with clear resolution paths.'
         ]
     },
@@ -670,13 +670,13 @@ function updateGuidanceText() {
     const lowest = categoryPercentages[0];
 
     if (percentage < 25) {
-        guidanceText.textContent = `Your operations are heavily spreadsheet-dependent. Focus on ${lowest.name} (${lowest.percentage}%) as your biggest opportunity for improvement.`;
+        guidanceText.textContent = `Significant manual workflow surface area. Start with ${lowest.name} (${lowest.percentage}%) — that is where a workflow diagnostic will find the most leakage.`;
     } else if (percentage < 50) {
-        guidanceText.textContent = `You're in a hybrid state with room to grow. Prioritize ${lowest.name} (${lowest.percentage}%) to see the quickest gains.`;
+        guidanceText.textContent = `Mixed manual and system-driven work. ${lowest.name} (${lowest.percentage}%) is the workflow most likely to repay an automation or overlay layer first.`;
     } else if (percentage < 75) {
-        guidanceText.textContent = `You're mostly system-driven! Consider enhancing ${lowest.name} (${lowest.percentage}%) to reach full integration.`;
+        guidanceText.textContent = `Mostly system-driven, with pockets of manual work. ${lowest.name} (${lowest.percentage}%) is a good candidate for a focused workflow control pilot.`;
     } else {
-        guidanceText.textContent = `Excellent! You're well-integrated. Fine-tune ${lowest.name} (${lowest.percentage}%) to achieve operational excellence.`;
+        guidanceText.textContent = `Tightly integrated. ${lowest.name} (${lowest.percentage}%) is the remaining surface where a workflow refinement could still move a metric.`;
     }
 }
 
