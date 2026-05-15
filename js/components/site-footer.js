@@ -9,7 +9,7 @@ class SiteFooter extends HTMLElement {
                 <span class="footer-eyebrow">05 / Contact</span>
                 <div class="footer-lead">
                     <h3>Applied 3PL Systems</h3>
-                    <p>Tell us which workflow is hurting most. We respond within 2&ndash;4 hours on business days.</p>
+                    <p>Tell us what you're working on. We typically reply within 2&ndash;4 hours on business days.</p>
                 </div>
 
                 <h6 class="footer-label" style="margin-top: 2.5rem;">Workflow inquiry</h6>
@@ -77,7 +77,7 @@ class SiteFooter extends HTMLElement {
                                 <span class="thank-you-next-num">/ 01</span>
                                 <div class="thank-you-next-body">
                                     <h6>See real operations</h6>
-                                    <p>Five case studies — virtual operators, retailer scorecards, Amazon SP-API, and more.</p>
+                                    <p>Five case studies. Virtual operators, retailer scorecards, Amazon SP-API, and more.</p>
                                 </div>
                                 <span class="thank-you-next-arrow" aria-hidden="true">→</span>
                             </a>
@@ -85,7 +85,7 @@ class SiteFooter extends HTMLElement {
                                 <span class="thank-you-next-num">/ 02</span>
                                 <div class="thank-you-next-body">
                                     <h6>Score your operation</h6>
-                                    <p>The Margin Leakage Scorecard surfaces where manual workflows, portal work, and stale reporting are quietly consuming capacity.</p>
+                                    <p>A 10-minute self-assessment that shows where the operation is still propped up by spreadsheets and manual work.</p>
                                 </div>
                                 <span class="thank-you-next-arrow" aria-hidden="true">→</span>
                             </a>
@@ -93,7 +93,7 @@ class SiteFooter extends HTMLElement {
                                 <span class="thank-you-next-num">/ 03</span>
                                 <div class="thank-you-next-body">
                                     <h6>Follow on LinkedIn</h6>
-                                    <p>3PL tooling experiments, integration notes, and the occasional warehouse story.</p>
+                                    <p>3PL tooling notes and the occasional warehouse story.</p>
                                 </div>
                                 <span class="thank-you-next-arrow" aria-hidden="true">↗</span>
                             </a>
@@ -157,8 +157,7 @@ class SiteFooter extends HTMLElement {
 
                 <div class="footer-info-block" style="margin-top: 2.5rem;">
                     <h6 class="footer-label">Specialization</h6>
-                    <p>We work with independent 3PL operators across the U.S.</p>
-                    <p>Workflow control. Validation. Portal automation. Exception visibility.</p>
+                    <p>We work with independent 3PL operators across the U.S. Software that fits between your WMS, your customers' portals, and the people running shipments out the door.</p>
                 </div>
 
                 <div class="footer-info-block footer-credential" style="margin-top: 2.5rem;">

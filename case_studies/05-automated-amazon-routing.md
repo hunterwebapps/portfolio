@@ -22,7 +22,7 @@ Amazon vendor business is some of the most demanding work a 3PL can take on. The
 
 The flow itself is the problem. An Amazon routing request comes in by email. Someone has to read it, find the shipment in the ops system, calculate the cartons, group the orders correctly, submit the shipment data to Amazon's Selling Partner API, manage OAuth tokens, deal with the fact that the submission is asynchronous (you don't get an immediate yes/no — you get a transaction ID and have to poll for status), wait for confirmation, and then go back to the legacy systems and close out the corresponding records there. Miss any link in that chain — or do any of it sloppy — and the chargeback follows.
 
-For most 3PLs, that means staffing a dedicated team to handle Amazon, training them carefully, building tribal knowledge, and absorbing the chargebacks that happen anyway when someone's out sick or the inbox backs up over a weekend. The volume keeps growing. The team keeps growing. The compliance risk never goes away.
+For most 3PLs, that means staffing a dedicated team to handle Amazon, training them carefully, watching the knowledge collect in just a few people's heads, and absorbing the chargebacks that happen anyway when someone's out sick or the inbox backs up over a weekend. The volume keeps growing. The team keeps growing. The compliance risk never goes away.
 
 ## What We Built
 

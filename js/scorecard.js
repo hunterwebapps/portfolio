@@ -11,7 +11,7 @@ const categories = [
         icon: 'bi-truck',
         questions: [
             'Orders flow from intake to shipping labels without manual re-keying or copy/paste between systems.',
-            'Pick/pack tasks, routing rules, and customer-specific requirements are system-directed (not printed lists or tribal knowledge).',
+            'Pick/pack tasks, routing rules, and customer-specific requirements are system-directed (not printed lists or what someone happens to remember).',
             'Exceptions (shorts, holds, substitutions) are caught by system guardrails and tracked with clear resolution paths.'
         ]
     },
