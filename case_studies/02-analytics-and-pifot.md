@@ -25,7 +25,7 @@ Layered underneath that pain is the fact that the data lives in two places that 
 
 ## What We Built
 
-A **dedicated analytics layer** running alongside the operational system. Every fifteen minutes during business hours, an ETL pipeline reaches into both the legacy ERP and the operational database, transforms what it finds into a star schema (customers, SKUs, workcenters, dates, ship methods, vendors, plus shipment and line-item facts), and pre-computes the SLA flags that retailers care about. A **Power BI report** sits on top, embedded right inside the operations app — so the same PIFOT dashboard that runs the Monday review is one click away during the day.
+A **dedicated analytics layer** that lives beside the operational system. Every fifteen minutes during business hours, an ETL pipeline reaches into both the legacy ERP and the operational database, transforms what it finds into a star schema (customers, SKUs, workcenters, dates, ship methods, vendors, plus shipment and line-item facts), and pre-computes the SLA flags that retailers care about. A **Power BI report** sits on top, embedded right inside the operations app — so the same PIFOT dashboard that runs the Monday review is one click away during the day.
 
 ### Action 1: Unify the legacy ERP and the operational data into one model
 

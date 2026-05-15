@@ -15,29 +15,29 @@
     <link rel="dns-prefetch" href="https://js.hs-scripts.com">
 
     <meta name="description"
-          content="Amazon routing email parsed, submitted to SP-API, polled, and closed out automatically. No human in the loop unless an exception needs review."/>
+          content="How we wired an Amazon routing email straight through to a confirmed shipment and legacy close-out, without anyone in operations having to babysit it."/>
     <meta name="author" content="Applied 3PL Systems">
 
-    <meta property="og:title" content="Amazon Routing · Leak 05 · Applied 3PL Systems">
+    <meta property="og:title" content="From Amazon Routing Request to Confirmed Shipment | Applied 3PL Systems">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://applied3pl.com/case-studies/amazon-routing.html">
     <meta property="og:image" content="https://applied3pl.com/images/case-studies/amazon-routing.webp">
     <meta property="og:description"
-          content="Email-in to confirmed Amazon shipment with no human in the loop. Routing emails parsed, submitted to SP-API, polled, and closed out automatically.">
+          content="Email-in to lights-out Amazon SP-API submission, polling, and legacy close-out, with no one driving it and a clean audit trail at every step.">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@applied3pl">
-    <meta name="twitter:title" content="Amazon Routing · Leak 05 · Applied 3PL Systems">
+    <meta name="twitter:title" content="From Amazon Routing Request to Confirmed Shipment | Applied 3PL Systems">
     <meta name="twitter:image" content="https://applied3pl.com/images/case-studies/amazon-routing.webp">
     <meta name="twitter:description"
-          content="Email-in to confirmed Amazon shipment with no human in the loop. Routing emails parsed, submitted to SP-API, polled, and closed out automatically.">
+          content="Email-in to lights-out Amazon SP-API submission, polling, and legacy close-out, with no one driving it and a clean audit trail at every step.">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Amazon routing: email-in to confirmed shipment with no human in the loop",
-        "description": "An automation chain that reads Amazon routing request emails, submits via SP-API, polls to confirmation, and closes out WMS/ERP.",
+        "headline": "From Amazon Routing Request to Confirmed Shipment, Without a Human in the Loop",
+        "description": "An end-to-end automation chain that reads Amazon routing request emails, submits via SP-API, polls to confirmation, and closes the legacy systems.",
         "image": "https://applied3pl.com/images/case-studies/amazon-routing.webp",
         "author": { "@type": "Organization", "name": "Applied 3PL Systems" },
         "publisher": {
@@ -57,15 +57,15 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://applied3pl.com/case-studies/amazon-routing.html">
 
-    <title>Amazon Routing · Leak 05 · Applied 3PL Systems</title>
+    <title>Case Study 05: From Amazon Routing to Confirmed Shipment | Applied 3PL Systems</title>
 
     <script src="/js/google-tag-manager.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/bootstrap-icons.css?v=1.1">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/jgk1kms.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/css/styles.css?v=3.8">
-    <link rel="stylesheet" href="/css/case-study.css?v=2.2">
+    <link rel="stylesheet" href="/css/styles.css?v=2.7">
+    <link rel="stylesheet" href="/css/case-study.css?v=1.7">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2E6ZZL9BM"></script>
     <script>
@@ -96,10 +96,10 @@
         <div class="cs-container">
             <div class="cs-hero-eyebrow">
                 <span class="cs-hero-eyebrow-divider" aria-hidden="true"></span>
-                <span>Leak 05 · Amazon routing</span>
+                <span>Case Study 05 · Distribution &amp; Third-Party Logistics</span>
             </div>
-            <h1 class="cs-hero-title">Email-in to confirmed Amazon shipment, no human in the loop.</h1>
-            <p class="cs-hero-lede">Reads Amazon's routing request emails, submits the shipment through Amazon's API, polls until Amazon confirms it, and closes out the WMS and ERP. Nobody in operations has to drive it.</p>
+            <h1 class="cs-hero-title">From Amazon Routing Request to Confirmed Shipment, Without a Human in the Loop</h1>
+            <p class="cs-hero-lede">Reads Amazon's routing request emails, submits the shipment through Amazon's API, polls until Amazon confirms it, then closes out the legacy systems on the back. Nobody in operations has to drive it.</p>
 
             <div class="cs-meta-strip">
                 <div class="cs-meta-item">
@@ -122,9 +122,6 @@
                  loading="eager" decoding="async">
         </div>
     </div>
-
-    <!-- ---BUYER SUMMARY ----->
-    <buyer-summary data-case="amazon-routing"></buyer-summary>
 
     <section class="cs-section">
         <div class="cs-container">
@@ -240,14 +237,24 @@
         </div>
     </section>
 
+    <section class="cs-section">
+        <div class="cs-container">
+            <div class="cs-why reveal">
+                <span class="cs-why-label">Why this matters for your 3PL</span>
+                <h2>Amazon today. Every retailer next.</h2>
+                <p>If you're running real Amazon volume, the routing-and-confirmation flow is probably the riskiest piece of your operation. But this isn't Amazon-specific. Every major retailer is moving the same direction: more API calls, more async submissions, more compliance pressure. Email in, enrich and validate, submit, poll, close out the legacy systems — that's the shape you'll want for whichever retailer's flow shows up next.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="cs-cta">
         <div class="cs-container">
             <div class="cta-block reveal">
                 <div>
                     <h3>Running Amazon volume that keeps getting more demanding?</h3>
-                    <p>Book a free intro call. We'll walk through where your chargebacks are coming from today, and what an always-on submission chain would mean for the Amazon team.</p>
+                    <p>Book a free 30-minute call. We'll walk through where your chargebacks are coming from today and what an always-on automation chain would mean for your Amazon team.</p>
                 </div>
-                <a href="/#Contact" class="cta-button">Book an intro call <span aria-hidden="true">→</span></a>
+                <a href="/#Contact" class="cta-button">Book Discovery Call <span aria-hidden="true">→</span></a>
             </div>
         </div>
     </section>
@@ -256,7 +263,7 @@
         <div class="cs-container">
             <div class="cs-related-header">
                 <span class="cs-related-label">Related case studies</span>
-                <h2 class="cs-related-title">Other engagements like this one</h2>
+                <h2 class="cs-related-title">Where this fits in the bigger picture</h2>
             </div>
             <div class="cs-related-grid">
                 <a href="/case-studies/ai-vision-agent.html" class="cs-related-card">
@@ -302,8 +309,8 @@
 <iframe id="salesforce" name="salesforce" src="about:blank" style="display:none;"></iframe>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="/js/page-transitions.js?v=1.0"></script>
-<script src="/js/components/index.js?v=2.4" type="module"></script>
-<script src="/js/index.js?v=2.9"></script>
+<script src="/js/components/index.js?v=2.0" type="module"></script>
+<script src="/js/index.js?v=2.8"></script>
 <script defer src="https://www.google.com/recaptcha/enterprise.js?render=6LdOBZMsAAAAAAuxSTFA0n2zyfmipK222HVnQyi9"></script>
 </body>
 </html>

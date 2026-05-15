@@ -85,4 +85,4 @@ Related case studies: the [Analytics + PIFOT case study](02-analytics-and-pifot.
 
 ## Why This Matters for 3PLs
 
-If your operation is on a WMS, TMS, or ERP you can't replace — and your team has built up a stack of spreadsheets, dashboards, and side databases just to work around it — the pattern we built for our client is the pattern you need. Keep the system of record. Layer a modern, real-time, validated operations cockpit on top of it. Codify the customer-specific rules in software instead of in people's heads. The team gets a modern operating model; the business gets out of the rip-and-replace conversation entirely.
+If your operation is on a WMS, TMS, or ERP you can't replace — and your team has built up a stack of spreadsheets, dashboards, and side databases just to work around it — the pattern we built for our client is the pattern you need. Keep the system of record. Layer a modern, real-time, validated operations cockpit on top of it. Codify the customer-specific rules in software instead of in tribal knowledge. The team gets a modern operating model; the business gets out of the rip-and-replace conversation entirely.

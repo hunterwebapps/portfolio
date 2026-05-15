@@ -3,7 +3,7 @@ const CASE_STUDIES = [
     num: '01',
     href: '/case-studies/ai-vision-agent.html',
     title: 'Scaling warehouse ops without scaling the team',
-    tagline: 'Virtual operator across WMS, ERP, and retailer screens'
+    tagline: 'Virtual operator across legacy and retailer screens'
   },
   {
     num: '02',
@@ -67,8 +67,9 @@ class SiteNav extends HTMLElement {
                         </div>
                     </div>
                 </li>
-                <li class="nav-item"><a class="${cls('fit')}" href="/#WhereWeFit">Where We Fit</a></li>
-                <li class="nav-item"><a class="${cls('engagement')}" href="/#Engagement">Engagement</a></li>
+                <li class="nav-item"><a class="${cls('about')}" href="/#AboutUs">About</a></li>
+                <li class="nav-item"><a class="${cls('solutions')}" href="/#Services">Solutions</a></li>
+                <li class="nav-item"><a class="${cls('engagement')}" href="/#ServicePackages">Engagement</a></li>
                 <li class="nav-item"><a class="${cls('scorecard')}" href="/scorecard.html">Scorecard</a></li>
                 <li class="nav-item"><a class="${cls('contact')}" href="/#Contact">Contact</a></li>
             </ul>
